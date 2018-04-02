@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YGI-gE-xK6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oHj-KA-tJo">
+            <objects>
+                <tabBarController id="YGI-gE-xK6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cij-pz-vVp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eUs-RP-dO2" kind="relationship" relationship="viewControllers" id="V1l-XK-l6H"/>
+                        <segue destination="LwM-1k-L0G" kind="relationship" relationship="viewControllers" id="56C-38-nNK"/>
+                        <segue destination="Kcg-lP-2me" kind="relationship" relationship="viewControllers" id="rBM-om-PG1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hht-Lr-Tzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1934" y="-237"/>
+        </scene>
+        <!--DeviceCentre-->
+        <scene sceneID="kDN-3T-PMF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DeviceCentre" id="eUs-RP-dO2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="设备中心" image="ic_01equipment" id="aW6-Tz-r7g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-m8-Poz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1358" y="-393"/>
+        </scene>
+        <!--SceneMode-->
+        <scene sceneID="jj1-Oh-KAE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SceneMode" id="LwM-1k-L0G" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="场景模式" image="ic_02mode" id="Hn2-aj-dxa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcb-ed-U92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1330" y="-237"/>
+        </scene>
+        <!--PersonalCentre-->
+        <scene sceneID="TYR-XN-AE1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PersonalCentre" id="Kcg-lP-2me" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="个人中心" image="ic_03user" id="pyn-yx-SAn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7Z-x8-Gvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1349" y="-108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_01equipment" width="28" height="28"/>
+        <image name="ic_02mode" width="28" height="28"/>
+        <image name="ic_03user" width="28" height="28"/>
+    </resources>
+</document>
