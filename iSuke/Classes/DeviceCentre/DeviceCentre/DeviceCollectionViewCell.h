@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, RTCellType){
+    RTCellTypeDeviceCentre,
+    RTCellTypeDeviceAdd,
+    RTCellTypeSceneMode
+};
+
+
+static NSString * const reuseIdentifier = @"deviceCell";
+
+
 @interface DeviceCollectionViewCell : UICollectionViewCell
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPaht;
 
-- (void)freshCellWihtIconString:(NSString *)iconString deviceName:(NSString *)deviceName;
+
+- (void)freshCellWithIcon:(NSString *)icon deviceName:(NSString *)deviceName cellType:(RTCellType)cellType;
+
 
 @end

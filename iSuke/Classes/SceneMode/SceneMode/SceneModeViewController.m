@@ -12,24 +12,18 @@
 #define ITEM_WIDTH1  (SCREEN_WIDTH - 3 * kMagin) / 2
 static CGFloat kMagin = 10.f;
 
-
-static NSString * const reuseIdentifier = @"Cell";
-
-
 @interface SceneModeViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
 @end
 
+
+
 @implementation SceneModeViewController
-
-
 #pragma mark  --LifeCycle---
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
-    
     
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -60,22 +54,27 @@ static NSString * const reuseIdentifier = @"Cell";
     return 5;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DeviceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {    
+    DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
     
     if (indexPath.row == 0) {
-        [cell freshCellWihtIconString:@"ic_home" deviceName:@"回家模式"];
+        [cell freshCellWithIcon:@"ic_home" deviceName:@"回家模式" cellType:RTCellTypeSceneMode];
     }else if(indexPath.row == 1){
-        [cell freshCellWihtIconString:@"ic_leave" deviceName:@"离家模式"];
+        [cell freshCellWithIcon:@"ic_leave" deviceName:@"离家模式" cellType:RTCellTypeSceneMode];
     }else{
-        [cell freshCellWihtIconString:@"ic_cup" deviceName:@"自定义模式-1"];
+        [cell freshCellWithIcon:@"ic_cup" deviceName:@"自定义模式" cellType:RTCellTypeSceneMode];
     }
-    
-    
     
     return cell;
 }
 
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_SCENEMODE, SB_SCENEMODE_ADD);
+    
+    [self.rt_navigationController pushViewController:vc animated:YES complete:nil];
+}
 
 
 @end

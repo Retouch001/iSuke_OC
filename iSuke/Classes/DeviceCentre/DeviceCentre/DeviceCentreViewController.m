@@ -14,7 +14,6 @@
 static CGFloat kMagin = 10.f;
 
 
-static NSString * const reuseIdentifier = @"deviceCell";
 static NSString * const headIdentifier = @"headCell";
 
 @interface DeviceCentreViewController ()
@@ -40,19 +39,17 @@ static NSString * const headIdentifier = @"headCell";
     self.collectionView.collectionViewLayout = flowLayout;
     
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DeviceCentreCollectionReusableView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headIdentifier];
     
     self.navigationController.navigationBarHidden = YES;
-
 }
 
 
 
 
 #pragma mark  - IBAction -----
-- (IBAction)rightBtnClick:(id)sender {
-}
-
 - (IBAction)leftBtnClick:(UIButton *)button {
     if ([button.titleLabel.text isEqualToString:@"编辑"]) {
         [button setTitle:@"完成" forState:UIControlStateNormal];
@@ -62,6 +59,7 @@ static NSString * const headIdentifier = @"headCell";
 }
 
 - (IBAction)speechBtnClick:(id)sender {
+    
 }
 
 
@@ -95,19 +93,18 @@ static NSString * const headIdentifier = @"headCell";
     DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
     
     if (indexPath.row == 0) {
-        [cell freshCellWihtIconString:@"ic_light" deviceName:@"客厅灯"];
+        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯" cellType:RTCellTypeDeviceCentre];
     }else if(indexPath.row == 1){
-        [cell freshCellWihtIconString:@"ic_socket" deviceName:@"插座"];
+        [cell freshCellWithIcon:@"ic_socket" deviceName:@"插座" cellType:RTCellTypeDeviceCentre];
     }else{
-        [cell freshCellWihtIconString:@"ic_light" deviceName:@"客厅灯-2"];
-
+        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯-2" cellType:RTCellTypeDeviceCentre];
     }
     return cell;
 }
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc = SB_VIEWCONTROLLER(SB_DEVICEDETAIL);
+    UIViewController *vc = SB_VIEWCONTROLLER(SB_DEVICE_DETAIL);
 
     [self.rt_navigationController pushViewController:vc animated:YES complete:nil];
 }

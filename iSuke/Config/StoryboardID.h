@@ -17,9 +17,20 @@
 #define SB_VIEWCONTROLLER_IDENTIFIER(SB_ID,VC_ID)   [SB_INSTANCE(SB_ID) instantiateViewControllerWithIdentifier:VC_ID]
 
 
+//设备
+#define SB_DEVICE_CENTRE          @"DeviceCentre"
+#define SB_DEVICE_DETAIL          @"DeviceDetail"
+#define SB_DEVICE_CONFIG          @"DeviceConfig"
 
-#define SB_DEVICECENTRE          @"DeviceCentre"
-#define SB_DEVICEDETAIL          @"DeviceDetail"
+//场景
+#define SB_SCENEMODE              @"SceneMode"
+
+#define SB_SCENEMODE_ADD          @"addSceneMode"
+
+
+
+
+
 
 
 

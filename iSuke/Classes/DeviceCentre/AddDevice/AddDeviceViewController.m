@@ -11,9 +11,7 @@
 #import "DeviceCollectionViewCell.h"
 
 #define ITEM_WIDTH  (SCREEN_WIDTH - 4 * kMagin) / 3
-static CGFloat kMagin = 20.f;
-
-static NSString *const reuseIdentifier = @"deviceCell";
+static CGFloat kMagin = 10.f;
 
 @interface AddDeviceViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -30,9 +28,9 @@ static NSString *const reuseIdentifier = @"deviceCell";
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.itemSize = CGSizeMake(ITEM_WIDTH, ITEM_WIDTH);
-    flowLayout.minimumLineSpacing = 20;////最小行间距(默认为10)
+    //flowLayout.minimumLineSpacing = 20;////最小行间距(默认为10)
     //flowLayout.minimumInteritemSpacing = 0;//最小item间距（默认为10
-    flowLayout.sectionInset = UIEdgeInsetsMake(kMagin + 10, kMagin, kMagin, kMagin);////设置senction的内边距
+    flowLayout.sectionInset = UIEdgeInsetsMake(kMagin , kMagin, kMagin, kMagin);////设置senction的内边距
     //flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 5);
     
     self.collectionView.collectionViewLayout = flowLayout;
@@ -60,14 +58,21 @@ static NSString *const reuseIdentifier = @"deviceCell";
     
     
     if (indexPath.row == 0) {
-        [cell freshCellWihtIconString:@"ic_light" deviceName:@"客厅灯"];
+        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯" cellType:RTCellTypeDeviceAdd];
     }else if(indexPath.row == 1){
-        [cell freshCellWihtIconString:@"ic_socket" deviceName:@"插座"];
+        [cell freshCellWithIcon:@"ic_socket" deviceName:@"插座" cellType:RTCellTypeDeviceAdd];
     }else{
-        [cell freshCellWihtIconString:@"ic_light" deviceName:@"客厅灯-2"];
+        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯-2" cellType:RTCellTypeDeviceAdd];
     }
     
     return cell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *vc = SB_VIEWCONTROLLER(SB_DEVICE_CONFIG);
+    
+    [self.rt_navigationController pushViewController:vc animated:YES complete:nil];
 }
 
 

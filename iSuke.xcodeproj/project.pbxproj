@@ -43,6 +43,13 @@
 		5EA48B1C2068C10E004B5E7E /* CodeLoginSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B1B2068C10E004B5E7E /* CodeLoginSecondViewController.m */; };
 		5EA48B1F2068C173004B5E7E /* UIView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B1E2068C173004B5E7E /* UIView+CornerRadius.m */; };
 		5EA48B222068C2F1004B5E7E /* LoginMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA48B212068C2F1004B5E7E /* LoginMode.storyboard */; };
+		5ED094DF20720BFC00F77160 /* DeviceConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED094DE20720BFC00F77160 /* DeviceConfig.storyboard */; };
+		5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E120725BA400F77160 /* SELUpdateAlert.m */; };
+		5ED094E820725BA400F77160 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E420725BA400F77160 /* UpdateApp.m */; };
+		5ED094E920725BA400F77160 /* UpDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E620725BA400F77160 /* UpDataView.m */; };
+		5ED094EE2073286D00F77160 /* AddSceneModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */; };
+		5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */; };
+		5ED094F32073339200F77160 /* TriggerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */; };
 		5ED2FDDE206B928B0067B7A4 /* TimeZone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */; };
 		5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */; };
 		5ED2FDE9206BA6680067B7A4 /* SelectCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */; };
@@ -197,6 +204,18 @@
 		5EA48B1E2068C173004B5E7E /* UIView+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerRadius.m"; sourceTree = "<group>"; };
 		5EA48B202068C247004B5E7E /* ColorCentre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorCentre.h; sourceTree = "<group>"; };
 		5EA48B212068C2F1004B5E7E /* LoginMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMode.storyboard; sourceTree = "<group>"; };
+		5ED094DE20720BFC00F77160 /* DeviceConfig.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeviceConfig.storyboard; sourceTree = "<group>"; };
+		5ED094E120725BA400F77160 /* SELUpdateAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELUpdateAlert.m; sourceTree = "<group>"; };
+		5ED094E220725BA400F77160 /* SELUpdateAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELUpdateAlert.h; sourceTree = "<group>"; };
+		5ED094E320725BA400F77160 /* UpDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDataView.h; sourceTree = "<group>"; };
+		5ED094E420725BA400F77160 /* UpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
+		5ED094E520725BA400F77160 /* UpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
+		5ED094E620725BA400F77160 /* UpDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDataView.m; sourceTree = "<group>"; };
+		5ED094EC2073286D00F77160 /* AddSceneModeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSceneModeTableViewController.h; sourceTree = "<group>"; };
+		5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSceneModeTableViewController.m; sourceTree = "<group>"; };
+		5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriggerCollectionViewCell.h; sourceTree = "<group>"; };
+		5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriggerCollectionViewCell.m; sourceTree = "<group>"; };
+		5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriggerCollectionViewCell.xib; sourceTree = "<group>"; };
 		5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TimeZone.plist; sourceTree = "<group>"; };
 		5ED2FDE0206B978F0067B7A4 /* TimeZoneSelectTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeZoneSelectTableViewController.h; sourceTree = "<group>"; };
 		5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeZoneSelectTableViewController.m; sourceTree = "<group>"; };
@@ -368,6 +387,7 @@
 		5E498FC52058EC69001D6D9B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				5ED094E020725B3500F77160 /* CheckUpdate */,
 				5E73737F206B6B50004125F1 /* AlertController */,
 				5E737369206B320B004125F1 /* Language */,
 				5EF3FECA2060E2320021FF58 /* SpeechSynthesizer */,
@@ -389,6 +409,7 @@
 				5E73733A2068FB4A004125F1 /* DeviceCentre.storyboard */,
 				5ED2FE04206D34AC0067B7A4 /* DeviceDetail.storyboard */,
 				5E498F962058EC10001D6D9B /* Main.storyboard */,
+				5ED094DE20720BFC00F77160 /* DeviceConfig.storyboard */,
 				5E498F992058EC10001D6D9B /* Assets.xcassets */,
 				5E498F9B2058EC10001D6D9B /* LaunchScreen.storyboard */,
 				5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */,
@@ -428,10 +449,8 @@
 			isa = PBXGroup;
 			children = (
 				5ED2FE10206DC8A50067B7A4 /* SceneMode */,
-				5ED2FE0F206DC8A40067B7A4 /* New Group1 */,
+				5ED2FE0F206DC8A40067B7A4 /* AddSceneMode */,
 				5ED2FE0E206DC8A20067B7A4 /* New Group */,
-				5EA48AFB2068BEFA004B5E7E /* SceneModeViewController.h */,
-				5EA48AFC2068BEFA004B5E7E /* SceneModeViewController.m */,
 			);
 			path = SceneMode;
 			sourceTree = "<group>";
@@ -812,6 +831,19 @@
 			path = LoginMode;
 			sourceTree = "<group>";
 		};
+		5ED094E020725B3500F77160 /* CheckUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				5ED094E220725BA400F77160 /* SELUpdateAlert.h */,
+				5ED094E120725BA400F77160 /* SELUpdateAlert.m */,
+				5ED094E320725BA400F77160 /* UpDataView.h */,
+				5ED094E620725BA400F77160 /* UpDataView.m */,
+				5ED094E520725BA400F77160 /* UpdateApp.h */,
+				5ED094E420725BA400F77160 /* UpdateApp.m */,
+			);
+			path = CheckUpdate;
+			sourceTree = "<group>";
+		};
 		5ED2FDDF206B975C0067B7A4 /* TimeZone */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,16 +887,23 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		5ED2FE0F206DC8A40067B7A4 /* New Group1 */ = {
+		5ED2FE0F206DC8A40067B7A4 /* AddSceneMode */ = {
 			isa = PBXGroup;
 			children = (
+				5ED094EC2073286D00F77160 /* AddSceneModeTableViewController.h */,
+				5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */,
+				5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */,
+				5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */,
+				5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */,
 			);
-			path = "New Group1";
+			path = AddSceneMode;
 			sourceTree = "<group>";
 		};
 		5ED2FE10206DC8A50067B7A4 /* SceneMode */ = {
 			isa = PBXGroup;
 			children = (
+				5EA48AFB2068BEFA004B5E7E /* SceneModeViewController.h */,
+				5EA48AFC2068BEFA004B5E7E /* SceneModeViewController.m */,
 			);
 			path = SceneMode;
 			sourceTree = "<group>";
@@ -1092,7 +1131,7 @@
 		5E498F852058EC10001D6D9B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tang Retouch";
 				TargetAttributes = {
 					5E498F8C2058EC10001D6D9B = {
@@ -1139,7 +1178,9 @@
 				5ED2FDEA206BD5330067B7A4 /* sortedChnames.plist in Resources */,
 				5E73733E2068FC24004125F1 /* PersonalCentre.storyboard in Resources */,
 				5E73733F2068FC24004125F1 /* SceneMode.storyboard in Resources */,
+				5ED094F32073339200F77160 /* TriggerCollectionViewCell.xib in Resources */,
 				5E7373402068FC24004125F1 /* DeviceCentre.storyboard in Resources */,
+				5ED094DF20720BFC00F77160 /* DeviceConfig.storyboard in Resources */,
 				5E498F9D2058EC10001D6D9B /* LaunchScreen.storyboard in Resources */,
 				5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */,
 				5E73735F206A74DF004125F1 /* DeviceCollectionViewCell.xib in Resources */,
@@ -1328,6 +1369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED094E920725BA400F77160 /* UpDataView.m in Sources */,
 				5E737382206B6B97004125F1 /* RTAlertContrller.m in Sources */,
 				5E73736F206B35E1004125F1 /* Language.m in Sources */,
 				5E737359206A35C7004125F1 /* MessageCentreTableViewCell.m in Sources */,
@@ -1338,6 +1380,7 @@
 				5ED9E44B20635845004A5D79 /* RTNetworkAgent.m in Sources */,
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
 				5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */,
+				5ED094E820725BA400F77160 /* UpdateApp.m in Sources */,
 				5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */,
 				5E73735D206A4622004125F1 /* AddDeviceViewController.m in Sources */,
 				5ED9E44A2063583D004A5D79 /* RTBaseRequest.m in Sources */,
@@ -1347,6 +1390,7 @@
 				5ED2FE27206E09130067B7A4 /* SetDeviceRemarkViewController.m in Sources */,
 				5EF3FEC82060AA6D0021FF58 /* RTSpeechRecognition.m in Sources */,
 				5EF3FEC2205FAF220021FF58 /* RTLocationManager.m in Sources */,
+				5ED094EE2073286D00F77160 /* AddSceneModeTableViewController.m in Sources */,
 				5EA48AFA2068BEE8004B5E7E /* DeviceCentreViewController.m in Sources */,
 				5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */,
 				5EA48B1F2068C173004B5E7E /* UIView+CornerRadius.m in Sources */,
@@ -1355,6 +1399,7 @@
 				5EA48B132068C0E0004B5E7E /* RegisterFirstViewController.m in Sources */,
 				5E73734B2069F7AD004125F1 /* PersonalCentreTableViewController.m in Sources */,
 				5ED2FE0C206D41E70067B7A4 /* DeviceSocketTableViewCell.m in Sources */,
+				5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */,
 				5ED2FE2A206E0AD70067B7A4 /* AddTimingTableViewController.m in Sources */,
 				5E737355206A35A6004125F1 /* MessageCentreTableViewController.m in Sources */,
 				5EA48B192068C102004B5E7E /* CodeLoginFirstViewController.m in Sources */,
@@ -1364,6 +1409,7 @@
 				5ED2FE21206DE6CE0067B7A4 /* DeviceTimingTableViewController.m in Sources */,
 				5E7373472069E8BA004125F1 /* DeviceCollectionViewCell.m in Sources */,
 				5EA48B072068BFF8004B5E7E /* LoginViewController.m in Sources */,
+				5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */,
 				5EA48B162068C0EC004B5E7E /* RegisterSecondViewController.m in Sources */,
 				5ED2FDF8206C83180067B7A4 /* UIViewController+RTRootNavigationController.m in Sources */,
 				5EA48AF72068BEAA004B5E7E /* RootTableBarController.m in Sources */,
@@ -1439,6 +1485,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1446,6 +1493,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1473,7 +1521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1495,6 +1543,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1502,6 +1551,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1523,7 +1573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1540,7 +1590,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibreezee.cn.iSuke;
@@ -1560,7 +1610,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibreezee.cn.iSuke;
 				PRODUCT_NAME = "$(TARGET_NAME)";

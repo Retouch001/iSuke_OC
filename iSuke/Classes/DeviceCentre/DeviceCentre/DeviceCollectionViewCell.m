@@ -29,17 +29,36 @@
 
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"deviceCell";
-    DeviceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    DeviceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:reuseIdentifier owner:nil options:nil] firstObject];
     }
     return cell;
 }
 
-- (void)freshCellWihtIconString:(NSString *)iconString deviceName:(NSString *)deviceName{
-    _iconImageView.image = [UIImage imageNamed:iconString];
+
+- (void)freshCellWithIcon:(NSString *)icon deviceName:(NSString *)deviceName cellType:(RTCellType)cellType{
+    _iconImageView.image = [UIImage imageNamed:icon];
     _deviceNameLabel.text = deviceName;
+    switch (cellType) {
+        case RTCellTypeDeviceCentre:
+            _deviceNameLabel.textColor = kColorTheme;
+            break;
+        case RTCellTypeDeviceAdd:
+            _deviceNameLabel.textColor = UIColor.blackColor;
+            break;
+        case RTCellTypeSceneMode:
+            _deviceNameLabel.textColor = kColorTheme;
+            break;
+        default:
+            break;
+    }
+}
+
+
+- (void)freshCellWihtIconString:(NSString *)iconString deviceName:(NSString *)deviceName{
+
 }
 
 @end

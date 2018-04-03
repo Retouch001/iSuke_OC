@@ -9,23 +9,23 @@
 #ifndef ColorCentre_h
 #define ColorCentre_h
 
-//基色
-#define kColorBase                      UIColorHex(@"F1F0EF")
+//基色F1F0EF
+#define kColorBase                      [UIColor colorWithHexString:@"F1F0EF"]
 
+//主题色EF8A3F
+#define kColorTheme                     [UIColor colorWithHexString:@"EF8A3F"]
 
-//cell色
-#define kColorTableViewCell             UIColorHex(@"FFFEFD")
+//cell色FFFEFD
+#define kColorTableViewCell             [UIColor colorWithHexString:@"FFFEFD"]
 
-
-
-//分割线色
-#define kColorTableViewSeparatorLine    UIColorHex(@"F5F4F3")
+//分割线色F5F4F3
+#define kColorTableViewSeparatorLine    [UIColor colorWithHexString:@"F5F4F3"]
 
 
 
 
 //导航栏色181818
-#define kColorNavgationbar              [UIColor colorFromHexString:@"262f4c"]
+#define kColorNavgationbar              [UIColor colorFromHexString:@"EF8A3F"]
 //tabbar颜色181818
 #define kColorTabbar                    [UIColor colorFromHexString:@"262f4c"]
 //一级文字颜色
