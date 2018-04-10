@@ -162,6 +162,18 @@ NSString *const RTRequestValidationErrorDomain = @"com.retouch.request.validatio
     return (statusCode >= 200 && statusCode <= 299);
 }
 
+- (BOOL)dataSuccess{
+    if ([self.responseObject[@"resultcode"] isEqualToString:@"SYS000"]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSString *)errorMessage{
+    return self.responseObject[@"error_msg"];
+}
+
+
 #pragma mark - NSObject
 - (NSString *)description {
     return [NSString stringWithFormat:@"<%@: %p>{ URL: %@ } { method: %@ } { arguments: %@ }", NSStringFromClass([self class]), self, self.currentRequest.URL, self.currentRequest.HTTPMethod, self.requestArgument];

@@ -57,14 +57,6 @@ static CGFloat kMagin = 10.f;
     DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
     
     
-    if (indexPath.row == 0) {
-        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯" cellType:RTCellTypeDeviceAdd];
-    }else if(indexPath.row == 1){
-        [cell freshCellWithIcon:@"ic_socket" deviceName:@"插座" cellType:RTCellTypeDeviceAdd];
-    }else{
-        [cell freshCellWithIcon:@"ic_light" deviceName:@"客厅灯-2" cellType:RTCellTypeDeviceAdd];
-    }
-    
     return cell;
 }
 

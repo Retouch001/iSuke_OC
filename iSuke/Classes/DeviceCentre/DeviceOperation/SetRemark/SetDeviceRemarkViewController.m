@@ -7,17 +7,21 @@
 //
 
 #import "SetDeviceRemarkViewController.h"
+#import "SetDeviceAliasApi.h"
 
-@interface SetDeviceRemarkViewController ()
+@interface SetDeviceRemarkViewController ()<RTRequestDelegate>{
+    SetDeviceAliasApi *_setDeviceAliasApi;
+}
+
 @property (weak, nonatomic) IBOutlet UITextField *remarkTextField;
-
 @end
 
 @implementation SetDeviceRemarkViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [_remarkTextField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
 
@@ -25,22 +29,30 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 - (IBAction)rightBtnClick:(id)sender {
+    _setDeviceAliasApi = [[SetDeviceAliasApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_sub_id:_deviceDetailInfo.device_sub_id device_sub_alias:_remarkTextField.text device_belong_type:_device.device_belong_type];
+    _setDeviceAliasApi.delegate = self;
+    [_setDeviceAliasApi start];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+#pragma mark -UITextFieldEditingDidChanged--
+- (void)textFieldDidChanged:(UITextField *)textField{
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark -RTRequestDelegate--
+- (void)requestFinished:(__kindof RTBaseRequest *)request{
+    if ([request dataSuccess]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
-*/
 
+- (void)requestFailed:(__kindof RTBaseRequest *)request{
+    
+}
 @end

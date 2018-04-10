@@ -7,20 +7,54 @@
 //
 
 #import "AppDelegate.h"
+#import "RTNetworkConfig.h"
+#import "RTUrlArgumentsFilter.h"
+#import "MainUserManager.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
     
+    
+    RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
+    config.baseUrl = RT_DEVELOP_BASE_URL;
+    config.debugLogEnabled = YES;
+
+    
+    MainUser *mainUser = [MainUserManager getLocalMainUserInfo];
+    if (mainUser) {
+        long timestamp = [NSDate date].timeIntervalSince1970;
+        NSString *token = [[NSString stringWithFormat:@"%@%ldapp",mainUser.phone,timestamp] md5String];
+        RTUrlArgumentsFilter *urlFilter = [RTUrlArgumentsFilter filterWithArguments:@{@"orgId": RT_ORGID,
+                                                                                      @"phone" : mainUser.phone,
+                                                                                      @"timestamp" : @(timestamp),
+                                                                                      @"token" : token
+                                                                                      }];
+        [config addUrlFilter:urlFilter];
+        
+        UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
+        self.window.rootViewController = mainVC;
+    }else{
+        UIViewController *mainVC = SB_VIEWCONTROLLER(SB_LOGIN_MODE);
+        self.window.rootViewController = mainVC;
+    }
     [self setAppWindows];
+    [self configureSVProgressHUD];
     
     return YES;
+}
+
+
+- (void)configureSVProgressHUD{
+    [SVProgressHUD setMinimumDismissTimeInterval:0.8f];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
 }
 
 
@@ -41,7 +75,9 @@
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ic_navigationBarBg"] forBarMetrics:UIBarMetricsDefault];
     
     
-    
+//    //隐藏导航栏下面的黑线
+//    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     
     //导航条上UIBarButtonItem颜色
     [[UINavigationBar appearance] setTintColor:UIColor.blackColor];
@@ -58,25 +94,6 @@
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kColor2692E1}forState:UIControlStateSelected];
 //
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorThirdText}forState:UIControlStateNormal];
-    
-    
-    
-    
-//    if (@available(iOS 11.0, *)) {// 如果iOS 11走else的代码，系统自己的文字和箭头会出来
-//        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-200, 0) forBarMetrics:UIBarMetricsDefault];
-//
-//        UIImage *backButtonImage = [[UIImage imageNamed:@"ic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//
-//        [UINavigationBar appearance].backIndicatorImage = backButtonImage;
-//
-//        [UINavigationBar appearance].backIndicatorTransitionMaskImage =backButtonImage;
-//    }else{
-//        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-200, 0) forBarMetrics:UIBarMetricsDefault];
-//
-//        UIImage *image = [[UIImage imageNamed:@"ic_back"] imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
-//
-//        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[image resizableImageWithCapInsets:UIEdgeInsetsMake(0, image.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    }
     
 }
 

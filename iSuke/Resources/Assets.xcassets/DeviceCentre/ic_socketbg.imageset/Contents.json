@@ -11,6 +11,17 @@
       "scale" : "2x"
     },
     {
+      "resizing" : {
+        "mode" : "3-part-vertical",
+        "center" : {
+          "mode" : "tile",
+          "height" : 33
+        },
+        "cap-insets" : {
+          "top" : 75,
+          "bottom" : 1075
+        }
+      },
       "idiom" : "universal",
       "filename" : "ic_socketbg@3x.png",
       "scale" : "3x"

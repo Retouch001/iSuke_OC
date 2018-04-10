@@ -441,7 +441,7 @@
         <!--意见或建议-->
         <scene sceneID="VvB-2l-c1o">
             <objects>
-                <viewController title="意见或建议" hidesBottomBarWhenPushed="YES" id="Npk-JM-r2A" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedBack" title="意见或建议" hidesBottomBarWhenPushed="YES" id="Npk-JM-r2A" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GT7-TM-KQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

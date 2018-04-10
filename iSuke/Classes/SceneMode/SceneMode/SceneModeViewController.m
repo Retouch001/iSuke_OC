@@ -57,14 +57,6 @@ static CGFloat kMagin = 10.f;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {    
     DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
     
-    if (indexPath.row == 0) {
-        [cell freshCellWithIcon:@"ic_home" deviceName:@"回家模式" cellType:RTCellTypeSceneMode];
-    }else if(indexPath.row == 1){
-        [cell freshCellWithIcon:@"ic_leave" deviceName:@"离家模式" cellType:RTCellTypeSceneMode];
-    }else{
-        [cell freshCellWithIcon:@"ic_cup" deviceName:@"自定义模式" cellType:RTCellTypeSceneMode];
-    }
-    
     return cell;
 }
 

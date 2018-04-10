@@ -19,6 +19,8 @@ pod 'Bugly'
 pod 'JTCalendar'
 pod 'DateTools'
 pod 'CocoaAsyncSocket'
+pod 'MBProgressHUD'
+pod 'DZNEmptyDataSet'
 
   target 'iSukeTests' do
     inherit! :search_paths

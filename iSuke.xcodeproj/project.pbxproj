@@ -14,6 +14,31 @@
 		5E498FA02058EC10001D6D9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498F9F2058EC10001D6D9B /* main.m */; };
 		5E498FAA2058EC10001D6D9B /* iSukeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498FA92058EC10001D6D9B /* iSukeTests.m */; };
 		5E498FB52058EC10001D6D9B /* iSukeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498FB42058EC10001D6D9B /* iSukeUITests.m */; };
+		5E68C0C020749DE700B8DF9F /* RegisterApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0BF20749DE700B8DF9F /* RegisterApi.m */; };
+		5E68C0C52074C3AC00B8DF9F /* VerifyCodeAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0C42074C3AC00B8DF9F /* VerifyCodeAPi.m */; };
+		5E68C0C92074C77100B8DF9F /* RTVerifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0C82074C77100B8DF9F /* RTVerifyCodeButton.m */; };
+		5E68C0CE2079E68F00B8DF9F /* MainUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0CD2079E68F00B8DF9F /* MainUser.m */; };
+		5E68C0D12079E87200B8DF9F /* MainUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0D02079E87200B8DF9F /* MainUserManager.m */; };
+		5E68C0D4207A0D4700B8DF9F /* LoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0D3207A0D4700B8DF9F /* LoginApi.m */; };
+		5E68C0D7207A40FE00B8DF9F /* ForgotPsdFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0D6207A40FE00B8DF9F /* ForgotPsdFirstViewController.m */; };
+		5E68C0DA207A411300B8DF9F /* ForgotPsdSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0D9207A411300B8DF9F /* ForgotPsdSecondViewController.m */; };
+		5E68C0DD207A44F900B8DF9F /* ForgotPsdApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0DC207A44F900B8DF9F /* ForgotPsdApi.m */; };
+		5E68C0E1207A4ACD00B8DF9F /* BaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0E0207A4ACD00B8DF9F /* BaseLoginViewController.m */; };
+		5E68C0E8207A4F3B00B8DF9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E68C0EA207A4F3B00B8DF9F /* Localizable.strings */; };
+		5E68C0EF207B0F5100B8DF9F /* DeviceManageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0EE207B0F5100B8DF9F /* DeviceManageApi.m */; };
+		5E68C101207B17EB00B8DF9F /* RTUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C100207B17EB00B8DF9F /* RTUrlArgumentsFilter.m */; };
+		5E68C10C207B4BFE00B8DF9F /* DeviceCentreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C10B207B4BFE00B8DF9F /* DeviceCentreModel.m */; };
+		5E68C112207B6BA900B8DF9F /* DeviceDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C111207B6BA900B8DF9F /* DeviceDetailApi.m */; };
+		5E68C118207B6D1400B8DF9F /* OperatingSwitchApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C117207B6D1400B8DF9F /* OperatingSwitchApi.m */; };
+		5E68C11B207B6D3200B8DF9F /* SetDeviceAliasApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C11A207B6D3200B8DF9F /* SetDeviceAliasApi.m */; };
+		5E68C11E207C8F9A00B8DF9F /* EditJackNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C11D207C8F9A00B8DF9F /* EditJackNameView.m */; };
+		5E68C120207C8FA900B8DF9F /* EditJackNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E68C11F207C8FA900B8DF9F /* EditJackNameView.xib */; };
+		5E68C123207C994900B8DF9F /* DeviceDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C122207C994900B8DF9F /* DeviceDetailModel.m */; };
+		5E68C129207CC75100B8DF9F /* DeviceShareUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C128207CC75100B8DF9F /* DeviceShareUserApi.m */; };
+		5E68C12C207CF4D800B8DF9F /* UnshareApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C12B207CF4D800B8DF9F /* UnshareApi.m */; };
+		5E68C12F207CF50300B8DF9F /* SetShareUserAliasApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C12E207CF50300B8DF9F /* SetShareUserAliasApi.m */; };
+		5E68C137207CF57500B8DF9F /* AddShareUserFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C136207CF57500B8DF9F /* AddShareUserFirstViewController.m */; };
+		5E68C13A207CF58400B8DF9F /* AddShareUserSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C139207CF58400B8DF9F /* AddShareUserSecondViewController.m */; };
 		5E73733E2068FC24004125F1 /* PersonalCentre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E7373392068FB4A004125F1 /* PersonalCentre.storyboard */; };
 		5E73733F2068FC24004125F1 /* SceneMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E7373382068FB49004125F1 /* SceneMode.storyboard */; };
 		5E7373402068FC24004125F1 /* DeviceCentre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E73733A2068FB4A004125F1 /* DeviceCentre.storyboard */; };
@@ -36,7 +61,6 @@
 		5EA48AFD2068BEFA004B5E7E /* SceneModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48AFC2068BEFA004B5E7E /* SceneModeViewController.m */; };
 		5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B032068BFC2004B5E7E /* RootLoginViewController.m */; };
 		5EA48B072068BFF8004B5E7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B062068BFF8004B5E7E /* LoginViewController.m */; };
-		5EA48B102068C0B6004B5E7E /* ForgotPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B0F2068C0B6004B5E7E /* ForgotPsdViewController.m */; };
 		5EA48B132068C0E0004B5E7E /* RegisterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B122068C0E0004B5E7E /* RegisterFirstViewController.m */; };
 		5EA48B162068C0EC004B5E7E /* RegisterSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B152068C0EC004B5E7E /* RegisterSecondViewController.m */; };
 		5EA48B192068C102004B5E7E /* CodeLoginFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA48B182068C102004B5E7E /* CodeLoginFirstViewController.m */; };
@@ -50,7 +74,6 @@
 		5ED094EE2073286D00F77160 /* AddSceneModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */; };
 		5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */; };
 		5ED094F32073339200F77160 /* TriggerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */; };
-		5ED2FDDE206B928B0067B7A4 /* TimeZone.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */; };
 		5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */; };
 		5ED2FDE9206BA6680067B7A4 /* SelectCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */; };
 		5ED2FDEA206BD5330067B7A4 /* sortedChnames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE5206BA0E30067B7A4 /* sortedChnames.plist */; };
@@ -59,8 +82,6 @@
 		5ED2FE02206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */; };
 		5ED2FE03206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */; };
 		5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FE04206D34AC0067B7A4 /* DeviceDetail.storyboard */; };
-		5ED2FE0C206D41E70067B7A4 /* DeviceSocketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE0A206D41E70067B7A4 /* DeviceSocketTableViewCell.m */; };
-		5ED2FE0D206D41E70067B7A4 /* DeviceSocketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FE0B206D41E70067B7A4 /* DeviceSocketTableViewCell.xib */; };
 		5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE1D206DCA4A0067B7A4 /* ShareUserTableViewController.m */; };
 		5ED2FE21206DE6CE0067B7A4 /* DeviceTimingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE20206DE6CE0067B7A4 /* DeviceTimingTableViewController.m */; };
 		5ED2FE24206DED450067B7A4 /* DeviceOperationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE23206DED450067B7A4 /* DeviceOperationTableViewController.m */; };
@@ -70,6 +91,11 @@
 		5ED9E44B20635845004A5D79 /* RTNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEB7205FA08D0021FF58 /* RTNetworkAgent.m */; };
 		5ED9E44C2063584B004A5D79 /* RTNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEB6205FA08D0021FF58 /* RTNetworkConfig.m */; };
 		5ED9E44D2063584F004A5D79 /* RTNetworkPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEBD205FA08D0021FF58 /* RTNetworkPrivate.m */; };
+		5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */; };
+		5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E6207D0191001C46D3 /* PowerDataViewController.m */; };
+		5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E9207D0421001C46D3 /* DevicePowerApi.m */; };
+		5EE321ED207D0430001C46D3 /* DevicePowerDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */; };
+		5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */; };
 		5EF3FEC2205FAF220021FF58 /* RTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEC1205FAF220021FF58 /* RTLocationManager.m */; };
 		5EF3FEC4205FB9560021FF58 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF3FEC3205FB9560021FF58 /* CoreLocation.framework */; };
 		5EF3FEC82060AA6D0021FF58 /* RTSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEC72060AA6D0021FF58 /* RTSpeechRecognition.m */; };
@@ -150,6 +176,60 @@
 		5E499008205A5155001D6D9B /* CTServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTServiceProtocol.h; sourceTree = "<group>"; };
 		5E499009205A5155001D6D9B /* CTServiceFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTServiceFactory.h; sourceTree = "<group>"; };
 		5E49900A205A5155001D6D9B /* CTServiceFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTServiceFactory.m; sourceTree = "<group>"; };
+		5E68C0BE20749DE700B8DF9F /* RegisterApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterApi.h; sourceTree = "<group>"; };
+		5E68C0BF20749DE700B8DF9F /* RegisterApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterApi.m; sourceTree = "<group>"; };
+		5E68C0C32074C3AC00B8DF9F /* VerifyCodeAPi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifyCodeAPi.h; sourceTree = "<group>"; };
+		5E68C0C42074C3AC00B8DF9F /* VerifyCodeAPi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifyCodeAPi.m; sourceTree = "<group>"; };
+		5E68C0C72074C77100B8DF9F /* RTVerifyCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTVerifyCodeButton.h; sourceTree = "<group>"; };
+		5E68C0C82074C77100B8DF9F /* RTVerifyCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTVerifyCodeButton.m; sourceTree = "<group>"; };
+		5E68C0CC2079E68F00B8DF9F /* MainUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainUser.h; sourceTree = "<group>"; };
+		5E68C0CD2079E68F00B8DF9F /* MainUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainUser.m; sourceTree = "<group>"; };
+		5E68C0CF2079E87200B8DF9F /* MainUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainUserManager.h; sourceTree = "<group>"; };
+		5E68C0D02079E87200B8DF9F /* MainUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainUserManager.m; sourceTree = "<group>"; };
+		5E68C0D2207A0D4700B8DF9F /* LoginApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginApi.h; sourceTree = "<group>"; };
+		5E68C0D3207A0D4700B8DF9F /* LoginApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginApi.m; sourceTree = "<group>"; };
+		5E68C0D5207A40FE00B8DF9F /* ForgotPsdFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPsdFirstViewController.h; sourceTree = "<group>"; };
+		5E68C0D6207A40FE00B8DF9F /* ForgotPsdFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdFirstViewController.m; sourceTree = "<group>"; };
+		5E68C0D8207A411300B8DF9F /* ForgotPsdSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPsdSecondViewController.h; sourceTree = "<group>"; };
+		5E68C0D9207A411300B8DF9F /* ForgotPsdSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdSecondViewController.m; sourceTree = "<group>"; };
+		5E68C0DB207A44F900B8DF9F /* ForgotPsdApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPsdApi.h; sourceTree = "<group>"; };
+		5E68C0DC207A44F900B8DF9F /* ForgotPsdApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdApi.m; sourceTree = "<group>"; };
+		5E68C0DF207A4ACD00B8DF9F /* BaseLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLoginViewController.h; sourceTree = "<group>"; };
+		5E68C0E0207A4ACD00B8DF9F /* BaseLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLoginViewController.m; sourceTree = "<group>"; };
+		5E68C0E2207A4E4000B8DF9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5E68C0E3207A4E4100B8DF9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5E68C0E4207A4E4C00B8DF9F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		5E68C0E5207A4E4D00B8DF9F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5E68C0E9207A4F3B00B8DF9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E68C0EB207A4F3E00B8DF9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5E68C0EC207A4F4200B8DF9F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E68C0ED207B0F5100B8DF9F /* DeviceManageApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceManageApi.h; sourceTree = "<group>"; };
+		5E68C0EE207B0F5100B8DF9F /* DeviceManageApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceManageApi.m; sourceTree = "<group>"; };
+		5E68C0FF207B17EB00B8DF9F /* RTUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTUrlArgumentsFilter.h; sourceTree = "<group>"; };
+		5E68C100207B17EB00B8DF9F /* RTUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTUrlArgumentsFilter.m; sourceTree = "<group>"; };
+		5E68C10A207B4BFE00B8DF9F /* DeviceCentreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceCentreModel.h; sourceTree = "<group>"; };
+		5E68C10B207B4BFE00B8DF9F /* DeviceCentreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceCentreModel.m; sourceTree = "<group>"; };
+		5E68C110207B6BA900B8DF9F /* DeviceDetailApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailApi.h; sourceTree = "<group>"; };
+		5E68C111207B6BA900B8DF9F /* DeviceDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailApi.m; sourceTree = "<group>"; };
+		5E68C116207B6D1400B8DF9F /* OperatingSwitchApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperatingSwitchApi.h; sourceTree = "<group>"; };
+		5E68C117207B6D1400B8DF9F /* OperatingSwitchApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperatingSwitchApi.m; sourceTree = "<group>"; };
+		5E68C119207B6D3200B8DF9F /* SetDeviceAliasApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetDeviceAliasApi.h; sourceTree = "<group>"; };
+		5E68C11A207B6D3200B8DF9F /* SetDeviceAliasApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetDeviceAliasApi.m; sourceTree = "<group>"; };
+		5E68C11C207C8F9A00B8DF9F /* EditJackNameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditJackNameView.h; sourceTree = "<group>"; };
+		5E68C11D207C8F9A00B8DF9F /* EditJackNameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditJackNameView.m; sourceTree = "<group>"; };
+		5E68C11F207C8FA900B8DF9F /* EditJackNameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditJackNameView.xib; sourceTree = "<group>"; };
+		5E68C121207C994900B8DF9F /* DeviceDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDetailModel.h; sourceTree = "<group>"; };
+		5E68C122207C994900B8DF9F /* DeviceDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailModel.m; sourceTree = "<group>"; };
+		5E68C127207CC75100B8DF9F /* DeviceShareUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceShareUserApi.h; sourceTree = "<group>"; };
+		5E68C128207CC75100B8DF9F /* DeviceShareUserApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceShareUserApi.m; sourceTree = "<group>"; };
+		5E68C12A207CF4D800B8DF9F /* UnshareApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnshareApi.h; sourceTree = "<group>"; };
+		5E68C12B207CF4D800B8DF9F /* UnshareApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnshareApi.m; sourceTree = "<group>"; };
+		5E68C12D207CF50300B8DF9F /* SetShareUserAliasApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetShareUserAliasApi.h; sourceTree = "<group>"; };
+		5E68C12E207CF50300B8DF9F /* SetShareUserAliasApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetShareUserAliasApi.m; sourceTree = "<group>"; };
+		5E68C135207CF57500B8DF9F /* AddShareUserFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShareUserFirstViewController.h; sourceTree = "<group>"; };
+		5E68C136207CF57500B8DF9F /* AddShareUserFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShareUserFirstViewController.m; sourceTree = "<group>"; };
+		5E68C138207CF58400B8DF9F /* AddShareUserSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShareUserSecondViewController.h; sourceTree = "<group>"; };
+		5E68C139207CF58400B8DF9F /* AddShareUserSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShareUserSecondViewController.m; sourceTree = "<group>"; };
 		5E7373382068FB49004125F1 /* SceneMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SceneMode.storyboard; sourceTree = "<group>"; };
 		5E7373392068FB4A004125F1 /* PersonalCentre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalCentre.storyboard; sourceTree = "<group>"; };
 		5E73733A2068FB4A004125F1 /* DeviceCentre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeviceCentre.storyboard; sourceTree = "<group>"; };
@@ -190,8 +270,6 @@
 		5EA48B032068BFC2004B5E7E /* RootLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootLoginViewController.m; sourceTree = "<group>"; };
 		5EA48B052068BFF8004B5E7E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5EA48B062068BFF8004B5E7E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		5EA48B0E2068C0B6004B5E7E /* ForgotPsdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPsdViewController.h; sourceTree = "<group>"; };
-		5EA48B0F2068C0B6004B5E7E /* ForgotPsdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPsdViewController.m; sourceTree = "<group>"; };
 		5EA48B112068C0E0004B5E7E /* RegisterFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterFirstViewController.h; sourceTree = "<group>"; };
 		5EA48B122068C0E0004B5E7E /* RegisterFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterFirstViewController.m; sourceTree = "<group>"; };
 		5EA48B142068C0EC004B5E7E /* RegisterSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterSecondViewController.h; sourceTree = "<group>"; };
@@ -216,7 +294,6 @@
 		5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriggerCollectionViewCell.h; sourceTree = "<group>"; };
 		5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriggerCollectionViewCell.m; sourceTree = "<group>"; };
 		5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriggerCollectionViewCell.xib; sourceTree = "<group>"; };
-		5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TimeZone.plist; sourceTree = "<group>"; };
 		5ED2FDE0206B978F0067B7A4 /* TimeZoneSelectTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeZoneSelectTableViewController.h; sourceTree = "<group>"; };
 		5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeZoneSelectTableViewController.m; sourceTree = "<group>"; };
 		5ED2FDE5206BA0E30067B7A4 /* sortedChnames.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sortedChnames.plist; sourceTree = "<group>"; };
@@ -231,9 +308,6 @@
 		5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceCentreCollectionReusableView.m; sourceTree = "<group>"; };
 		5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCentreCollectionReusableView.xib; sourceTree = "<group>"; };
 		5ED2FE04206D34AC0067B7A4 /* DeviceDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeviceDetail.storyboard; sourceTree = "<group>"; };
-		5ED2FE09206D41E70067B7A4 /* DeviceSocketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceSocketTableViewCell.h; sourceTree = "<group>"; };
-		5ED2FE0A206D41E70067B7A4 /* DeviceSocketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceSocketTableViewCell.m; sourceTree = "<group>"; };
-		5ED2FE0B206D41E70067B7A4 /* DeviceSocketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceSocketTableViewCell.xib; sourceTree = "<group>"; };
 		5ED2FE1C206DCA4A0067B7A4 /* ShareUserTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareUserTableViewController.h; sourceTree = "<group>"; };
 		5ED2FE1D206DCA4A0067B7A4 /* ShareUserTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareUserTableViewController.m; sourceTree = "<group>"; };
 		5ED2FE1F206DE6CE0067B7A4 /* DeviceTimingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceTimingTableViewController.h; sourceTree = "<group>"; };
@@ -244,6 +318,16 @@
 		5ED2FE26206E09130067B7A4 /* SetDeviceRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetDeviceRemarkViewController.m; sourceTree = "<group>"; };
 		5ED2FE28206E0AD60067B7A4 /* AddTimingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTimingTableViewController.h; sourceTree = "<group>"; };
 		5ED2FE29206E0AD70067B7A4 /* AddTimingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTimingTableViewController.m; sourceTree = "<group>"; };
+		5EE321E2207CF8DA001C46D3 /* AddShareUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShareUserApi.h; sourceTree = "<group>"; };
+		5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShareUserApi.m; sourceTree = "<group>"; };
+		5EE321E5207D0191001C46D3 /* PowerDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerDataViewController.h; sourceTree = "<group>"; };
+		5EE321E6207D0191001C46D3 /* PowerDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerDataViewController.m; sourceTree = "<group>"; };
+		5EE321E8207D0421001C46D3 /* DevicePowerApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicePowerApi.h; sourceTree = "<group>"; };
+		5EE321E9207D0421001C46D3 /* DevicePowerApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicePowerApi.m; sourceTree = "<group>"; };
+		5EE321EB207D0430001C46D3 /* DevicePowerDetailApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevicePowerDetailApi.h; sourceTree = "<group>"; };
+		5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicePowerDetailApi.m; sourceTree = "<group>"; };
+		5EE321EE207D046C001C46D3 /* DeleteDeviceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteDeviceApi.h; sourceTree = "<group>"; };
+		5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteDeviceApi.m; sourceTree = "<group>"; };
 		5EF3FEB6205FA08D0021FF58 /* RTNetworkConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTNetworkConfig.m; sourceTree = "<group>"; };
 		5EF3FEB7205FA08D0021FF58 /* RTNetworkAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTNetworkAgent.m; sourceTree = "<group>"; };
 		5EF3FEB8205FA08D0021FF58 /* RTNetworkAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTNetworkAgent.h; sourceTree = "<group>"; };
@@ -379,6 +463,7 @@
 		5E498FC42058EC68001D6D9B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				5E68C0C62074C73800B8DF9F /* RTVerfifyCodeButton */,
 				5ED2FDF2206C82F40067B7A4 /* RTRootNavigationCotroller */,
 			);
 			path = Vendors;
@@ -412,7 +497,7 @@
 				5ED094DE20720BFC00F77160 /* DeviceConfig.storyboard */,
 				5E498F992058EC10001D6D9B /* Assets.xcassets */,
 				5E498F9B2058EC10001D6D9B /* LaunchScreen.storyboard */,
-				5ED2FDDD206B928B0067B7A4 /* TimeZone.plist */,
+				5E68C0EA207A4F3B00B8DF9F /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -420,11 +505,13 @@
 		5E498FC82058ECA8001D6D9B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E68C0CB2079E63100B8DF9F /* MainUserManager */,
+				5E68C0CA2079E62F00B8DF9F /* New Group */,
 				5EA48B012068BF28004B5E7E /* LoginMode */,
 				5EA48AF32068BDFA004B5E7E /* TabBarVC */,
 				5E498FCD2058F690001D6D9B /* DeviceCentre */,
-				5E498FCC2058F68F001D6D9B /* SceneMode */,
 				5E498FCB2058F68D001D6D9B /* PersonalCentre */,
+				5E498FCC2058F68F001D6D9B /* SceneMode */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -710,8 +797,216 @@
 				5EF3FEB6205FA08D0021FF58 /* RTNetworkConfig.m */,
 				5EF3FEBB205FA08D0021FF58 /* RTNetworkPrivate.h */,
 				5EF3FEBD205FA08D0021FF58 /* RTNetworkPrivate.m */,
+				5E68C0FF207B17EB00B8DF9F /* RTUrlArgumentsFilter.h */,
+				5E68C100207B17EB00B8DF9F /* RTUrlArgumentsFilter.m */,
 			);
 			path = RTNetwork;
+			sourceTree = "<group>";
+		};
+		5E68C0B920749C9300B8DF9F /* SelectCountry */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2FDE7206BA6680067B7A4 /* SelectCountryTableViewController.h */,
+				5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */,
+			);
+			path = SelectCountry;
+			sourceTree = "<group>";
+		};
+		5E68C0BA20749C9400B8DF9F /* ForgotPsd */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C0D5207A40FE00B8DF9F /* ForgotPsdFirstViewController.h */,
+				5E68C0D6207A40FE00B8DF9F /* ForgotPsdFirstViewController.m */,
+				5E68C0D8207A411300B8DF9F /* ForgotPsdSecondViewController.h */,
+				5E68C0D9207A411300B8DF9F /* ForgotPsdSecondViewController.m */,
+				5E68C0DB207A44F900B8DF9F /* ForgotPsdApi.h */,
+				5E68C0DC207A44F900B8DF9F /* ForgotPsdApi.m */,
+			);
+			path = ForgotPsd;
+			sourceTree = "<group>";
+		};
+		5E68C0BB20749C9500B8DF9F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5EA48B052068BFF8004B5E7E /* LoginViewController.h */,
+				5EA48B062068BFF8004B5E7E /* LoginViewController.m */,
+				5E68C0D2207A0D4700B8DF9F /* LoginApi.h */,
+				5E68C0D3207A0D4700B8DF9F /* LoginApi.m */,
+				5EA48B172068C102004B5E7E /* CodeLoginFirstViewController.h */,
+				5EA48B182068C102004B5E7E /* CodeLoginFirstViewController.m */,
+				5EA48B1A2068C10E004B5E7E /* CodeLoginSecondViewController.h */,
+				5EA48B1B2068C10E004B5E7E /* CodeLoginSecondViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5E68C0BC20749C9600B8DF9F /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5EA48B112068C0E0004B5E7E /* RegisterFirstViewController.h */,
+				5EA48B122068C0E0004B5E7E /* RegisterFirstViewController.m */,
+				5EA48B142068C0EC004B5E7E /* RegisterSecondViewController.h */,
+				5EA48B152068C0EC004B5E7E /* RegisterSecondViewController.m */,
+				5E68C0BE20749DE700B8DF9F /* RegisterApi.h */,
+				5E68C0BF20749DE700B8DF9F /* RegisterApi.m */,
+				5E68C0C32074C3AC00B8DF9F /* VerifyCodeAPi.h */,
+				5E68C0C42074C3AC00B8DF9F /* VerifyCodeAPi.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		5E68C0BD20749C9700B8DF9F /* RootLogin */ = {
+			isa = PBXGroup;
+			children = (
+				5EA48B022068BFC2004B5E7E /* RootLoginViewController.h */,
+				5EA48B032068BFC2004B5E7E /* RootLoginViewController.m */,
+			);
+			path = RootLogin;
+			sourceTree = "<group>";
+		};
+		5E68C0C62074C73800B8DF9F /* RTVerfifyCodeButton */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C0C72074C77100B8DF9F /* RTVerifyCodeButton.h */,
+				5E68C0C82074C77100B8DF9F /* RTVerifyCodeButton.m */,
+			);
+			path = RTVerfifyCodeButton;
+			sourceTree = "<group>";
+		};
+		5E68C0CA2079E62F00B8DF9F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		5E68C0CB2079E63100B8DF9F /* MainUserManager */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C0CC2079E68F00B8DF9F /* MainUser.h */,
+				5E68C0CD2079E68F00B8DF9F /* MainUser.m */,
+				5E68C0CF2079E87200B8DF9F /* MainUserManager.h */,
+				5E68C0D02079E87200B8DF9F /* MainUserManager.m */,
+			);
+			path = MainUserManager;
+			sourceTree = "<group>";
+		};
+		5E68C0DE207A4AA500B8DF9F /* BaseLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C0DF207A4ACD00B8DF9F /* BaseLoginViewController.h */,
+				5E68C0E0207A4ACD00B8DF9F /* BaseLoginViewController.m */,
+			);
+			path = BaseLoginViewController;
+			sourceTree = "<group>";
+		};
+		5E68C0F0207B12A700B8DF9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C10A207B4BFE00B8DF9F /* DeviceCentreModel.h */,
+				5E68C10B207B4BFE00B8DF9F /* DeviceCentreModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E68C0F1207B12AF00B8DF9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2FDFF206CB4100067B7A4 /* DeviceCentreCollectionReusableView.h */,
+				5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */,
+				5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */,
+				5E7373442069E8BA004125F1 /* DeviceCollectionViewCell.h */,
+				5E7373452069E8BA004125F1 /* DeviceCollectionViewCell.m */,
+				5E73735E206A74DF004125F1 /* DeviceCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E68C0F2207B12B100B8DF9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C0ED207B0F5100B8DF9F /* DeviceManageApi.h */,
+				5E68C0EE207B0F5100B8DF9F /* DeviceManageApi.m */,
+				5EA48AF82068BEE8004B5E7E /* DeviceCentreViewController.h */,
+				5EA48AF92068BEE8004B5E7E /* DeviceCentreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E68C10D207B6B6A00B8DF9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E737361206A7E87004125F1 /* DeviceDetailViewController.h */,
+				5E737362206A7E87004125F1 /* DeviceDetailViewController.m */,
+				5E68C110207B6BA900B8DF9F /* DeviceDetailApi.h */,
+				5E68C111207B6BA900B8DF9F /* DeviceDetailApi.m */,
+				5E68C116207B6D1400B8DF9F /* OperatingSwitchApi.h */,
+				5E68C117207B6D1400B8DF9F /* OperatingSwitchApi.m */,
+				5E68C119207B6D3200B8DF9F /* SetDeviceAliasApi.h */,
+				5E68C11A207B6D3200B8DF9F /* SetDeviceAliasApi.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E68C10E207B6B6C00B8DF9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C11C207C8F9A00B8DF9F /* EditJackNameView.h */,
+				5E68C11D207C8F9A00B8DF9F /* EditJackNameView.m */,
+				5E68C11F207C8FA900B8DF9F /* EditJackNameView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E68C10F207B6B6D00B8DF9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C121207C994900B8DF9F /* DeviceDetailModel.h */,
+				5E68C122207C994900B8DF9F /* DeviceDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E68C130207CF52B00B8DF9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2FE1C206DCA4A0067B7A4 /* ShareUserTableViewController.h */,
+				5ED2FE1D206DCA4A0067B7A4 /* ShareUserTableViewController.m */,
+				5E68C135207CF57500B8DF9F /* AddShareUserFirstViewController.h */,
+				5E68C136207CF57500B8DF9F /* AddShareUserFirstViewController.m */,
+				5E68C138207CF58400B8DF9F /* AddShareUserSecondViewController.h */,
+				5E68C139207CF58400B8DF9F /* AddShareUserSecondViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E68C132207CF53100B8DF9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E68C133207CF53200B8DF9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E68C134207CF54800B8DF9F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5E68C127207CC75100B8DF9F /* DeviceShareUserApi.h */,
+				5E68C128207CC75100B8DF9F /* DeviceShareUserApi.m */,
+				5E68C12A207CF4D800B8DF9F /* UnshareApi.h */,
+				5E68C12B207CF4D800B8DF9F /* UnshareApi.m */,
+				5E68C12D207CF50300B8DF9F /* SetShareUserAliasApi.h */,
+				5E68C12E207CF50300B8DF9F /* SetShareUserAliasApi.m */,
+				5EE321E2207CF8DA001C46D3 /* AddShareUserApi.h */,
+				5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		5E73734C206A3064004125F1 /* Feedback */ = {
@@ -811,22 +1106,12 @@
 		5EA48B012068BF28004B5E7E /* LoginMode */ = {
 			isa = PBXGroup;
 			children = (
-				5EA48B022068BFC2004B5E7E /* RootLoginViewController.h */,
-				5EA48B032068BFC2004B5E7E /* RootLoginViewController.m */,
-				5EA48B052068BFF8004B5E7E /* LoginViewController.h */,
-				5EA48B062068BFF8004B5E7E /* LoginViewController.m */,
-				5EA48B112068C0E0004B5E7E /* RegisterFirstViewController.h */,
-				5EA48B122068C0E0004B5E7E /* RegisterFirstViewController.m */,
-				5EA48B142068C0EC004B5E7E /* RegisterSecondViewController.h */,
-				5EA48B152068C0EC004B5E7E /* RegisterSecondViewController.m */,
-				5EA48B172068C102004B5E7E /* CodeLoginFirstViewController.h */,
-				5EA48B182068C102004B5E7E /* CodeLoginFirstViewController.m */,
-				5EA48B1A2068C10E004B5E7E /* CodeLoginSecondViewController.h */,
-				5EA48B1B2068C10E004B5E7E /* CodeLoginSecondViewController.m */,
-				5EA48B0E2068C0B6004B5E7E /* ForgotPsdViewController.h */,
-				5EA48B0F2068C0B6004B5E7E /* ForgotPsdViewController.m */,
-				5ED2FDE7206BA6680067B7A4 /* SelectCountryTableViewController.h */,
-				5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */,
+				5E68C0DE207A4AA500B8DF9F /* BaseLoginViewController */,
+				5E68C0BD20749C9700B8DF9F /* RootLogin */,
+				5E68C0BC20749C9600B8DF9F /* Register */,
+				5E68C0BB20749C9500B8DF9F /* Login */,
+				5E68C0BA20749C9400B8DF9F /* ForgotPsd */,
+				5E68C0B920749C9300B8DF9F /* SelectCountry */,
 			);
 			path = LoginMode;
 			sourceTree = "<group>";
@@ -913,9 +1198,9 @@
 			children = (
 				5ED2FE1B206DC9F80067B7A4 /* DeviceOperation */,
 				5ED2FE1A206DC9F70067B7A4 /* DeviceShareUser */,
-				5ED2FE19206DC9F60067B7A4 /* Timing */,
+				5ED2FE19206DC9F60067B7A4 /* TimedTask */,
 				5ED2FE18206DC9F40067B7A4 /* SetRemark */,
-				5ED2FE16206DC9E70067B7A4 /* New Group1 */,
+				5ED2FE16206DC9E70067B7A4 /* PowerData */,
 				5ED2FE15206DC9E50067B7A4 /* New Group */,
 			);
 			path = DeviceOperation;
@@ -924,11 +1209,9 @@
 		5ED2FE12206DC8F60067B7A4 /* DeviceDetail */ = {
 			isa = PBXGroup;
 			children = (
-				5ED2FE09206D41E70067B7A4 /* DeviceSocketTableViewCell.h */,
-				5ED2FE0A206D41E70067B7A4 /* DeviceSocketTableViewCell.m */,
-				5ED2FE0B206D41E70067B7A4 /* DeviceSocketTableViewCell.xib */,
-				5E737361206A7E87004125F1 /* DeviceDetailViewController.h */,
-				5E737362206A7E87004125F1 /* DeviceDetailViewController.m */,
+				5E68C10F207B6B6D00B8DF9F /* Model */,
+				5E68C10E207B6B6C00B8DF9F /* View */,
+				5E68C10D207B6B6A00B8DF9F /* Controller */,
 			);
 			path = DeviceDetail;
 			sourceTree = "<group>";
@@ -945,14 +1228,9 @@
 		5ED2FE14206DC8F80067B7A4 /* DeviceCentre */ = {
 			isa = PBXGroup;
 			children = (
-				5ED2FDFF206CB4100067B7A4 /* DeviceCentreCollectionReusableView.h */,
-				5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */,
-				5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */,
-				5E7373442069E8BA004125F1 /* DeviceCollectionViewCell.h */,
-				5E7373452069E8BA004125F1 /* DeviceCollectionViewCell.m */,
-				5E73735E206A74DF004125F1 /* DeviceCollectionViewCell.xib */,
-				5EA48AF82068BEE8004B5E7E /* DeviceCentreViewController.h */,
-				5EA48AF92068BEE8004B5E7E /* DeviceCentreViewController.m */,
+				5E68C0F2207B12B100B8DF9F /* Controller */,
+				5E68C0F1207B12AF00B8DF9F /* View */,
+				5E68C0F0207B12A700B8DF9F /* Model */,
 			);
 			path = DeviceCentre;
 			sourceTree = "<group>";
@@ -964,11 +1242,17 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		5ED2FE16206DC9E70067B7A4 /* New Group1 */ = {
+		5ED2FE16206DC9E70067B7A4 /* PowerData */ = {
 			isa = PBXGroup;
 			children = (
+				5EE321E5207D0191001C46D3 /* PowerDataViewController.h */,
+				5EE321E6207D0191001C46D3 /* PowerDataViewController.m */,
+				5EE321E8207D0421001C46D3 /* DevicePowerApi.h */,
+				5EE321E9207D0421001C46D3 /* DevicePowerApi.m */,
+				5EE321EB207D0430001C46D3 /* DevicePowerDetailApi.h */,
+				5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */,
 			);
-			path = "New Group1";
+			path = PowerData;
 			sourceTree = "<group>";
 		};
 		5ED2FE18206DC9F40067B7A4 /* SetRemark */ = {
@@ -980,7 +1264,7 @@
 			path = SetRemark;
 			sourceTree = "<group>";
 		};
-		5ED2FE19206DC9F60067B7A4 /* Timing */ = {
+		5ED2FE19206DC9F60067B7A4 /* TimedTask */ = {
 			isa = PBXGroup;
 			children = (
 				5ED2FE1F206DE6CE0067B7A4 /* DeviceTimingTableViewController.h */,
@@ -988,14 +1272,16 @@
 				5ED2FE28206E0AD60067B7A4 /* AddTimingTableViewController.h */,
 				5ED2FE29206E0AD70067B7A4 /* AddTimingTableViewController.m */,
 			);
-			path = Timing;
+			path = TimedTask;
 			sourceTree = "<group>";
 		};
 		5ED2FE1A206DC9F70067B7A4 /* DeviceShareUser */ = {
 			isa = PBXGroup;
 			children = (
-				5ED2FE1C206DCA4A0067B7A4 /* ShareUserTableViewController.h */,
-				5ED2FE1D206DCA4A0067B7A4 /* ShareUserTableViewController.m */,
+				5E68C134207CF54800B8DF9F /* Api */,
+				5E68C133207CF53200B8DF9F /* Model */,
+				5E68C132207CF53100B8DF9F /* View */,
+				5E68C130207CF52B00B8DF9F /* Controller */,
 			);
 			path = DeviceShareUser;
 			sourceTree = "<group>";
@@ -1005,6 +1291,8 @@
 			children = (
 				5ED2FE22206DED450067B7A4 /* DeviceOperationTableViewController.h */,
 				5ED2FE23206DED450067B7A4 /* DeviceOperationTableViewController.m */,
+				5EE321EE207D046C001C46D3 /* DeleteDeviceApi.h */,
+				5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */,
 			);
 			path = DeviceOperation;
 			sourceTree = "<group>";
@@ -1157,6 +1445,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 5E498F842058EC10001D6D9B;
 			productRefGroup = 5E498F8E2058EC10001D6D9B /* Products */;
@@ -1175,6 +1465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E68C0E8207A4F3B00B8DF9F /* Localizable.strings in Resources */,
 				5ED2FDEA206BD5330067B7A4 /* sortedChnames.plist in Resources */,
 				5E73733E2068FC24004125F1 /* PersonalCentre.storyboard in Resources */,
 				5E73733F2068FC24004125F1 /* SceneMode.storyboard in Resources */,
@@ -1184,13 +1475,12 @@
 				5E498F9D2058EC10001D6D9B /* LaunchScreen.storyboard in Resources */,
 				5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */,
 				5E73735F206A74DF004125F1 /* DeviceCollectionViewCell.xib in Resources */,
-				5ED2FE0D206D41E70067B7A4 /* DeviceSocketTableViewCell.xib in Resources */,
+				5E68C120207C8FA900B8DF9F /* EditJackNameView.xib in Resources */,
 				5E73735A206A35C7004125F1 /* MessageCentreTableViewCell.xib in Resources */,
 				5EA48B222068C2F1004B5E7E /* LoginMode.storyboard in Resources */,
 				5ED2FE03206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib in Resources */,
 				5E737387206B7D9F004125F1 /* Setting.storyboard in Resources */,
 				5E498F9A2058EC10001D6D9B /* Assets.xcassets in Resources */,
-				5ED2FDDE206B928B0067B7A4 /* TimeZone.plist in Resources */,
 				5E498F982058EC10001D6D9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1370,22 +1660,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED094E920725BA400F77160 /* UpDataView.m in Sources */,
+				5E68C11B207B6D3200B8DF9F /* SetDeviceAliasApi.m in Sources */,
+				5E68C0C92074C77100B8DF9F /* RTVerifyCodeButton.m in Sources */,
 				5E737382206B6B97004125F1 /* RTAlertContrller.m in Sources */,
 				5E73736F206B35E1004125F1 /* Language.m in Sources */,
 				5E737359206A35C7004125F1 /* MessageCentreTableViewCell.m in Sources */,
-				5EA48B102068C0B6004B5E7E /* ForgotPsdViewController.m in Sources */,
+				5E68C0D4207A0D4700B8DF9F /* LoginApi.m in Sources */,
+				5E68C112207B6BA900B8DF9F /* DeviceDetailApi.m in Sources */,
+				5E68C101207B17EB00B8DF9F /* RTUrlArgumentsFilter.m in Sources */,
+				5E68C0C52074C3AC00B8DF9F /* VerifyCodeAPi.m in Sources */,
+				5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */,
 				5EA48AFD2068BEFA004B5E7E /* SceneModeViewController.m in Sources */,
 				5ED9E44D2063584F004A5D79 /* RTNetworkPrivate.m in Sources */,
 				5ED9E44C2063584B004A5D79 /* RTNetworkConfig.m in Sources */,
 				5ED9E44B20635845004A5D79 /* RTNetworkAgent.m in Sources */,
+				5E68C0DD207A44F900B8DF9F /* ForgotPsdApi.m in Sources */,
+				5E68C12C207CF4D800B8DF9F /* UnshareApi.m in Sources */,
+				5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */,
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
 				5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */,
 				5ED094E820725BA400F77160 /* UpdateApp.m in Sources */,
+				5E68C12F207CF50300B8DF9F /* SetShareUserAliasApi.m in Sources */,
 				5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */,
 				5E73735D206A4622004125F1 /* AddDeviceViewController.m in Sources */,
 				5ED9E44A2063583D004A5D79 /* RTBaseRequest.m in Sources */,
+				5E68C0EF207B0F5100B8DF9F /* DeviceManageApi.m in Sources */,
 				5E737385206B732F004125F1 /* LocalizationKeys.m in Sources */,
+				5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */,
 				5EA48B1C2068C10E004B5E7E /* CodeLoginSecondViewController.m in Sources */,
+				5E68C0D12079E87200B8DF9F /* MainUserManager.m in Sources */,
 				5ED2FE24206DED450067B7A4 /* DeviceOperationTableViewController.m in Sources */,
 				5ED2FE27206E09130067B7A4 /* SetDeviceRemarkViewController.m in Sources */,
 				5EF3FEC82060AA6D0021FF58 /* RTSpeechRecognition.m in Sources */,
@@ -1394,23 +1697,36 @@
 				5EA48AFA2068BEE8004B5E7E /* DeviceCentreViewController.m in Sources */,
 				5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */,
 				5EA48B1F2068C173004B5E7E /* UIView+CornerRadius.m in Sources */,
+				5E68C123207C994900B8DF9F /* DeviceDetailModel.m in Sources */,
 				5E498FA02058EC10001D6D9B /* main.m in Sources */,
 				5E73737A206B6509004125F1 /* SettingTableViewController.m in Sources */,
+				5E68C118207B6D1400B8DF9F /* OperatingSwitchApi.m in Sources */,
+				5E68C13A207CF58400B8DF9F /* AddShareUserSecondViewController.m in Sources */,
+				5E68C0E1207A4ACD00B8DF9F /* BaseLoginViewController.m in Sources */,
 				5EA48B132068C0E0004B5E7E /* RegisterFirstViewController.m in Sources */,
 				5E73734B2069F7AD004125F1 /* PersonalCentreTableViewController.m in Sources */,
-				5ED2FE0C206D41E70067B7A4 /* DeviceSocketTableViewCell.m in Sources */,
 				5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */,
+				5E68C11E207C8F9A00B8DF9F /* EditJackNameView.m in Sources */,
 				5ED2FE2A206E0AD70067B7A4 /* AddTimingTableViewController.m in Sources */,
+				5E68C129207CC75100B8DF9F /* DeviceShareUserApi.m in Sources */,
 				5E737355206A35A6004125F1 /* MessageCentreTableViewController.m in Sources */,
 				5EA48B192068C102004B5E7E /* CodeLoginFirstViewController.m in Sources */,
+				5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */,
 				5E737363206A7E87004125F1 /* DeviceDetailViewController.m in Sources */,
+				5E68C10C207B4BFE00B8DF9F /* DeviceCentreModel.m in Sources */,
 				5ED2FE02206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m in Sources */,
 				5EF3FECE2060E5480021FF58 /* RTSpeechSynthesizer.m in Sources */,
 				5ED2FE21206DE6CE0067B7A4 /* DeviceTimingTableViewController.m in Sources */,
 				5E7373472069E8BA004125F1 /* DeviceCollectionViewCell.m in Sources */,
+				5E68C0C020749DE700B8DF9F /* RegisterApi.m in Sources */,
+				5EE321ED207D0430001C46D3 /* DevicePowerDetailApi.m in Sources */,
+				5E68C137207CF57500B8DF9F /* AddShareUserFirstViewController.m in Sources */,
+				5E68C0D7207A40FE00B8DF9F /* ForgotPsdFirstViewController.m in Sources */,
 				5EA48B072068BFF8004B5E7E /* LoginViewController.m in Sources */,
 				5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */,
+				5E68C0CE2079E68F00B8DF9F /* MainUser.m in Sources */,
 				5EA48B162068C0EC004B5E7E /* RegisterSecondViewController.m in Sources */,
+				5E68C0DA207A411300B8DF9F /* ForgotPsdSecondViewController.m in Sources */,
 				5ED2FDF8206C83180067B7A4 /* UIViewController+RTRootNavigationController.m in Sources */,
 				5EA48AF72068BEAA004B5E7E /* RootTableBarController.m in Sources */,
 				5ED2FDE9206BA6680067B7A4 /* SelectCountryTableViewController.m in Sources */,
@@ -1455,6 +1771,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E498F972058EC10001D6D9B /* Base */,
+				5E68C0E2207A4E4000B8DF9F /* zh-Hans */,
+				5E68C0E4207A4E4C00B8DF9F /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1463,8 +1781,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E498F9C2058EC10001D6D9B /* Base */,
+				5E68C0E3207A4E4100B8DF9F /* zh-Hans */,
+				5E68C0E5207A4E4D00B8DF9F /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5E68C0EA207A4F3B00B8DF9F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E68C0E9207A4F3B00B8DF9F /* en */,
+				5E68C0EB207A4F3E00B8DF9F /* zh-Hans */,
+				5E68C0EC207A4F4200B8DF9F /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1588,7 +1918,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY9WUERQBM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/Config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/retouch/Desktop/苏仁  iSuke/iSuke/iSuke/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1608,7 +1938,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY9WUERQBM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/Config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "/Users/retouch/Desktop/苏仁  iSuke/iSuke/iSuke/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

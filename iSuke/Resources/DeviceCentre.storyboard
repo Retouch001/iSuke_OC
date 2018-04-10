@@ -133,7 +133,7 @@
         <!--添加设备类型-->
         <scene sceneID="L0I-nH-AZb">
             <objects>
-                <viewController title="添加设备类型" hidesBottomBarWhenPushed="YES" id="Qnd-IV-8ys" customClass="AddDeviceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDeviceVC" title="添加设备类型" hidesBottomBarWhenPushed="YES" id="Qnd-IV-8ys" customClass="AddDeviceViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2dS-AA-ngD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

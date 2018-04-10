@@ -21,6 +21,14 @@
 //分割线色F5F4F3
 #define kColorTableViewSeparatorLine    [UIColor colorWithHexString:@"F5F4F3"]
 
+#define kColorUnClickBtnBg              [UIColor colorWithHexString:@"A2A2A1"]
+
+#define kColorDeleteBtnBg               [UIColor colorWithHexString:@"F95F5F"]
+
+
+
+
+
 
 
 

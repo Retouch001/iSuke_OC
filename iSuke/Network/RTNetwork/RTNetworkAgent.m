@@ -108,6 +108,8 @@
         url = [url URLByAppendingPathComponent:@""];
     }
     
+    //NSLog(@"%@",[NSURL URLWithString:detailUrl relativeToURL:url].absoluteString);
+    
     return [NSURL URLWithString:detailUrl relativeToURL:url].absoluteString;
 }
 
@@ -241,7 +243,6 @@
         return;
     }
     
-    YTKLog(@"Finished Request: %@", NSStringFromClass([request class]));
     
     NSError * __autoreleasing serializationError = nil;
     NSError * __autoreleasing validationError = nil;
@@ -278,8 +279,12 @@
     }
     
     if (succeed) {
+        YTKLog(@"Success Request: %@\nResponse:%@", NSStringFromClass([request class]),request.responseObject);
+
         [self requestDidSucceedWithRequest:request];
     } else {
+        YTKLog(@"Request %@ failed, status code = %ld, error = %@",
+               NSStringFromClass([request class]), (long)request.responseStatusCode, error.localizedDescription);
         [self requestDidFailWithRequest:request error:requestError];
     }
     
@@ -302,9 +307,7 @@
 
 - (void)requestDidFailWithRequest:(RTBaseRequest *)request error:(NSError *)error {
     request.error = error;
-    YTKLog(@"Request %@ failed, status code = %ld, error = %@",
-           NSStringFromClass([request class]), (long)request.responseStatusCode, error.localizedDescription);
-    
+
     // Load response from file and clean up if download task failed.
     if ([request.responseObject isKindOfClass:[NSURL class]]) {
         NSURL *url = request.responseObject;
@@ -369,7 +372,6 @@
     __block NSURLSessionDataTask *dataTask = nil;
     dataTask = [_manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         
-        NSLog(@"------------------%@",responseObject);
         [self handleRequestResult:dataTask responseObject:responseObject error:error];
     }];
     return dataTask;

@@ -1,4 +1,4 @@
-AP//
+//
 //  Header.h
 //  iSuke
 //
@@ -11,21 +11,46 @@ AP//
 
 
 
+#define RT_APPSERIALNUM                     @"MIS0812778904"
+#define RT_APPORGCODE                       @"0"
+#define RT_ORGID                            @"-1"
 
 
 
-#define   RT_BASE_URL                        @"192.168.8.245:8080/iSukeServer/"
-
+#define   RT_BASE_URL                        @"http://192.168.8.229:8080"
+#define   RT_DEVELOP_BASE_URL                @"http://117.78.48.143"
 
 //LoginMode
-#define   RT_REGISTER_URL                    @"api/register"
-#define   RT_GET_CAPTCHA_URL                 @"api/getVerifyCode"
-#define   RT_LOGIN_URL                       @"api/login"
-#define   RT_FORGET_PSD                      @"api/forgetPwd"
+#define   RT_REGISTER_URL                    @"/iSukeServer/api/register"
+#define   RT_GET_CAPTCHA_URL                 @"/iSukeServer/api/getVerifyCode"
+#define   RT_LOGIN_URL                       @"/iSukeServer/api/login"
+#define   RT_FORGET_PSD                      @"/iSukeServer/api/forgetPwd"
 
 
 
 //DeviceCentre
+#define RT_DEVICEMANAGE                      @"/iSukeServer/device/getDeviceManage"
+#define RT_DEVICE_DETAIL                     @"/iSukeServer/device/getDeviceDetail"
+#define RT_OPERATE_SWITCH                    @"/iSukeServer/device/operateSwitch"
+#define RT_SETDEVICE_ALIAS                   @"/iSukeServer/device/deviceAlias"
+
+
+#define RT_SHARED_USERS                      @"iSukeServer/user/getSharedUser"
+#define RT_UNSHARE_USER                      @"iSukeServer/user/unShareDeviceToUser"
+#define RT_SET_SHAREUSER_ALIAS               @"iSukeServer/user/setShareUserAlias"
+#define RT_ADD_SHARE_USER                    @"iSukeServer/user/addShareUser"
+
+
+#define RT_GET_TIMEDTASK                     @"iSukeServer/timedTask/getTimedTask"
+#define RT_TIMEDTASK_DETAIL                  @"iSukeServer/timedTask/timedTaskDetail"
+#define RT_EDIT_TIMEDTASK                    @"iSukeServer/timedTask/editTimedTask"
+#define RT_DELETE_TIMEDTASK                  @"iSukeServer/timedTask/deleteTimedTask"
+#define RT_ADD_TIMEDTASK                     @"iSukeServer/timedTask/addTimedTask"
+
+#define RT_DEVICE_POWER                      @"iSukeServer/device/devicePower"
+#define RT_DEVICE_POWER_DETAIL               @"iSukeServer/device/devicePowerDetail"
+
+#define RT_DELETE_DEVICE                     @"iSukeServer/device/deleteDevice"
 
 
 

@@ -132,6 +132,8 @@ typedef void(^RTRequestCompletionBlock)(__kindof RTBaseRequest *request);
 - (nullable id)jsonValidator;
 - (BOOL)statusCodeValidator;
 
+- (BOOL)dataSuccess;
+- (NSString *)errorMessage;
 
 @end
 

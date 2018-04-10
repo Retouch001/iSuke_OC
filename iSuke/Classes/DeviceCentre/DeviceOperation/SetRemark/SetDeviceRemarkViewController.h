@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DeviceCentreModel.h"
+#import "DeviceDetailModel.h"
 
 @interface SetDeviceRemarkViewController : UIViewController
+
+@property (nonatomic, strong) Device *device;
+@property (nonatomic, strong) DeviceDetailInfo *deviceDetailInfo;
+
+@property (nonatomic, copy) void (^block)(NSString *string);
 
 @end
