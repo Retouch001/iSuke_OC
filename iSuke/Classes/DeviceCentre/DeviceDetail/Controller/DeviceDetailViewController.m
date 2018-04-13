@@ -41,6 +41,10 @@
 #pragma mark  --LifeCycle---
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSLog(@"%@",[_device modelDescription]);
+
         
     self.navigationController.navigationBarHidden = YES;
     deviceDetailApi = [[DeviceDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_belong_type:_device.device_belong_type];

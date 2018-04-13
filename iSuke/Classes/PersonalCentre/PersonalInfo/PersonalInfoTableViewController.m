@@ -8,8 +8,11 @@
 
 #import "PersonalInfoTableViewController.h"
 #import "RTAlertContrller.h"
+#import "ModifyUserIconApi.h"
 
-@interface PersonalInfoTableViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface PersonalInfoTableViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,RTRequestDelegate>{
+    ModifyUserIconApi *modifyUserIconApi;
+}
 
 @end
 
@@ -73,9 +76,25 @@
     UIImage *image = nil;
     image = [info objectForKey:UIImagePickerControllerEditedImage];
     
+    
+    modifyUserIconApi = [[ModifyUserIconApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id icon:image];
+    modifyUserIconApi.delegate = self;
+    [modifyUserIconApi start];
+    
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
+
+
+#pragma mark -RTRequestDelegate--
+- (void)requestFinished:(__kindof RTBaseRequest *)request{
+    
+}
+
+- (void)requestFailed:(__kindof RTBaseRequest *)request{
+    
+}
 
 @end

@@ -15,6 +15,4 @@
 
 - (id)initWithApp_user_id:(NSInteger)app_user_id device_id:(NSInteger)device_id device_sub_id:(NSInteger)device_sub_id device_sub_num:(NSInteger)device_sub_num device_sub_status:(RTDeviceSubStatus)device_sub_status switch_type:(RTSwitchType)switch_type device_sub_alias:(NSString *)device_sub_alias total_switch_exist:(BOOL)total_switch_exist device_belong_type:(RTDeviceBelongType)devcie_belong_type;
 
-
-
 @end

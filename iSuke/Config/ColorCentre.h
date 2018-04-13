@@ -9,11 +9,15 @@
 #ifndef ColorCentre_h
 #define ColorCentre_h
 
+
+#define HEADER_HEIGHT   (SCREEN_HEIGHT*17/80)
+
+
 //基色F1F0EF
 #define kColorBase                      [UIColor colorWithHexString:@"F1F0EF"]
 
 //主题色EF8A3F
-#define kColorTheme                     [UIColor colorWithHexString:@"EF8A3F"]
+#define kColorTheme                     [UIColor colorWithHexString:@"ff8324"]
 
 //cell色FFFEFD
 #define kColorTableViewCell             [UIColor colorWithHexString:@"FFFEFD"]

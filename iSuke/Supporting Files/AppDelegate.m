@@ -22,12 +22,12 @@
     
     
     RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
-    config.baseUrl = RT_DEVELOP_BASE_URL;
+    config.baseUrl = RT_BASE_URL;
     config.debugLogEnabled = YES;
 
-    
     MainUser *mainUser = [MainUserManager getLocalMainUserInfo];
     if (mainUser) {
+        
         long timestamp = [NSDate date].timeIntervalSince1970;
         NSString *token = [[NSString stringWithFormat:@"%@%ldapp",mainUser.phone,timestamp] md5String];
         RTUrlArgumentsFilter *urlFilter = [RTUrlArgumentsFilter filterWithArguments:@{@"orgId": RT_ORGID,
@@ -35,6 +35,7 @@
                                                                                       @"timestamp" : @(timestamp),
                                                                                       @"token" : token
                                                                                       }];
+                
         [config addUrlFilter:urlFilter];
         
         UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
@@ -51,7 +52,7 @@
 
 
 - (void)configureSVProgressHUD{
-    [SVProgressHUD setMinimumDismissTimeInterval:0.8f];
+    [SVProgressHUD setMinimumDismissTimeInterval:1.0f];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
@@ -59,41 +60,20 @@
 
 
 - (void)setAppWindows{
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.backgroundColor = [UIColor whiteColor];
-    //    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//再plist文件中设置View controller-based status bar appearance 为 NO才能起效
-    
-    
-    
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-//
-//    //导航条上标题的颜色
-//    NSDictionary *navbarTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-//    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-//
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ic_navigationBarBg"] forBarMetrics:UIBarMetricsDefault];
-    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"ic_navigationBarBg"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setBarTintColor:kColorTheme];
     
 //    //隐藏导航栏下面的黑线
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
 //    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     
     //导航条上UIBarButtonItem颜色
-    [[UINavigationBar appearance] setTintColor:UIColor.blackColor];
+    [[UINavigationBar appearance] setTintColor:UIColor.whiteColor];
     //TabBar选中图标的颜色,默认是蓝色
 //    [[UITabBar appearance] setTintColor:UIColor.redColor];
     
-//    [[UITabBar appearance] setTranslucent:NO];
-    [[UINavigationBar appearance] setTranslucent:YES];
-//    [[UINavigationBar appearance] setBarTintColor:kColorTableViewCell];
-//
-//    //TabBar的背景颜色
-//    [[UITabBar appearance] setBarTintColor:kColorTabbar];
-//
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kColor2692E1}forState:UIControlStateSelected];
-//
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kColorThirdText}forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
 }
 

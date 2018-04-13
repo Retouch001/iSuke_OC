@@ -25,6 +25,7 @@ static NSString * const headIdentifier = @"headCell";
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) DeviceCentreModel *deviceCentreModel;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -36,7 +37,26 @@ static NSString * const headIdentifier = @"headCell";
     deviceManageApi.delegate = self;
     
     [self initCollectionView];
+    
+    
+    NSLog(@"%f----%f",self.headerView.height,HEADER_HEIGHT);
 }
+
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.headerView.height = 20;
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.headerView.height = 20;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.headerView.height = 20;
+}
+
 
 #pragma mark -Private Method--
 - (void)initCollectionView{
@@ -57,8 +77,9 @@ static NSString * const headIdentifier = @"headCell";
     self.collectionView.emptyDataSetSource = self;
     self.collectionView.emptyDataSetDelegate = self;
     
-    self.navigationController.navigationBarHidden = YES;
-    
+    //self.navigationController.navigationBarHidden = YES;
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFromNetwork)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
@@ -96,7 +117,6 @@ static NSString * const headIdentifier = @"headCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
     return self.deviceCentreModel.deviceList.count;
 }
 

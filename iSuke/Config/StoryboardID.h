@@ -27,10 +27,16 @@
 #define SB_DEVICE_CONFIG          @"DeviceConfig"
 #define SB_ADD_DEVICE             @"AddDeviceVC"
 
+#define SB_EDIT_TIMEDTASK         @"editTimedTaskNav"
+
+#define SB_POWER_DETAIL           @"powerDetail"
+
+
+
 //场景
 #define SB_SCENEMODE              @"SceneMode"
 
-#define SB_SCENEMODE_ADD          @"addSceneMode"
+#define SB_SCENEMODE_ADD          @"SceneDetail"
 
 
 

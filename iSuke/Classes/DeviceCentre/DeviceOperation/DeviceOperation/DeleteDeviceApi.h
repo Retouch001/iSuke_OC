@@ -10,4 +10,6 @@
 
 @interface DeleteDeviceApi : RTBaseRequest
 
+- (id)initWithApp_user_id:(NSInteger)app_user_id deviceId_userId:(NSString *)deviceId_userId;
+
 @end

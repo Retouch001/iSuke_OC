@@ -73,6 +73,9 @@
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     [SVProgressHUD dismiss];
 
+    NSLog(@"%@",request.requestArgument);
+    
+    
     if ([request dataSuccess]) {
         MainUser *mainUser = [MainUser modelWithDictionary:request.responseObject[@"appUser"]];
         [MainUserManager updateLocalMainUserInfo:mainUser];

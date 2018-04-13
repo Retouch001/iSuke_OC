@@ -11,7 +11,11 @@
 #import "DeviceDetailModel.h"
 #import "DeviceCentreModel.h"
 
-@interface DeviceOperationTableViewController ()
+#import "DeleteDeviceApi.h"
+
+@interface DeviceOperationTableViewController ()<RTRequestDelegate>{
+    DeleteDeviceApi *deleteDeviceApi;
+}
 
 @property (nonatomic, strong) Device *device;
 @property (nonatomic, strong) DeviceDetailInfo *deviceDetailInfo;
@@ -33,7 +37,25 @@
     if (indexPath.section == 3) {
         UIViewController *vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_PERSONAL_CENTRE, SB_FEEDBACK);
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 4){
+        
+        NSString *deviceId_userId = [NSString stringWithFormat:@"%ld@%ld",(long)_device.device_id,(long)_device.device_user_id];
+        deleteDeviceApi = [[DeleteDeviceApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id deviceId_userId:deviceId_userId];
+        deleteDeviceApi.delegate = self;
+        [deleteDeviceApi start];
     }
+}
+
+
+
+
+#pragma mark -RTRequestDelegate--
+- (void)requestFinished:(__kindof RTBaseRequest *)request{
+    
+}
+
+- (void)requestFailed:(__kindof RTBaseRequest *)request{
+    
 }
 
 
@@ -49,6 +71,9 @@
         setMarkVC.block = ^(NSString *string){
             NSLog(@"回传成功-------------%@",string);
         };
+    }else{
+        id vc = segue.destinationViewController;
+        [vc setValue:_device forKey:@"_device"];
     }
 }
 

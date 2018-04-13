@@ -25,6 +25,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 3) {
+        [MainUserManager clearMainUserInfo];
+        
         UIViewController *mainVC = SB_VIEWCONTROLLER(SB_LOGIN_MODE);
         kKeyWindow.rootViewController = mainVC;
     }

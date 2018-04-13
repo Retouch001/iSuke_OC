@@ -10,6 +10,6 @@
 
 @interface UnshareApi : RTBaseRequest
 
-//- (id)initWithApp_user_id:(NSInteger)app_user_id device_id:(NSInteger)device_id 
+- (id)initWithApp_user_id:(NSInteger)app_user_id device_id:(NSInteger)device_id share_user_id:(NSInteger)share_user_id;
 
 @end

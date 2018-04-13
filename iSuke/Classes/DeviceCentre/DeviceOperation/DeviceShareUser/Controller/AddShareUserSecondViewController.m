@@ -7,8 +7,16 @@
 //
 
 #import "AddShareUserSecondViewController.h"
+#import "AddShareUserApi.h"
+#import "DeviceCentreModel.h"
 
-@interface AddShareUserSecondViewController ()
+@interface AddShareUserSecondViewController ()<RTRequestDelegate>{
+    NSString *_phone;
+    Device *_device;
+    
+    AddShareUserApi *addShareUserApi;
+    
+}
 @property (weak, nonatomic) IBOutlet UIImageView *deviceIcon;
 @property (weak, nonatomic) IBOutlet UILabel *deviceName;
 
@@ -21,11 +29,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 
 - (IBAction)comfirmAciton:(id)sender {
+    addShareUserApi = [[AddShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id share_user_phone:_phone device_id:_device.device_id];
+    addShareUserApi.delegate = self;
+    [addShareUserApi start];
+}
+
+
+
+#pragma mark -RTRequestDelegate---
+- (void)requestFinished:(__kindof RTBaseRequest *)request{
+    
+}
+
+- (void)requestFailed:(__kindof RTBaseRequest *)request{
+    
 }
 
 

@@ -10,4 +10,6 @@
 
 @interface SetShareUserAliasApi : RTBaseRequest
 
+- (id)initWitApp_user_id:(NSInteger)app_user_id share_user_id:(NSInteger)share_user_id share_user_alias:(NSString *)share_user_alias;
+
 @end

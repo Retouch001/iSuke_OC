@@ -56,10 +56,21 @@
 
 
 //SceneMode
+#define RT_GET_SCENE                          @"iSukeServer/scene/getScene"
+#define RT_SCENE_DETAIL                       @"iSukeServer/scene/sceneDetail"
+#define RT_EDIT_SCENE                         @"iSukeServer/scene/editScene"
+#define RT_ADD_SCENE                          @"iSukeServer/scene/addScene"
+#define RT_DELETE_SCENE                       @"iSukeServer/scene/deleteScene"
+#define RT_GET_SCENE_CONDITION                @"iSukeServer/scene/getSceneCondition"
 
 
 
 //PersonalCentre
+#define RT_MODIFY_ICON                         @"iSukeServer/user/changeAvatar"
+#define RT_MODIFY_USERINFO                     @"iSukeServer/user/modifyUserInfo"
+#define RT_GET_MESSAGES                        @"iSukeServer/api/getMessageCenter"
+#define RT_FEEDBACK                            @"iSukeServer/api/feedback"
+#define RT_MODIFY_PWD                          @"iSukeServer/api/changePwd"
 
 
 

@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-903" y="-224"/>
         </scene>
-        <!--Scene Mode View Controller-->
+        <!--智能场景-->
         <scene sceneID="KbX-5B-Ngi">
             <objects>
                 <viewController id="ufy-9D-30w" customClass="SceneModeViewController" sceneMemberID="viewController">
@@ -38,39 +38,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQe-iN-EYe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="141.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_topbg02" translatesAutoresizingMaskIntoConstraints="NO" id="pBI-sZ-Fqa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能场景" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G4-Rj-teh">
-                                        <rect key="frame" x="146.5" y="40" width="82" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6S-gm-RJt">
-                                        <rect key="frame" x="339" y="38" width="28" height="28"/>
-                                        <state key="normal" image="ic_addhome"/>
-                                        <connections>
-                                            <segue destination="dy7-UK-TeY" kind="show" id="Cg1-j0-RAc"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="6G4-Rj-teh" firstAttribute="top" secondItem="rQe-iN-EYe" secondAttribute="top" constant="40" id="6Jh-5O-qh1"/>
-                                    <constraint firstItem="D6S-gm-RJt" firstAttribute="centerY" secondItem="6G4-Rj-teh" secondAttribute="centerY" id="Bsp-zP-Wun"/>
                                     <constraint firstItem="pBI-sZ-Fqa" firstAttribute="top" secondItem="rQe-iN-EYe" secondAttribute="top" id="T3j-aG-9ex"/>
                                     <constraint firstAttribute="bottom" secondItem="pBI-sZ-Fqa" secondAttribute="bottom" id="Vw2-5R-hAF"/>
                                     <constraint firstAttribute="trailing" secondItem="pBI-sZ-Fqa" secondAttribute="trailing" id="b4U-Uu-8IL"/>
-                                    <constraint firstItem="6G4-Rj-teh" firstAttribute="centerX" secondItem="rQe-iN-EYe" secondAttribute="centerX" id="e0i-5o-274"/>
-                                    <constraint firstAttribute="trailing" secondItem="D6S-gm-RJt" secondAttribute="trailing" constant="8" id="fuX-2H-F14"/>
                                     <constraint firstItem="pBI-sZ-Fqa" firstAttribute="leading" secondItem="rQe-iN-EYe" secondAttribute="leading" id="xNM-Ym-zHx"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l22-Xg-GOg">
-                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="205.5" width="375" height="461.5"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94117647058823528" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="88L-cB-Kkx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -87,8 +70,8 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rQe-iN-EYe" firstAttribute="height" secondItem="SJ7-ac-5jM" secondAttribute="height" multiplier="3:10" id="7tt-H0-bYY"/>
-                            <constraint firstItem="rQe-iN-EYe" firstAttribute="top" secondItem="SJ7-ac-5jM" secondAttribute="top" id="LaN-EO-lgy"/>
+                            <constraint firstItem="rQe-iN-EYe" firstAttribute="height" secondItem="SJ7-ac-5jM" secondAttribute="height" multiplier="17:80" id="7tt-H0-bYY"/>
+                            <constraint firstItem="rQe-iN-EYe" firstAttribute="top" secondItem="l8k-Cw-PDy" secondAttribute="top" id="M0I-Lc-TF6"/>
                             <constraint firstAttribute="bottom" secondItem="l22-Xg-GOg" secondAttribute="bottom" id="Nh7-cH-nVZ"/>
                             <constraint firstItem="l22-Xg-GOg" firstAttribute="leading" secondItem="l8k-Cw-PDy" secondAttribute="leading" id="iGb-df-jmo"/>
                             <constraint firstItem="l8k-Cw-PDy" firstAttribute="trailing" secondItem="rQe-iN-EYe" secondAttribute="trailing" id="mWo-cU-lw8"/>
@@ -98,19 +81,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l8k-Cw-PDy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iG3-E9-fRx"/>
+                    <navigationItem key="navigationItem" title="智能场景" id="iG3-E9-fRx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ZU-p4-Fnl">
+                            <connections>
+                                <segue destination="dy7-UK-TeY" kind="show" id="oFw-TV-xeA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="l22-Xg-GOg" id="6mR-Ng-EaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck6-bq-65g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198" y="-224"/>
+            <point key="canvasLocation" x="-199.19999999999999" y="-224.4377811094453"/>
         </scene>
         <!--添加智能场景-->
         <scene sceneID="EUN-Rr-SIb">
             <objects>
-                <tableViewController storyboardIdentifier="addSceneMode" title="添加智能场景" hidesBottomBarWhenPushed="YES" id="dy7-UK-TeY" customClass="AddSceneModeTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SceneDetail" title="添加智能场景" hidesBottomBarWhenPushed="YES" id="dy7-UK-TeY" customClass="SceneDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="7" id="mrh-qC-zH9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,8 +211,8 @@
                                                     </collectionViewFlowLayout>
                                                     <cells/>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="dy7-UK-TeY" id="OM4-rq-94S"/>
-                                                        <outlet property="delegate" destination="dy7-UK-TeY" id="4pe-Ox-mRR"/>
+                                                        <outlet property="dataSource" destination="dy7-UK-TeY" id="CRu-XD-ixR"/>
+                                                        <outlet property="delegate" destination="dy7-UK-TeY" id="Lp0-Wh-tWL"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -302,10 +291,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加智能场景" id="Icy-AC-nj7">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="7sF-f1-ZJK"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="7sF-f1-ZJK">
+                            <connections>
+                                <action selector="rightBtnClick:" destination="dy7-UK-TeY" id="5lU-ff-sYi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="triggerCollectionView" destination="wpc-Kq-mXK" id="e7Y-ZM-42p"/>
+                        <outlet property="deviceCollectionView" destination="vjy-Q5-Qoj" id="JXq-ey-vl7"/>
+                        <outlet property="triggerCollectionView" destination="wpc-Kq-mXK" id="2Yi-n3-h7O"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVV-80-skA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,7 +309,6 @@
     </scenes>
     <resources>
         <image name="ic_02mode" width="28" height="28"/>
-        <image name="ic_addhome" width="28" height="28"/>
         <image name="ic_topbg02" width="375" height="220"/>
     </resources>
 </document>

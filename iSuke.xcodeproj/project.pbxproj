@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E413FEB207F03E000C621F4 /* SceneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FE9207F03E000C621F4 /* SceneCollectionViewCell.m */; };
+		5E413FEC207F03E000C621F4 /* SceneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E413FEA207F03E000C621F4 /* SceneCollectionViewCell.xib */; };
+		5E413FF3207F10BA00C621F4 /* SceneDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FF2207F10BA00C621F4 /* SceneDetailApi.m */; };
+		5E413FF6207F116900C621F4 /* AddSceneApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FF5207F116900C621F4 /* AddSceneApi.m */; };
+		5E413FFC207F2D4D00C621F4 /* SceneDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FFB207F2D4D00C621F4 /* SceneDetailTableViewController.m */; };
+		5E414002207F53D100C621F4 /* SceneCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414001207F53D100C621F4 /* SceneCondition.m */; };
+		5E414005207F540A00C621F4 /* SceneDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414004207F540A00C621F4 /* SceneDetail.m */; };
+		5E414008207F58DD00C621F4 /* GetSceneConditionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */; };
 		5E498F922058EC10001D6D9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498F912058EC10001D6D9B /* AppDelegate.m */; };
 		5E498F982058EC10001D6D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E498F962058EC10001D6D9B /* Main.storyboard */; };
 		5E498F9A2058EC10001D6D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E498F992058EC10001D6D9B /* Assets.xcassets */; };
@@ -14,6 +22,17 @@
 		5E498FA02058EC10001D6D9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498F9F2058EC10001D6D9B /* main.m */; };
 		5E498FAA2058EC10001D6D9B /* iSukeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498FA92058EC10001D6D9B /* iSukeTests.m */; };
 		5E498FB52058EC10001D6D9B /* iSukeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498FB42058EC10001D6D9B /* iSukeUITests.m */; };
+		5E4B016F207FA39600296F85 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B016D207FA39600296F85 /* UINavigationBar+Awesome.m */; };
+		5E4B017220805C9700296F85 /* SceneDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B017120805C9700296F85 /* SceneDevice.m */; };
+		5E4B01752080793B00296F85 /* EditSceneApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B01742080793B00296F85 /* EditSceneApi.m */; };
+		5E4B017820807F9700296F85 /* DeleteSceneApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B017720807F9700296F85 /* DeleteSceneApi.m */; };
+		5E4B0181208087A500296F85 /* ModifyUserInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0180208087A500296F85 /* ModifyUserInfoApi.m */; };
+		5E4B0184208089AA00296F85 /* ModifyUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0183208089AA00296F85 /* ModifyUserInfoViewController.m */; };
+		5E4B018720808A7200296F85 /* GetMessagesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B018620808A7200296F85 /* GetMessagesApi.m */; };
+		5E4B018E208095D400296F85 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B018D208095D400296F85 /* MessageModel.m */; };
+		5E4B0191208099CA00296F85 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0190208099CA00296F85 /* FeedbackViewController.m */; };
+		5E4B0194208099EA00296F85 /* FeedbackApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0193208099EA00296F85 /* FeedbackApi.m */; };
+		5E4B019720809F4B00296F85 /* ModifyUserIconApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B019620809F4B00296F85 /* ModifyUserIconApi.m */; };
 		5E68C0C020749DE700B8DF9F /* RegisterApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0BF20749DE700B8DF9F /* RegisterApi.m */; };
 		5E68C0C52074C3AC00B8DF9F /* VerifyCodeAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0C42074C3AC00B8DF9F /* VerifyCodeAPi.m */; };
 		5E68C0C92074C77100B8DF9F /* RTVerifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E68C0C82074C77100B8DF9F /* RTVerifyCodeButton.m */; };
@@ -71,7 +90,6 @@
 		5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E120725BA400F77160 /* SELUpdateAlert.m */; };
 		5ED094E820725BA400F77160 /* UpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E420725BA400F77160 /* UpdateApp.m */; };
 		5ED094E920725BA400F77160 /* UpDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094E620725BA400F77160 /* UpDataView.m */; };
-		5ED094EE2073286D00F77160 /* AddSceneModeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */; };
 		5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */; };
 		5ED094F32073339200F77160 /* TriggerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */; };
 		5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */; };
@@ -96,6 +114,22 @@
 		5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E9207D0421001C46D3 /* DevicePowerApi.m */; };
 		5EE321ED207D0430001C46D3 /* DevicePowerDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */; };
 		5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */; };
+		5EE321F6207D9B3C001C46D3 /* ShareUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321F5207D9B3C001C46D3 /* ShareUserModel.m */; };
+		5EE321F9207D9D57001C46D3 /* ShareUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321F8207D9D57001C46D3 /* ShareUserTableViewCell.m */; };
+		5EE321FC207DB59B001C46D3 /* AddTimedTaskApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321FB207DB59B001C46D3 /* AddTimedTaskApi.m */; };
+		5EE32202207DD83C001C46D3 /* GetTimedTaskApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32201207DD83C001C46D3 /* GetTimedTaskApi.m */; };
+		5EE32208207DDA63001C46D3 /* TimedTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32207207DDA63001C46D3 /* TimedTaskModel.m */; };
+		5EE3220F207DDDD7001C46D3 /* TimedTaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3220E207DDDD7001C46D3 /* TimedTaskTableViewCell.m */; };
+		5EE32212207DECCD001C46D3 /* EditTimedTaskApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32211207DECCD001C46D3 /* EditTimedTaskApi.m */; };
+		5EE32215207DF20A001C46D3 /* DeleteTimedTaskApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32214207DF20A001C46D3 /* DeleteTimedTaskApi.m */; };
+		5EE32222207E01EC001C46D3 /* PowerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32221207E01EC001C46D3 /* PowerModel.m */; };
+		5EE32225207E035B001C46D3 /* PowerYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32224207E035B001C46D3 /* PowerYear.m */; };
+		5EE3222E207E0D8C001C46D3 /* PowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3222C207E0D8C001C46D3 /* PowerTableViewCell.m */; };
+		5EE3222F207E0D8C001C46D3 /* PowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE3222D207E0D8C001C46D3 /* PowerTableViewCell.xib */; };
+		5EE32232207E1241001C46D3 /* PowerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32231207E1241001C46D3 /* PowerDetailViewController.m */; };
+		5EE32238207EE909001C46D3 /* PowerDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32237207EE909001C46D3 /* PowerDetailModel.m */; };
+		5EE3223B207EFB84001C46D3 /* GetScenesApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3223A207EFB84001C46D3 /* GetScenesApi.m */; };
+		5EE32241207EFECB001C46D3 /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE32240207EFECB001C46D3 /* SceneModel.m */; };
 		5EF3FEC2205FAF220021FF58 /* RTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEC1205FAF220021FF58 /* RTLocationManager.m */; };
 		5EF3FEC4205FB9560021FF58 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF3FEC3205FB9560021FF58 /* CoreLocation.framework */; };
 		5EF3FEC82060AA6D0021FF58 /* RTSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEC72060AA6D0021FF58 /* RTSpeechRecognition.m */; };
@@ -123,6 +157,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E413FE8207F03E000C621F4 /* SceneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCollectionViewCell.h; sourceTree = "<group>"; };
+		5E413FE9207F03E000C621F4 /* SceneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCollectionViewCell.m; sourceTree = "<group>"; };
+		5E413FEA207F03E000C621F4 /* SceneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneCollectionViewCell.xib; sourceTree = "<group>"; };
+		5E413FF1207F10BA00C621F4 /* SceneDetailApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDetailApi.h; sourceTree = "<group>"; };
+		5E413FF2207F10BA00C621F4 /* SceneDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDetailApi.m; sourceTree = "<group>"; };
+		5E413FF4207F116900C621F4 /* AddSceneApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSceneApi.h; sourceTree = "<group>"; };
+		5E413FF5207F116900C621F4 /* AddSceneApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSceneApi.m; sourceTree = "<group>"; };
+		5E413FFA207F2D4D00C621F4 /* SceneDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDetailTableViewController.h; sourceTree = "<group>"; };
+		5E413FFB207F2D4D00C621F4 /* SceneDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDetailTableViewController.m; sourceTree = "<group>"; };
+		5E414000207F53D100C621F4 /* SceneCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCondition.h; sourceTree = "<group>"; };
+		5E414001207F53D100C621F4 /* SceneCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCondition.m; sourceTree = "<group>"; };
+		5E414003207F540A00C621F4 /* SceneDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDetail.h; sourceTree = "<group>"; };
+		5E414004207F540A00C621F4 /* SceneDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDetail.m; sourceTree = "<group>"; };
+		5E414006207F58DD00C621F4 /* GetSceneConditionApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSceneConditionApi.h; sourceTree = "<group>"; };
+		5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSceneConditionApi.m; sourceTree = "<group>"; };
 		5E498F8D2058EC10001D6D9B /* iSuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E498F902058EC10001D6D9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E498F912058EC10001D6D9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -176,6 +225,28 @@
 		5E499008205A5155001D6D9B /* CTServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTServiceProtocol.h; sourceTree = "<group>"; };
 		5E499009205A5155001D6D9B /* CTServiceFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTServiceFactory.h; sourceTree = "<group>"; };
 		5E49900A205A5155001D6D9B /* CTServiceFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTServiceFactory.m; sourceTree = "<group>"; };
+		5E4B016D207FA39600296F85 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		5E4B016E207FA39600296F85 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		5E4B017020805C9700296F85 /* SceneDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDevice.h; sourceTree = "<group>"; };
+		5E4B017120805C9700296F85 /* SceneDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDevice.m; sourceTree = "<group>"; };
+		5E4B01732080793B00296F85 /* EditSceneApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditSceneApi.h; sourceTree = "<group>"; };
+		5E4B01742080793B00296F85 /* EditSceneApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditSceneApi.m; sourceTree = "<group>"; };
+		5E4B017620807F9700296F85 /* DeleteSceneApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteSceneApi.h; sourceTree = "<group>"; };
+		5E4B017720807F9700296F85 /* DeleteSceneApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteSceneApi.m; sourceTree = "<group>"; };
+		5E4B017F208087A500296F85 /* ModifyUserInfoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyUserInfoApi.h; sourceTree = "<group>"; };
+		5E4B0180208087A500296F85 /* ModifyUserInfoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyUserInfoApi.m; sourceTree = "<group>"; };
+		5E4B0182208089AA00296F85 /* ModifyUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyUserInfoViewController.h; sourceTree = "<group>"; };
+		5E4B0183208089AA00296F85 /* ModifyUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyUserInfoViewController.m; sourceTree = "<group>"; };
+		5E4B018520808A7200296F85 /* GetMessagesApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMessagesApi.h; sourceTree = "<group>"; };
+		5E4B018620808A7200296F85 /* GetMessagesApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMessagesApi.m; sourceTree = "<group>"; };
+		5E4B018C208095D400296F85 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		5E4B018D208095D400296F85 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		5E4B018F208099CA00296F85 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		5E4B0190208099CA00296F85 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		5E4B0192208099EA00296F85 /* FeedbackApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackApi.h; sourceTree = "<group>"; };
+		5E4B0193208099EA00296F85 /* FeedbackApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackApi.m; sourceTree = "<group>"; };
+		5E4B019520809F4B00296F85 /* ModifyUserIconApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyUserIconApi.h; sourceTree = "<group>"; };
+		5E4B019620809F4B00296F85 /* ModifyUserIconApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyUserIconApi.m; sourceTree = "<group>"; };
 		5E68C0BE20749DE700B8DF9F /* RegisterApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterApi.h; sourceTree = "<group>"; };
 		5E68C0BF20749DE700B8DF9F /* RegisterApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterApi.m; sourceTree = "<group>"; };
 		5E68C0C32074C3AC00B8DF9F /* VerifyCodeAPi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifyCodeAPi.h; sourceTree = "<group>"; };
@@ -289,8 +360,6 @@
 		5ED094E420725BA400F77160 /* UpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateApp.m; sourceTree = "<group>"; };
 		5ED094E520725BA400F77160 /* UpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateApp.h; sourceTree = "<group>"; };
 		5ED094E620725BA400F77160 /* UpDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpDataView.m; sourceTree = "<group>"; };
-		5ED094EC2073286D00F77160 /* AddSceneModeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSceneModeTableViewController.h; sourceTree = "<group>"; };
-		5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSceneModeTableViewController.m; sourceTree = "<group>"; };
 		5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriggerCollectionViewCell.h; sourceTree = "<group>"; };
 		5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriggerCollectionViewCell.m; sourceTree = "<group>"; };
 		5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriggerCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -328,6 +397,37 @@
 		5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevicePowerDetailApi.m; sourceTree = "<group>"; };
 		5EE321EE207D046C001C46D3 /* DeleteDeviceApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteDeviceApi.h; sourceTree = "<group>"; };
 		5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteDeviceApi.m; sourceTree = "<group>"; };
+		5EE321F4207D9B3C001C46D3 /* ShareUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareUserModel.h; sourceTree = "<group>"; };
+		5EE321F5207D9B3C001C46D3 /* ShareUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareUserModel.m; sourceTree = "<group>"; };
+		5EE321F7207D9D57001C46D3 /* ShareUserTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareUserTableViewCell.h; sourceTree = "<group>"; };
+		5EE321F8207D9D57001C46D3 /* ShareUserTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareUserTableViewCell.m; sourceTree = "<group>"; };
+		5EE321FA207DB59B001C46D3 /* AddTimedTaskApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTimedTaskApi.h; sourceTree = "<group>"; };
+		5EE321FB207DB59B001C46D3 /* AddTimedTaskApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTimedTaskApi.m; sourceTree = "<group>"; };
+		5EE32200207DD83C001C46D3 /* GetTimedTaskApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetTimedTaskApi.h; sourceTree = "<group>"; };
+		5EE32201207DD83C001C46D3 /* GetTimedTaskApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetTimedTaskApi.m; sourceTree = "<group>"; };
+		5EE32206207DDA63001C46D3 /* TimedTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimedTaskModel.h; sourceTree = "<group>"; };
+		5EE32207207DDA63001C46D3 /* TimedTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimedTaskModel.m; sourceTree = "<group>"; };
+		5EE3220D207DDDD7001C46D3 /* TimedTaskTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimedTaskTableViewCell.h; sourceTree = "<group>"; };
+		5EE3220E207DDDD7001C46D3 /* TimedTaskTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimedTaskTableViewCell.m; sourceTree = "<group>"; };
+		5EE32210207DECCD001C46D3 /* EditTimedTaskApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditTimedTaskApi.h; sourceTree = "<group>"; };
+		5EE32211207DECCD001C46D3 /* EditTimedTaskApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditTimedTaskApi.m; sourceTree = "<group>"; };
+		5EE32213207DF20A001C46D3 /* DeleteTimedTaskApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteTimedTaskApi.h; sourceTree = "<group>"; };
+		5EE32214207DF20A001C46D3 /* DeleteTimedTaskApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteTimedTaskApi.m; sourceTree = "<group>"; };
+		5EE32220207E01EC001C46D3 /* PowerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerModel.h; sourceTree = "<group>"; };
+		5EE32221207E01EC001C46D3 /* PowerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerModel.m; sourceTree = "<group>"; };
+		5EE32223207E035B001C46D3 /* PowerYear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerYear.h; sourceTree = "<group>"; };
+		5EE32224207E035B001C46D3 /* PowerYear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerYear.m; sourceTree = "<group>"; };
+		5EE3222B207E0D8C001C46D3 /* PowerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerTableViewCell.h; sourceTree = "<group>"; };
+		5EE3222C207E0D8C001C46D3 /* PowerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerTableViewCell.m; sourceTree = "<group>"; };
+		5EE3222D207E0D8C001C46D3 /* PowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerTableViewCell.xib; sourceTree = "<group>"; };
+		5EE32230207E1241001C46D3 /* PowerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerDetailViewController.h; sourceTree = "<group>"; };
+		5EE32231207E1241001C46D3 /* PowerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerDetailViewController.m; sourceTree = "<group>"; };
+		5EE32236207EE909001C46D3 /* PowerDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerDetailModel.h; sourceTree = "<group>"; };
+		5EE32237207EE909001C46D3 /* PowerDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerDetailModel.m; sourceTree = "<group>"; };
+		5EE32239207EFB84001C46D3 /* GetScenesApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetScenesApi.h; sourceTree = "<group>"; };
+		5EE3223A207EFB84001C46D3 /* GetScenesApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetScenesApi.m; sourceTree = "<group>"; };
+		5EE3223F207EFECB001C46D3 /* SceneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
+		5EE32240207EFECB001C46D3 /* SceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
 		5EF3FEB6205FA08D0021FF58 /* RTNetworkConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTNetworkConfig.m; sourceTree = "<group>"; };
 		5EF3FEB7205FA08D0021FF58 /* RTNetworkAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTNetworkAgent.m; sourceTree = "<group>"; };
 		5EF3FEB8205FA08D0021FF58 /* RTNetworkAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTNetworkAgent.h; sourceTree = "<group>"; };
@@ -383,6 +483,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E413FED207F107200C621F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E413FFA207F2D4D00C621F4 /* SceneDetailTableViewController.h */,
+				5E413FFB207F2D4D00C621F4 /* SceneDetailTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E413FEE207F107300C621F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */,
+				5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */,
+				5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E413FEF207F107400C621F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E414000207F53D100C621F4 /* SceneCondition.h */,
+				5E414001207F53D100C621F4 /* SceneCondition.m */,
+				5E414003207F540A00C621F4 /* SceneDetail.h */,
+				5E414004207F540A00C621F4 /* SceneDetail.m */,
+				5E4B017020805C9700296F85 /* SceneDevice.h */,
+				5E4B017120805C9700296F85 /* SceneDevice.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E413FF0207F107700C621F4 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5E413FF1207F10BA00C621F4 /* SceneDetailApi.h */,
+				5E413FF2207F10BA00C621F4 /* SceneDetailApi.m */,
+				5E413FF4207F116900C621F4 /* AddSceneApi.h */,
+				5E413FF5207F116900C621F4 /* AddSceneApi.m */,
+				5E414006207F58DD00C621F4 /* GetSceneConditionApi.h */,
+				5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */,
+				5E4B01732080793B00296F85 /* EditSceneApi.h */,
+				5E4B01742080793B00296F85 /* EditSceneApi.m */,
+				5E4B017620807F9700296F85 /* DeleteSceneApi.h */,
+				5E4B017720807F9700296F85 /* DeleteSceneApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		5E498F842058EC10001D6D9B = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +603,8 @@
 		5E498FC32058EC66001D6D9B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				5E4B016E207FA39600296F85 /* UINavigationBar+Awesome.h */,
+				5E4B016D207FA39600296F85 /* UINavigationBar+Awesome.m */,
 				5EA48B1D2068C172004B5E7E /* UIView+CornerRadius.h */,
 				5EA48B1E2068C173004B5E7E /* UIView+CornerRadius.m */,
 			);
@@ -506,7 +657,6 @@
 			isa = PBXGroup;
 			children = (
 				5E68C0CB2079E63100B8DF9F /* MainUserManager */,
-				5E68C0CA2079E62F00B8DF9F /* New Group */,
 				5EA48B012068BF28004B5E7E /* LoginMode */,
 				5EA48AF32068BDFA004B5E7E /* TabBarVC */,
 				5E498FCD2058F690001D6D9B /* DeviceCentre */,
@@ -536,8 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED2FE10206DC8A50067B7A4 /* SceneMode */,
-				5ED2FE0F206DC8A40067B7A4 /* AddSceneMode */,
-				5ED2FE0E206DC8A20067B7A4 /* New Group */,
+				5ED2FE0E206DC8A20067B7A4 /* SceneDetail */,
 			);
 			path = SceneMode;
 			sourceTree = "<group>";
@@ -803,6 +952,43 @@
 			path = RTNetwork;
 			sourceTree = "<group>";
 		};
+		5E4B018820808BB800296F85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E737353206A35A6004125F1 /* MessageCentreTableViewController.h */,
+				5E737354206A35A6004125F1 /* MessageCentreTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E4B018920808BB900296F85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E737356206A35C7004125F1 /* MessageCentreTableViewCell.h */,
+				5E737357206A35C7004125F1 /* MessageCentreTableViewCell.m */,
+				5E737358206A35C7004125F1 /* MessageCentreTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E4B018A20808BBA00296F85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B018C208095D400296F85 /* MessageModel.h */,
+				5E4B018D208095D400296F85 /* MessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E4B018B20808BBB00296F85 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B018520808A7200296F85 /* GetMessagesApi.h */,
+				5E4B018620808A7200296F85 /* GetMessagesApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		5E68C0B920749C9300B8DF9F /* SelectCountry */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,13 +1057,6 @@
 				5E68C0C82074C77100B8DF9F /* RTVerifyCodeButton.m */,
 			);
 			path = RTVerfifyCodeButton;
-			sourceTree = "<group>";
-		};
-		5E68C0CA2079E62F00B8DF9F /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		5E68C0CB2079E63100B8DF9F /* MainUserManager */ = {
@@ -983,6 +1162,8 @@
 		5E68C132207CF53100B8DF9F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EE321F7207D9D57001C46D3 /* ShareUserTableViewCell.h */,
+				5EE321F8207D9D57001C46D3 /* ShareUserTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -990,6 +1171,8 @@
 		5E68C133207CF53200B8DF9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EE321F4207D9B3C001C46D3 /* ShareUserModel.h */,
+				5EE321F5207D9B3C001C46D3 /* ShareUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1012,6 +1195,10 @@
 		5E73734C206A3064004125F1 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				5E4B018F208099CA00296F85 /* FeedbackViewController.h */,
+				5E4B0190208099CA00296F85 /* FeedbackViewController.m */,
+				5E4B0192208099EA00296F85 /* FeedbackApi.h */,
+				5E4B0193208099EA00296F85 /* FeedbackApi.m */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -1033,11 +1220,10 @@
 		5E73734F206A3069004125F1 /* MessageCentre */ = {
 			isa = PBXGroup;
 			children = (
-				5E737353206A35A6004125F1 /* MessageCentreTableViewController.h */,
-				5E737354206A35A6004125F1 /* MessageCentreTableViewController.m */,
-				5E737356206A35C7004125F1 /* MessageCentreTableViewCell.h */,
-				5E737357206A35C7004125F1 /* MessageCentreTableViewCell.m */,
-				5E737358206A35C7004125F1 /* MessageCentreTableViewCell.xib */,
+				5E4B018B20808BBB00296F85 /* Api */,
+				5E4B018A20808BBA00296F85 /* Model */,
+				5E4B018920808BB900296F85 /* View */,
+				5E4B018820808BB800296F85 /* Controller */,
 			);
 			path = MessageCentre;
 			sourceTree = "<group>";
@@ -1081,6 +1267,12 @@
 			children = (
 				5E73737C206B66E2004125F1 /* PersonalInfoTableViewController.h */,
 				5E73737D206B66E2004125F1 /* PersonalInfoTableViewController.m */,
+				5E4B0182208089AA00296F85 /* ModifyUserInfoViewController.h */,
+				5E4B0183208089AA00296F85 /* ModifyUserInfoViewController.m */,
+				5E4B017F208087A500296F85 /* ModifyUserInfoApi.h */,
+				5E4B0180208087A500296F85 /* ModifyUserInfoApi.m */,
+				5E4B019520809F4B00296F85 /* ModifyUserIconApi.h */,
+				5E4B019620809F4B00296F85 /* ModifyUserIconApi.m */,
 			);
 			path = PersonalInfo;
 			sourceTree = "<group>";
@@ -1165,30 +1357,24 @@
 			path = RTRootNavigationCotroller;
 			sourceTree = "<group>";
 		};
-		5ED2FE0E206DC8A20067B7A4 /* New Group */ = {
+		5ED2FE0E206DC8A20067B7A4 /* SceneDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5E413FF0207F107700C621F4 /* Api */,
+				5E413FEF207F107400C621F4 /* Model */,
+				5E413FEE207F107300C621F4 /* View */,
+				5E413FED207F107200C621F4 /* Controller */,
 			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		5ED2FE0F206DC8A40067B7A4 /* AddSceneMode */ = {
-			isa = PBXGroup;
-			children = (
-				5ED094EC2073286D00F77160 /* AddSceneModeTableViewController.h */,
-				5ED094ED2073286D00F77160 /* AddSceneModeTableViewController.m */,
-				5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */,
-				5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */,
-				5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */,
-			);
-			path = AddSceneMode;
+			path = SceneDetail;
 			sourceTree = "<group>";
 		};
 		5ED2FE10206DC8A50067B7A4 /* SceneMode */ = {
 			isa = PBXGroup;
 			children = (
-				5EA48AFB2068BEFA004B5E7E /* SceneModeViewController.h */,
-				5EA48AFC2068BEFA004B5E7E /* SceneModeViewController.m */,
+				5EE32245207F00ED001C46D3 /* Api */,
+				5EE32244207F00EC001C46D3 /* Model */,
+				5EE32243207F00EA001C46D3 /* View */,
+				5EE32242207F00E9001C46D3 /* Controller */,
 			);
 			path = SceneMode;
 			sourceTree = "<group>";
@@ -1201,7 +1387,6 @@
 				5ED2FE19206DC9F60067B7A4 /* TimedTask */,
 				5ED2FE18206DC9F40067B7A4 /* SetRemark */,
 				5ED2FE16206DC9E70067B7A4 /* PowerData */,
-				5ED2FE15206DC9E50067B7A4 /* New Group */,
 			);
 			path = DeviceOperation;
 			sourceTree = "<group>";
@@ -1235,22 +1420,13 @@
 			path = DeviceCentre;
 			sourceTree = "<group>";
 		};
-		5ED2FE15206DC9E50067B7A4 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		5ED2FE16206DC9E70067B7A4 /* PowerData */ = {
 			isa = PBXGroup;
 			children = (
-				5EE321E5207D0191001C46D3 /* PowerDataViewController.h */,
-				5EE321E6207D0191001C46D3 /* PowerDataViewController.m */,
-				5EE321E8207D0421001C46D3 /* DevicePowerApi.h */,
-				5EE321E9207D0421001C46D3 /* DevicePowerApi.m */,
-				5EE321EB207D0430001C46D3 /* DevicePowerDetailApi.h */,
-				5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */,
+				5EE32219207DF614001C46D3 /* Api */,
+				5EE32218207DF60F001C46D3 /* Model */,
+				5EE32217207DF60D001C46D3 /* View */,
+				5EE32216207DF60C001C46D3 /* Controller */,
 			);
 			path = PowerData;
 			sourceTree = "<group>";
@@ -1267,10 +1443,10 @@
 		5ED2FE19206DC9F60067B7A4 /* TimedTask */ = {
 			isa = PBXGroup;
 			children = (
-				5ED2FE1F206DE6CE0067B7A4 /* DeviceTimingTableViewController.h */,
-				5ED2FE20206DE6CE0067B7A4 /* DeviceTimingTableViewController.m */,
-				5ED2FE28206E0AD60067B7A4 /* AddTimingTableViewController.h */,
-				5ED2FE29206E0AD70067B7A4 /* AddTimingTableViewController.m */,
+				5EE3220C207DDD91001C46D3 /* Api */,
+				5EE3220B207DDD76001C46D3 /* Model */,
+				5EE3220A207DDD75001C46D3 /* View */,
+				5EE32209207DDD73001C46D3 /* Controller */,
 			);
 			path = TimedTask;
 			sourceTree = "<group>";
@@ -1295,6 +1471,132 @@
 				5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */,
 			);
 			path = DeviceOperation;
+			sourceTree = "<group>";
+		};
+		5EE32209207DDD73001C46D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2FE1F206DE6CE0067B7A4 /* DeviceTimingTableViewController.h */,
+				5ED2FE20206DE6CE0067B7A4 /* DeviceTimingTableViewController.m */,
+				5ED2FE28206E0AD60067B7A4 /* AddTimingTableViewController.h */,
+				5ED2FE29206E0AD70067B7A4 /* AddTimingTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EE3220A207DDD75001C46D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EE3220D207DDDD7001C46D3 /* TimedTaskTableViewCell.h */,
+				5EE3220E207DDDD7001C46D3 /* TimedTaskTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EE3220B207DDD76001C46D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE32206207DDA63001C46D3 /* TimedTaskModel.h */,
+				5EE32207207DDA63001C46D3 /* TimedTaskModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EE3220C207DDD91001C46D3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5EE321FA207DB59B001C46D3 /* AddTimedTaskApi.h */,
+				5EE321FB207DB59B001C46D3 /* AddTimedTaskApi.m */,
+				5EE32200207DD83C001C46D3 /* GetTimedTaskApi.h */,
+				5EE32201207DD83C001C46D3 /* GetTimedTaskApi.m */,
+				5EE32210207DECCD001C46D3 /* EditTimedTaskApi.h */,
+				5EE32211207DECCD001C46D3 /* EditTimedTaskApi.m */,
+				5EE32213207DF20A001C46D3 /* DeleteTimedTaskApi.h */,
+				5EE32214207DF20A001C46D3 /* DeleteTimedTaskApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5EE32216207DF60C001C46D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EE321E5207D0191001C46D3 /* PowerDataViewController.h */,
+				5EE321E6207D0191001C46D3 /* PowerDataViewController.m */,
+				5EE32230207E1241001C46D3 /* PowerDetailViewController.h */,
+				5EE32231207E1241001C46D3 /* PowerDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EE32217207DF60D001C46D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EE3222B207E0D8C001C46D3 /* PowerTableViewCell.h */,
+				5EE3222C207E0D8C001C46D3 /* PowerTableViewCell.m */,
+				5EE3222D207E0D8C001C46D3 /* PowerTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EE32218207DF60F001C46D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE32223207E035B001C46D3 /* PowerYear.h */,
+				5EE32224207E035B001C46D3 /* PowerYear.m */,
+				5EE32220207E01EC001C46D3 /* PowerModel.h */,
+				5EE32221207E01EC001C46D3 /* PowerModel.m */,
+				5EE32236207EE909001C46D3 /* PowerDetailModel.h */,
+				5EE32237207EE909001C46D3 /* PowerDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EE32219207DF614001C46D3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5EE321E8207D0421001C46D3 /* DevicePowerApi.h */,
+				5EE321E9207D0421001C46D3 /* DevicePowerApi.m */,
+				5EE321EB207D0430001C46D3 /* DevicePowerDetailApi.h */,
+				5EE321EC207D0430001C46D3 /* DevicePowerDetailApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5EE32242207F00E9001C46D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EA48AFB2068BEFA004B5E7E /* SceneModeViewController.h */,
+				5EA48AFC2068BEFA004B5E7E /* SceneModeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EE32243207F00EA001C46D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E413FE8207F03E000C621F4 /* SceneCollectionViewCell.h */,
+				5E413FE9207F03E000C621F4 /* SceneCollectionViewCell.m */,
+				5E413FEA207F03E000C621F4 /* SceneCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EE32244207F00EC001C46D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE3223F207EFECB001C46D3 /* SceneModel.h */,
+				5EE32240207EFECB001C46D3 /* SceneModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EE32245207F00ED001C46D3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5EE32239207EFB84001C46D3 /* GetScenesApi.h */,
+				5EE3223A207EFB84001C46D3 /* GetScenesApi.m */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		5EF3FEBF205FAF0D0021FF58 /* Location */ = {
@@ -1468,6 +1770,7 @@
 				5E68C0E8207A4F3B00B8DF9F /* Localizable.strings in Resources */,
 				5ED2FDEA206BD5330067B7A4 /* sortedChnames.plist in Resources */,
 				5E73733E2068FC24004125F1 /* PersonalCentre.storyboard in Resources */,
+				5E413FEC207F03E000C621F4 /* SceneCollectionViewCell.xib in Resources */,
 				5E73733F2068FC24004125F1 /* SceneMode.storyboard in Resources */,
 				5ED094F32073339200F77160 /* TriggerCollectionViewCell.xib in Resources */,
 				5E7373402068FC24004125F1 /* DeviceCentre.storyboard in Resources */,
@@ -1476,6 +1779,7 @@
 				5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */,
 				5E73735F206A74DF004125F1 /* DeviceCollectionViewCell.xib in Resources */,
 				5E68C120207C8FA900B8DF9F /* EditJackNameView.xib in Resources */,
+				5EE3222F207E0D8C001C46D3 /* PowerTableViewCell.xib in Resources */,
 				5E73735A206A35C7004125F1 /* MessageCentreTableViewCell.xib in Resources */,
 				5EA48B222068C2F1004B5E7E /* LoginMode.storyboard in Resources */,
 				5ED2FE03206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib in Resources */,
@@ -1660,26 +1964,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED094E920725BA400F77160 /* UpDataView.m in Sources */,
+				5EE321FC207DB59B001C46D3 /* AddTimedTaskApi.m in Sources */,
 				5E68C11B207B6D3200B8DF9F /* SetDeviceAliasApi.m in Sources */,
 				5E68C0C92074C77100B8DF9F /* RTVerifyCodeButton.m in Sources */,
 				5E737382206B6B97004125F1 /* RTAlertContrller.m in Sources */,
 				5E73736F206B35E1004125F1 /* Language.m in Sources */,
+				5EE321F9207D9D57001C46D3 /* ShareUserTableViewCell.m in Sources */,
 				5E737359206A35C7004125F1 /* MessageCentreTableViewCell.m in Sources */,
 				5E68C0D4207A0D4700B8DF9F /* LoginApi.m in Sources */,
 				5E68C112207B6BA900B8DF9F /* DeviceDetailApi.m in Sources */,
 				5E68C101207B17EB00B8DF9F /* RTUrlArgumentsFilter.m in Sources */,
 				5E68C0C52074C3AC00B8DF9F /* VerifyCodeAPi.m in Sources */,
+				5EE3223B207EFB84001C46D3 /* GetScenesApi.m in Sources */,
 				5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */,
 				5EA48AFD2068BEFA004B5E7E /* SceneModeViewController.m in Sources */,
+				5E4B018720808A7200296F85 /* GetMessagesApi.m in Sources */,
 				5ED9E44D2063584F004A5D79 /* RTNetworkPrivate.m in Sources */,
 				5ED9E44C2063584B004A5D79 /* RTNetworkConfig.m in Sources */,
 				5ED9E44B20635845004A5D79 /* RTNetworkAgent.m in Sources */,
 				5E68C0DD207A44F900B8DF9F /* ForgotPsdApi.m in Sources */,
+				5EE32208207DDA63001C46D3 /* TimedTaskModel.m in Sources */,
 				5E68C12C207CF4D800B8DF9F /* UnshareApi.m in Sources */,
 				5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */,
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
+				5E4B019720809F4B00296F85 /* ModifyUserIconApi.m in Sources */,
 				5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */,
 				5ED094E820725BA400F77160 /* UpdateApp.m in Sources */,
+				5EE32202207DD83C001C46D3 /* GetTimedTaskApi.m in Sources */,
 				5E68C12F207CF50300B8DF9F /* SetShareUserAliasApi.m in Sources */,
 				5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */,
 				5E73735D206A4622004125F1 /* AddDeviceViewController.m in Sources */,
@@ -1687,51 +1998,76 @@
 				5E68C0EF207B0F5100B8DF9F /* DeviceManageApi.m in Sources */,
 				5E737385206B732F004125F1 /* LocalizationKeys.m in Sources */,
 				5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */,
+				5E4B01752080793B00296F85 /* EditSceneApi.m in Sources */,
 				5EA48B1C2068C10E004B5E7E /* CodeLoginSecondViewController.m in Sources */,
 				5E68C0D12079E87200B8DF9F /* MainUserManager.m in Sources */,
+				5EE32232207E1241001C46D3 /* PowerDetailViewController.m in Sources */,
 				5ED2FE24206DED450067B7A4 /* DeviceOperationTableViewController.m in Sources */,
+				5EE32212207DECCD001C46D3 /* EditTimedTaskApi.m in Sources */,
+				5E4B017220805C9700296F85 /* SceneDevice.m in Sources */,
 				5ED2FE27206E09130067B7A4 /* SetDeviceRemarkViewController.m in Sources */,
 				5EF3FEC82060AA6D0021FF58 /* RTSpeechRecognition.m in Sources */,
 				5EF3FEC2205FAF220021FF58 /* RTLocationManager.m in Sources */,
-				5ED094EE2073286D00F77160 /* AddSceneModeTableViewController.m in Sources */,
+				5E4B0181208087A500296F85 /* ModifyUserInfoApi.m in Sources */,
 				5EA48AFA2068BEE8004B5E7E /* DeviceCentreViewController.m in Sources */,
 				5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */,
 				5EA48B1F2068C173004B5E7E /* UIView+CornerRadius.m in Sources */,
+				5E414005207F540A00C621F4 /* SceneDetail.m in Sources */,
+				5EE3222E207E0D8C001C46D3 /* PowerTableViewCell.m in Sources */,
+				5EE32225207E035B001C46D3 /* PowerYear.m in Sources */,
+				5EE321F6207D9B3C001C46D3 /* ShareUserModel.m in Sources */,
 				5E68C123207C994900B8DF9F /* DeviceDetailModel.m in Sources */,
 				5E498FA02058EC10001D6D9B /* main.m in Sources */,
 				5E73737A206B6509004125F1 /* SettingTableViewController.m in Sources */,
 				5E68C118207B6D1400B8DF9F /* OperatingSwitchApi.m in Sources */,
+				5E413FF6207F116900C621F4 /* AddSceneApi.m in Sources */,
 				5E68C13A207CF58400B8DF9F /* AddShareUserSecondViewController.m in Sources */,
 				5E68C0E1207A4ACD00B8DF9F /* BaseLoginViewController.m in Sources */,
 				5EA48B132068C0E0004B5E7E /* RegisterFirstViewController.m in Sources */,
+				5E413FF3207F10BA00C621F4 /* SceneDetailApi.m in Sources */,
 				5E73734B2069F7AD004125F1 /* PersonalCentreTableViewController.m in Sources */,
 				5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */,
 				5E68C11E207C8F9A00B8DF9F /* EditJackNameView.m in Sources */,
+				5E413FFC207F2D4D00C621F4 /* SceneDetailTableViewController.m in Sources */,
 				5ED2FE2A206E0AD70067B7A4 /* AddTimingTableViewController.m in Sources */,
 				5E68C129207CC75100B8DF9F /* DeviceShareUserApi.m in Sources */,
 				5E737355206A35A6004125F1 /* MessageCentreTableViewController.m in Sources */,
+				5E414002207F53D100C621F4 /* SceneCondition.m in Sources */,
 				5EA48B192068C102004B5E7E /* CodeLoginFirstViewController.m in Sources */,
 				5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */,
+				5EE32215207DF20A001C46D3 /* DeleteTimedTaskApi.m in Sources */,
+				5E4B0184208089AA00296F85 /* ModifyUserInfoViewController.m in Sources */,
+				5EE32241207EFECB001C46D3 /* SceneModel.m in Sources */,
 				5E737363206A7E87004125F1 /* DeviceDetailViewController.m in Sources */,
+				5E414008207F58DD00C621F4 /* GetSceneConditionApi.m in Sources */,
 				5E68C10C207B4BFE00B8DF9F /* DeviceCentreModel.m in Sources */,
 				5ED2FE02206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m in Sources */,
+				5EE32238207EE909001C46D3 /* PowerDetailModel.m in Sources */,
+				5E4B016F207FA39600296F85 /* UINavigationBar+Awesome.m in Sources */,
 				5EF3FECE2060E5480021FF58 /* RTSpeechSynthesizer.m in Sources */,
 				5ED2FE21206DE6CE0067B7A4 /* DeviceTimingTableViewController.m in Sources */,
 				5E7373472069E8BA004125F1 /* DeviceCollectionViewCell.m in Sources */,
 				5E68C0C020749DE700B8DF9F /* RegisterApi.m in Sources */,
 				5EE321ED207D0430001C46D3 /* DevicePowerDetailApi.m in Sources */,
+				5E413FEB207F03E000C621F4 /* SceneCollectionViewCell.m in Sources */,
 				5E68C137207CF57500B8DF9F /* AddShareUserFirstViewController.m in Sources */,
+				5E4B017820807F9700296F85 /* DeleteSceneApi.m in Sources */,
+				5E4B0191208099CA00296F85 /* FeedbackViewController.m in Sources */,
 				5E68C0D7207A40FE00B8DF9F /* ForgotPsdFirstViewController.m in Sources */,
+				5E4B018E208095D400296F85 /* MessageModel.m in Sources */,
 				5EA48B072068BFF8004B5E7E /* LoginViewController.m in Sources */,
 				5ED094F22073339200F77160 /* TriggerCollectionViewCell.m in Sources */,
 				5E68C0CE2079E68F00B8DF9F /* MainUser.m in Sources */,
 				5EA48B162068C0EC004B5E7E /* RegisterSecondViewController.m in Sources */,
 				5E68C0DA207A411300B8DF9F /* ForgotPsdSecondViewController.m in Sources */,
 				5ED2FDF8206C83180067B7A4 /* UIViewController+RTRootNavigationController.m in Sources */,
+				5EE32222207E01EC001C46D3 /* PowerModel.m in Sources */,
+				5EE3220F207DDDD7001C46D3 /* TimedTaskTableViewCell.m in Sources */,
 				5EA48AF72068BEAA004B5E7E /* RootTableBarController.m in Sources */,
 				5ED2FDE9206BA6680067B7A4 /* SelectCountryTableViewController.m in Sources */,
 				5E498F922058EC10001D6D9B /* AppDelegate.m in Sources */,
 				5E73737E206B66E2004125F1 /* PersonalInfoTableViewController.m in Sources */,
+				5E4B0194208099EA00296F85 /* FeedbackApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

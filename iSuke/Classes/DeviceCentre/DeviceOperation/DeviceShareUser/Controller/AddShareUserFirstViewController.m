@@ -7,8 +7,11 @@
 //
 
 #import "AddShareUserFirstViewController.h"
+#import "DeviceCentreModel.h"
 
-@interface AddShareUserFirstViewController ()
+@interface AddShareUserFirstViewController (){
+    Device *_device;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *deviceIcon;
 @property (weak, nonatomic) IBOutlet UILabel *deviceName;
@@ -21,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [_phoneTextField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
 
@@ -29,10 +33,24 @@
 }
 
 
+
+
+- (void)textFieldDidChanged:(UITextField *)textField{
+    if (_phoneTextField.text.length > 0 ) {
+        _addBtn.backgroundColor = kColorTheme;
+        _addBtn.userInteractionEnabled = YES;
+    }else{
+        _addBtn.backgroundColor = kColorUnClickBtnBg;
+        _addBtn.userInteractionEnabled = NO;
+    }
+}
+
+
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    id vc = segue.destinationViewController;
+    [vc setValue:_phoneTextField.text forKey:@"_phone"];
+    [vc setValue:_device forKey:@"_device"];
 }
 
 

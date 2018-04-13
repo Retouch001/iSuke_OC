@@ -910,7 +910,7 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 #pragma clang diagnostic pop
             }
             else {
-                viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_backblack"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
+                viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
 //                viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
 //                                                                                                   style:UIBarButtonItemStylePlain
 //                                                                                                  target:self
