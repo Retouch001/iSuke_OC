@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timedTaskTime;
 @property (weak, nonatomic) IBOutlet UILabel *timedTaskDays;
 @property (weak, nonatomic) IBOutlet UISwitch *timedTaskStatus;
+@property (weak, nonatomic) IBOutlet UILabel *timedTaskAction;
+@property (weak, nonatomic) IBOutlet UISwitch *timedTaskSwitch;
 
 
 @end
@@ -22,22 +24,69 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)freshCellWithTimedTask:(TimedTask *)timedTask{
-    _timedTaskTime.text = [NSString stringWithFormat:@"%@:%@",[timedTask.timedtask_time substringToIndex:2],[timedTask.timedtask_time substringFromIndex:2]];
-    
-    //NSArray *weekDays = [timedTask.timedtask_days componentsSeparatedByString:@","];
-    _timedTaskDays.text = timedTask.timedtask_days;
+    _timedTaskTime.text = [self parseTimedTaskTime:timedTask.timedtask_time];
+    _timedTaskDays.text = [self parseTimedTaskDays:timedTask.timedtask_days];
     _timedTaskStatus.on = timedTask.timedtask_status;
+    _timedTaskAction.text = timedTask.timedtask_action?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
+}
+
+- (IBAction)timedTaskAction:(id)sender {
+    self.switchClickBlock();
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (NSString *)parseTimedTaskDays:(NSString *)timedTaskDays{
+    NSArray *weekDays = [timedTaskDays componentsSeparatedByString:@","];
+    NSMutableString *string = [NSMutableString string];
+    
+    for (int i = 0; i < weekDays.count; i++) {
+        NSString *temp = weekDays[i];
+        if (i == 0) {
+            if ([temp isEqualToString:@"1"]) {
+                [string appendString:RTLocalizedString(@"周一")];
+            }else if ([temp isEqualToString:@"2"]){
+                [string appendString:RTLocalizedString(@"周二")];
+            }else if ([temp isEqualToString:@"3"]){
+                [string appendString:RTLocalizedString(@"周三")];
+            }else if ([temp isEqualToString:@"4"]){
+                [string appendString:RTLocalizedString(@"周四")];
+            }else if ([temp isEqualToString:@"5"]){
+                [string appendString:RTLocalizedString(@"周五")];
+            }else if ([temp isEqualToString:@"6"]){
+                [string appendString:RTLocalizedString(@"周六")];
+            }else{
+                [string appendString:RTLocalizedString(@"周日")];
+            }
+        }else{
+            if ([temp isEqualToString:@"1"]) {
+                [string appendString:RTLocalizedString(@" 周一")];
+            }else if ([temp isEqualToString:@"2"]){
+                [string appendString:RTLocalizedString(@" 周二")];
+            }else if ([temp isEqualToString:@"3"]){
+                [string appendString:RTLocalizedString(@" 周三")];
+            }else if ([temp isEqualToString:@"4"]){
+                [string appendString:RTLocalizedString(@" 周四")];
+            }else if ([temp isEqualToString:@"5"]){
+                [string appendString:RTLocalizedString(@" 周五")];
+            }else if ([temp isEqualToString:@"6"]){
+                [string appendString:RTLocalizedString(@" 周六")];
+            }else{
+                [string appendString:RTLocalizedString(@" 周日")];
+            }
+        }
+    }
+    return string;
+}
+
+- (NSString *)parseTimedTaskTime:(NSString *)timedTaskTime{
+    return [NSString stringWithFormat:@"%@:%@",[timedTaskTime substringToIndex:2],[timedTaskTime substringFromIndex:2]];
 }
 
 @end

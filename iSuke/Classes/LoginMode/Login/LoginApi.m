@@ -66,6 +66,7 @@
              
              @"appSerialNum" : RT_APPSERIALNUM,
              @"appOrgCode" : RT_APPORGCODE,
+             @"orgId" : RT_ORGID
              };
 }
 

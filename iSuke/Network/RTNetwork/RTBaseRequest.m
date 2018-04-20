@@ -122,7 +122,7 @@ NSString *const RTRequestValidationErrorDomain = @"com.retouch.request.validatio
 }
 
 - (NSTimeInterval)requestTimeoutInterval {
-    return 60;
+    return 10;
 }
 
 - (id)requestArgument {

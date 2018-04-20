@@ -30,8 +30,8 @@
 #define SB_EDIT_TIMEDTASK         @"editTimedTaskNav"
 
 #define SB_POWER_DETAIL           @"powerDetail"
-
-
+#define SB_ADDSHARE_USER          @"AddShareUser"
+#define SB_DEVICE_CONFIG_SECOND   @"DeviceConfigSecond"
 
 //场景
 #define SB_SCENEMODE              @"SceneMode"

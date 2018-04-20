@@ -32,28 +32,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"%@",[_topBgView.backgroundColor hexString]);
-    
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithHexString:@"86c059"]];
     
-//    PowerYear *powerYear = _powerModel.powerData[_indexPath.section];
-//    PowerMonth *powerMonth = powerYear.powerMonthList[_indexPath.row];
-//    
-//    
-//    powerDetailApi = [[DevicePowerDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id year:powerYear.year month:powerMonth.powerMonth];
-//    powerDetailApi.delegate = self;
-//    [powerDetailApi start];
+    PowerYear *powerYear = _powerModel.powerData[_indexPath.section];
+    PowerMonth *powerMonth = powerYear.powerMonthList[_indexPath.row];
+    
+    
+    powerDetailApi = [[DevicePowerDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id year:powerYear.year month:powerMonth.powerMonth];
+    powerDetailApi.delegate = self;
+    [powerDetailApi start];
 }
 
 
 
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-
     if ([request dataSuccess]) {
         powerDetailModel = [PowerDetailModel modelWithDictionary:request.responseObject];
     }

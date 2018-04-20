@@ -15,8 +15,9 @@ typedef NS_ENUM(NSInteger, RTSwitchType){
 };
 
 typedef NS_ENUM(NSInteger, RTDeviceSubStatus) {
-    RTDeviceSubStatusOn,
-    RTDeviceSubStatusOff
+    RTDeviceSubStatusOff = 0,
+    RTDeviceSubStatusOn
+    
 };
 
 

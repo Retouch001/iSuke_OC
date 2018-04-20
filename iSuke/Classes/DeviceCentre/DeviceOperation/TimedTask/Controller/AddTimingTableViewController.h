@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, RTTimedTaskVCType) {
+    RTTimedTaskVCTypeAdd,
+    RTTimedTaskVCTypeEdit
+};
+
 @interface AddTimingTableViewController : UITableViewController
+
+@property (nonatomic, assign) RTTimedTaskVCType timedTaskVCType;
 
 @end

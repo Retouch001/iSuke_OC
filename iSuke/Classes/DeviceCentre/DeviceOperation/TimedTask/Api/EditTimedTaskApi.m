@@ -17,15 +17,14 @@
     NSString *_timedtask_time;
 }
 
-
-- (id)initWithApp_user_id:(NSInteger)app_user_id timedtask_id:(NSInteger)timedtask_id timedtask_days:(NSString *)timedtask_days timedtask_action:(NSInteger)timedtask_action timedtask_status:(NSInteger)timedtask_status timedtask_time:(NSString *)timedtask_time{
+- (id)initWithApp_user_id:(NSInteger)app_user_id timedTask:(TimedTask *)timedTask{
     if (self = [super init]) {
         _app_user_id = app_user_id;
-        _timedtask_id = timedtask_id;
-        _timedtask_days = timedtask_days;
-        _timedtask_action = timedtask_action;
-        _timedtask_stauts = timedtask_status;
-        _timedtask_time = timedtask_time;
+        _timedtask_id = timedTask.timedtask_id;
+        _timedtask_days = timedTask.timedtask_days;
+        _timedtask_action = timedTask.timedtask_action;
+        _timedtask_stauts = timedTask.timedtask_status;
+        _timedtask_time = timedTask.timedtask_time;
     }
     return self;
 }

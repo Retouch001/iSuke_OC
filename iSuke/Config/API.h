@@ -17,7 +17,7 @@
 
 
 
-#define   RT_BASE_URL                        @"http://192.168.8.229:8080"
+#define   RT_BASE_URL                        @"http://192.168.8.216:8080"
 #define   RT_DEVELOP_BASE_URL                @"http://117.78.48.143"
 
 //LoginMode
@@ -39,6 +39,10 @@
 #define RT_UNSHARE_USER                      @"iSukeServer/user/unShareDeviceToUser"
 #define RT_SET_SHAREUSER_ALIAS               @"iSukeServer/user/setShareUserAlias"
 #define RT_ADD_SHARE_USER                    @"iSukeServer/user/addShareUser"
+#define RT_QUERY_USER                        @"iSukeServer/user/queryUser"
+#define RT_QUERY_DEVICE                      @"iSukeServer/device/getDeviceOnline"
+#define RT_ADD_DEVICE                        @"iSukeServer/device/relativeDevice"
+
 
 
 #define RT_GET_TIMEDTASK                     @"iSukeServer/timedTask/getTimedTask"
@@ -51,6 +55,7 @@
 #define RT_DEVICE_POWER_DETAIL               @"iSukeServer/device/devicePowerDetail"
 
 #define RT_DELETE_DEVICE                     @"iSukeServer/device/deleteDevice"
+
 
 
 

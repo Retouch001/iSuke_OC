@@ -11,6 +11,7 @@
 #import "RTUrlArgumentsFilter.h"
 #import "MainUserManager.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -20,24 +21,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    
     RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
-    config.baseUrl = RT_BASE_URL;
+    config.baseUrl = RT_DEVELOP_BASE_URL;
     config.debugLogEnabled = YES;
 
     MainUser *mainUser = [MainUserManager getLocalMainUserInfo];
     if (mainUser) {
-        
         long timestamp = [NSDate date].timeIntervalSince1970;
         NSString *token = [[NSString stringWithFormat:@"%@%ldapp",mainUser.phone,timestamp] md5String];
         RTUrlArgumentsFilter *urlFilter = [RTUrlArgumentsFilter filterWithArguments:@{@"orgId": RT_ORGID,
-                                                                                      @"phone" : mainUser.phone,
-                                                                                      @"timestamp" : @(timestamp),
-                                                                                      @"token" : token
-                                                                                      }];
-                
+                                                                @"phone" : mainUser.phone,
+                                                                @"timestamp" : @(timestamp),
+                                                                @"token" : token
+                                                                }];
         [config addUrlFilter:urlFilter];
-        
         UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
         self.window.rootViewController = mainVC;
     }else{
@@ -72,9 +69,11 @@
     [[UINavigationBar appearance] setTintColor:UIColor.whiteColor];
     //TabBar选中图标的颜色,默认是蓝色
 //    [[UITabBar appearance] setTintColor:UIColor.redColor];
-    
     [[UINavigationBar appearance] setTranslucent:NO];
     
+    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
+    [[UITabBar appearance] setBackgroundColor:UIColor.whiteColor];
 }
 
 

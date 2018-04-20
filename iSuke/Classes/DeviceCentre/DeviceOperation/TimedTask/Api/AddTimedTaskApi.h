@@ -8,9 +8,10 @@
 
 #import "RTBaseRequest.h"
 #import "DeviceCentreModel.h"
+#import "TimedTaskModel.h"
 
 @interface AddTimedTaskApi : RTBaseRequest
 
-- (id)initWithApp_user_id:(NSInteger)app_user_id device_id:(NSInteger)device_id  device_belong_type:(RTDeviceBelongType)device_belong_type timedtask_time:(NSString *)timedtask_time timedtask_days:(NSString *)timedtask_days timedtasdk_action:(NSInteger)timedtask_action;
+- (id)initWithApp_user_id:(NSInteger)app_user_id device:(Device *)device timedTask:(TimedTask *)timedTask;
 
 @end

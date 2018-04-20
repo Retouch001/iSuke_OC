@@ -10,4 +10,6 @@
 
 @interface EditJackNameView : UIView
 
+- (void)showWithCancel:(void(^)(void))cancel ok:(void(^)(NSString *number))ok;
+
 @end

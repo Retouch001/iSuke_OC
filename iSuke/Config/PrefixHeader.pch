@@ -16,7 +16,6 @@
 
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <MJRefresh/MJRefresh.h>
 
@@ -27,6 +26,7 @@
 #import "LocalizationKeys.h"
 #import "API.h"
 #import "MainUserManager.h"
+#import "UIView+XIB.h"
 
 #endif
 

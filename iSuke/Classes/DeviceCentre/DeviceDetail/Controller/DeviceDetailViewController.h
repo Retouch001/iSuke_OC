@@ -11,7 +11,6 @@
 
 @interface DeviceDetailViewController : UIViewController
 
-@property (nonatomic, strong) Device *device;
 
 
 

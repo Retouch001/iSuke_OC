@@ -24,6 +24,7 @@ static CGFloat kMagin = 20.f;
     GetScenesApi *getSceneApi;
     DeleteSceneApi *deleteSceneApi;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
 
@@ -48,6 +49,7 @@ static CGFloat kMagin = 20.f;
     self.collectionView.collectionViewLayout = flowLayout;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SceneCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
+    self.topViewConstraint.constant = HEADER_HEIGHT;
     
     getSceneApi = [[GetScenesApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id];
     getSceneApi.delegate = self;

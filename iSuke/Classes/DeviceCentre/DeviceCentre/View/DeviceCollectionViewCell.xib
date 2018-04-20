@@ -25,13 +25,13 @@
                         <rect key="frame" x="8.5" y="10" width="145" height="145"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_light" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-rC-XEz">
-                                <rect key="frame" x="37" y="8" width="72.5" height="72.5"/>
+                                <rect key="frame" x="37" y="10" width="72.5" height="72.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LNt-rC-XEz" secondAttribute="height" multiplier="1:1" id="Ofn-4k-DdE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客厅灯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evn-Vc-ZbI">
-                                <rect key="frame" x="51.5" y="85.5" width="43" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客厅灯" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evn-Vc-ZbI">
+                                <rect key="frame" x="51.5" y="92.5" width="43" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -41,10 +41,11 @@
                         <constraints>
                             <constraint firstItem="LNt-rC-XEz" firstAttribute="centerX" secondItem="wGN-9p-zDZ" secondAttribute="centerX" id="3Id-d5-68S"/>
                             <constraint firstItem="Evn-Vc-ZbI" firstAttribute="centerX" secondItem="wGN-9p-zDZ" secondAttribute="centerX" id="4cN-dU-Fnb"/>
-                            <constraint firstItem="Evn-Vc-ZbI" firstAttribute="top" secondItem="LNt-rC-XEz" secondAttribute="bottom" constant="5" id="IpV-KU-9hN"/>
+                            <constraint firstItem="Evn-Vc-ZbI" firstAttribute="top" secondItem="LNt-rC-XEz" secondAttribute="bottom" constant="10" id="IpV-KU-9hN"/>
+                            <constraint firstItem="Evn-Vc-ZbI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wGN-9p-zDZ" secondAttribute="leading" constant="10" id="O3Y-vT-xu7"/>
                             <constraint firstItem="LNt-rC-XEz" firstAttribute="width" secondItem="wGN-9p-zDZ" secondAttribute="width" multiplier="1:2" id="Xnu-aj-3MV"/>
                             <constraint firstAttribute="width" secondItem="wGN-9p-zDZ" secondAttribute="height" multiplier="1:1" id="ali-GF-d5G"/>
-                            <constraint firstItem="LNt-rC-XEz" firstAttribute="top" secondItem="wGN-9p-zDZ" secondAttribute="top" constant="8" id="kMS-b1-dY7"/>
+                            <constraint firstItem="LNt-rC-XEz" firstAttribute="top" secondItem="wGN-9p-zDZ" secondAttribute="top" constant="10" id="kMS-b1-dY7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -18,18 +18,17 @@
 }
 
 
-- (id)initWithApp_user_id:(NSInteger)app_user_id device_id:(NSInteger)device_id device_belong_type:(RTDeviceBelongType)device_belong_type timedtask_time:(NSString *)timedtask_time timedtask_days:(NSString *)timedtask_days timedtasdk_action:(NSInteger)timedtask_action{
+- (id)initWithApp_user_id:(NSInteger)app_user_id device:(Device *)device timedTask:(TimedTask *)timedTask{
     if (self = [super init]) {
         _app_user_id = app_user_id;
-        _device_id = device_id;
-        _device_belong_type = device_belong_type;
-        _timedtask_time = timedtask_time;
-        _timedtask_days = timedtask_days;
-        _timedtask_action = timedtask_action;
+        _device_id = device.device_id;
+        _device_belong_type = device.device_belong_type;
+        _timedtask_time = timedTask.timedtask_time;
+        _timedtask_days = timedTask.timedtask_days;
+        _timedtask_action = timedTask.timedtask_action;
     }
     return self;
 }
-
 
 
 - (NSString *)requestUrl{

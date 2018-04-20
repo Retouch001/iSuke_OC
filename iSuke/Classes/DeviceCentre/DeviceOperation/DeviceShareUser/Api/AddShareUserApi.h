@@ -11,6 +11,6 @@
 @interface AddShareUserApi : RTBaseRequest
 
 
-- (id)initWithApp_user_id:(NSInteger)app_user_id share_user_phone:(NSString *)share_user_phone device_id:(NSInteger)device_id;
+- (id)initWithApp_user_id:(NSInteger)app_user_id share_user_id:(NSInteger)share_user_id device_id:(NSInteger)device_id;
 
 @end

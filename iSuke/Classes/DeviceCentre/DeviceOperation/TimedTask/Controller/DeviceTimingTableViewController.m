@@ -7,11 +7,16 @@
 //
 
 #import "DeviceTimingTableViewController.h"
+#import "AddTimingTableViewController.h"
+
 #import "DeviceCentreModel.h"
 #import "GetTimedTaskApi.h"
 #import "DeleteTimedTaskApi.h"
+#import "EditTimedTaskApi.h"
+
 #import "TimedTaskModel.h"
 #import "TimedTaskTableViewCell.h"
+
 
 @interface DeviceTimingTableViewController ()<RTRequestDelegate>{
     Device *_device;
@@ -19,6 +24,7 @@
     
     GetTimedTaskApi *getTimedTaskApi;
     DeleteTimedTaskApi *deleteTimedTaskApi;
+    EditTimedTaskApi *editTimedTaskApi;
 }
 
 
@@ -30,12 +36,24 @@
     [super viewDidLoad];
     
     self.tableView.separatorColor = UIColorHex(0xf1f0ef);
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"请稍后...")];
     getTimedTaskApi = [[GetTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id];
     getTimedTaskApi.delegate = self;
     [getTimedTaskApi start];
 }
 
+- (IBAction)addTimedTask:(id)sender {
+    UINavigationController *nav = SB_VIEWCONTROLLER_IDENTIFIER(SB_DEVICE_DETAIL, SB_EDIT_TIMEDTASK);
+    AddTimingTableViewController *vc = nav.viewControllers.firstObject;
+    vc.timedTaskVCType = RTTimedTaskVCTypeAdd;
+    [vc setValue:_device forKey:@"_device"];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 
 #pragma mark - Table view data source
@@ -50,7 +68,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TimedTaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    [cell freshCellWithTimedTask:timedTaskModel.timedTaskList[indexPath.row]];
+    TimedTask *timedTask = timedTaskModel.timedTaskList[indexPath.row];
+    [cell freshCellWithTimedTask:timedTask];
+    
+    TimedTask *reTimedTask = [timedTask deepCopy];
+    reTimedTask.timedtask_status = !reTimedTask.timedtask_status;
+    @weakify(self);
+    cell.switchClickBlock = ^{
+        @strongify(self);
+        self->editTimedTaskApi = [[EditTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id timedTask:reTimedTask];
+        self->editTimedTaskApi.delegate = self;
+        [self->editTimedTaskApi start];
+    };
     return cell;
 }
 
@@ -58,10 +87,11 @@
     TimedTask *timedTask = timedTaskModel.timedTaskList[indexPath.row];
     
     UINavigationController *nav = SB_VIEWCONTROLLER_IDENTIFIER(SB_DEVICE_DETAIL, SB_EDIT_TIMEDTASK);
-    UIViewController *vc = nav.viewControllers.firstObject;
+    AddTimingTableViewController *vc = nav.viewControllers.firstObject;
+    vc.timedTaskVCType = RTTimedTaskVCTypeEdit;
     [vc setValue:timedTask forKey:@"_timedTask"];
-    vc.title = RTLocalizedString(@"编辑");
-    
+    [vc setValue:_device forKey:@"_device"];
+
     [self presentViewController:nav animated:YES completion:nil];
 }
 
@@ -74,11 +104,10 @@
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     //删除
     UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [SVProgressHUD showWithStatus:RTLocalizedString(@"请稍后...")];
         self->deleteTimedTaskApi = [[DeleteTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id timedtask_id:self->timedTaskModel.timedTaskList[indexPath.row].timedtask_id];
         self->deleteTimedTaskApi.delegate = self;
-        [self->deleteTimedTaskApi start];
-        
-        NSLog(@"点击了删除");
+        [self->deleteTimedTaskApi start];        
     }];
     deleteRowAction.backgroundColor = kColorDeleteBtnBg;
     return @[deleteRowAction];
@@ -91,6 +120,8 @@
 
 #pragma mark --RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
+    [SVProgressHUD dismiss];
+        
     if ([request dataSuccess]) {
         timedTaskModel = [TimedTaskModel modelWithDictionary:request.responseObject];
         [self.tableView reloadData];

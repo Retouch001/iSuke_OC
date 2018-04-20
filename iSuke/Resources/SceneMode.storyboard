@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,10 +37,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQe-iN-EYe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="141.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_topbg02" translatesAutoresizingMaskIntoConstraints="NO" id="pBI-sZ-Fqa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,11 +48,12 @@
                                     <constraint firstItem="pBI-sZ-Fqa" firstAttribute="top" secondItem="rQe-iN-EYe" secondAttribute="top" id="T3j-aG-9ex"/>
                                     <constraint firstAttribute="bottom" secondItem="pBI-sZ-Fqa" secondAttribute="bottom" id="Vw2-5R-hAF"/>
                                     <constraint firstAttribute="trailing" secondItem="pBI-sZ-Fqa" secondAttribute="trailing" id="b4U-Uu-8IL"/>
+                                    <constraint firstAttribute="height" constant="150" id="wPm-si-w6D"/>
                                     <constraint firstItem="pBI-sZ-Fqa" firstAttribute="leading" secondItem="rQe-iN-EYe" secondAttribute="leading" id="xNM-Ym-zHx"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l22-Xg-GOg">
-                                <rect key="frame" x="0.0" y="205.5" width="375" height="461.5"/>
+                                <rect key="frame" x="0.0" y="214" width="375" height="453"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94117647058823528" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="88L-cB-Kkx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -70,7 +70,6 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rQe-iN-EYe" firstAttribute="height" secondItem="SJ7-ac-5jM" secondAttribute="height" multiplier="17:80" id="7tt-H0-bYY"/>
                             <constraint firstItem="rQe-iN-EYe" firstAttribute="top" secondItem="l8k-Cw-PDy" secondAttribute="top" id="M0I-Lc-TF6"/>
                             <constraint firstAttribute="bottom" secondItem="l22-Xg-GOg" secondAttribute="bottom" id="Nh7-cH-nVZ"/>
                             <constraint firstItem="l22-Xg-GOg" firstAttribute="leading" secondItem="l8k-Cw-PDy" secondAttribute="leading" id="iGb-df-jmo"/>
@@ -90,6 +89,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="l22-Xg-GOg" id="6mR-Ng-EaX"/>
+                        <outlet property="topViewConstraint" destination="wPm-si-w6D" id="KbH-dQ-sQ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck6-bq-65g" userLabel="First Responder" sceneMemberID="firstResponder"/>

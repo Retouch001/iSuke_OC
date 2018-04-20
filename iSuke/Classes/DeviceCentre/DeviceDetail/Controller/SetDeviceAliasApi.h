@@ -10,7 +10,7 @@
 
 @interface SetDeviceAliasApi : RTBaseRequest
 
-- (id)initWithApp_user_id:(NSInteger)app_user_id device_sub_id:(NSInteger)device_sub_id device_sub_alias:(NSString *)device_sub_alias device_belong_type:(NSInteger)device_belong_type;
+- (id)initWithApp_user_id:(NSInteger)app_user_id device_sub_id:(NSInteger)device_sub_id device_sub_alias:(NSString *)device_sub_alias device_belong_type:(NSInteger)device_belong_type device_id:(NSInteger)device_id;
 
 
 @end

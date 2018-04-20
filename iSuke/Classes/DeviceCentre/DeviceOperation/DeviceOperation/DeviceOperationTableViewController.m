@@ -17,8 +17,13 @@
     DeleteDeviceApi *deleteDeviceApi;
 }
 
+
 @property (nonatomic, strong) Device *device;
 @property (nonatomic, strong) DeviceDetailInfo *deviceDetailInfo;
+
+@property (weak, nonatomic) IBOutlet UILabel *deviceAliasLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deviceVersionLabel;
+
 
 @end
 
@@ -28,6 +33,15 @@
     [super viewDidLoad];
     
     self.tableView.separatorColor = self.tableView.backgroundColor;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self freshUI];
+}
+
+- (void)freshUI{
+    _deviceAliasLabel.text = _device.device_alias;
 }
 
 
@@ -43,6 +57,10 @@
         deleteDeviceApi = [[DeleteDeviceApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id deviceId_userId:deviceId_userId];
         deleteDeviceApi.delegate = self;
         [deleteDeviceApi start];
+    }else if (indexPath.section == 2&&indexPath.row == 2){
+        UIViewController *vc = SB_VIEWCONTROLLER(SB_DEVICE_CONFIG);
+        
+        [self.rt_navigationController pushViewController:vc animated:YES complete:nil];
     }
 }
 

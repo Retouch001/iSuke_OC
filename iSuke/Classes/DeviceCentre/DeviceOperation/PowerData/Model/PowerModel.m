@@ -8,6 +8,14 @@
 
 #import "PowerModel.h"
 
+
+@implementation Power
+
+
+
+@end
+
+
 @implementation PowerModel
 
 + (NSDictionary *)modelContainerPropertyGenericClass{

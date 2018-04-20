@@ -20,12 +20,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    _title.font = [UIFont boldSystemFontOfSize:15];
 }
 
 
 - (void)freshCellWithPowerMonth:(PowerMonth *)powerMonth{
     _title.text = powerMonth.powerMonth;
+    
     _detail.text = powerMonth.powerValue;
 }
 

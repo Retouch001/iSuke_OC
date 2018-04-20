@@ -7,9 +7,7 @@
 //
 
 #import "DeviceDetailViewController.h"
-
 #import "EditJackNameView.h"
-
 #import "DeviceDetailModel.h"
 
 
@@ -18,6 +16,9 @@
 #import "SetDeviceAliasApi.h"
 
 @interface DeviceDetailViewController ()<RTRequestDelegate>{
+    Device *_device;
+    
+    
     DeviceDetailApi *deviceDetailApi;
     OperatingSwitchApi *operatingSwitchApi;
     SetDeviceAliasApi *setDeviceAliasApi;
@@ -29,6 +30,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *firstSwitchName;
 @property (weak, nonatomic) IBOutlet UILabel *firstSwitchStatus;
+@property (nonatomic, assign) BOOL switchStatus;
 
 @property (nonatomic, strong) EditJackNameView *editJackNameView;
 @property (nonatomic, strong) DeviceDetailModel *deviceDetailModel;
@@ -36,37 +38,40 @@
 @end
 
 @implementation DeviceDetailViewController
-
-
 #pragma mark  --LifeCycle---
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
-    NSLog(@"%@",[_device modelDescription]);
-
-        
-    self.navigationController.navigationBarHidden = YES;
     deviceDetailApi = [[DeviceDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_belong_type:_device.device_belong_type];
     deviceDetailApi.delegate = self;
     [deviceDetailApi start];
+    [SVProgressHUD show];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self freshUI];
+}
 
 
 #pragma mark -IBAction--
-- (IBAction)backAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)mainSwitchClick:(id)sender {
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"正在执行...")];
+    
+    DeviceDetailInfo *deviceDetailInfo = _deviceDetailModel.deviceDetail[0];
+    operatingSwitchApi = [[OperatingSwitchApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_sub_id:deviceDetailInfo.device_sub_id device_sub_num:deviceDetailInfo.device_sub_num device_sub_status:!_switchStatus switch_type:deviceDetailInfo.switch_type device_sub_alias:deviceDetailInfo.device_sub_alias total_switch_exist:deviceDetailInfo.total_switch_exist device_belong_type:_device.device_belong_type];
+    
+    operatingSwitchApi.delegate = self;
+    [operatingSwitchApi start];
 }
 
 - (IBAction)firstSwitchClick:(id)sender {
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"正在执行...")];
+
     DeviceDetailInfo *deviceDetailInfo = _deviceDetailModel.deviceDetail[1];
-    
-    operatingSwitchApi = [[OperatingSwitchApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_sub_id:deviceDetailInfo.device_sub_id device_sub_num:deviceDetailInfo.device_sub_num device_sub_status:1 switch_type:deviceDetailInfo.switch_type device_sub_alias:deviceDetailInfo.device_sub_alias total_switch_exist:deviceDetailInfo.total_switch_exist device_belong_type:_device.device_belong_type];
+    operatingSwitchApi = [[OperatingSwitchApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_sub_id:deviceDetailInfo.device_sub_id device_sub_num:deviceDetailInfo.device_sub_num device_sub_status:!_switchStatus switch_type:deviceDetailInfo.switch_type device_sub_alias:deviceDetailInfo.device_sub_alias total_switch_exist:deviceDetailInfo.total_switch_exist device_belong_type:_device.device_belong_type];
     
     operatingSwitchApi.delegate = self;
     [operatingSwitchApi start];
@@ -74,27 +79,54 @@
 
 
 - (IBAction)editFistSwitchNameAciton:(id)sender {
-    setDeviceAliasApi = [[SetDeviceAliasApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_sub_id:_device.device_sub_id device_sub_alias:@"Hello" device_belong_type:_device.device_belong_type];
-    setDeviceAliasApi.delegate = self;
-    [setDeviceAliasApi start];
+    self.editJackNameView = [EditJackNameView createFromXib];
+    [self.editJackNameView showWithCancel:nil ok:^(NSString *number) {
+        [SVProgressHUD showWithStatus:RTLocalizedString(@"正在执行...")];
+        DeviceDetailInfo *firstJack = self.deviceDetailModel.deviceDetail[1];
+        self ->setDeviceAliasApi = [[SetDeviceAliasApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_sub_id:firstJack.device_sub_id device_sub_alias:number device_belong_type:self->_device.device_belong_type device_id:self->_device.device_id];
+        self->setDeviceAliasApi.delegate = self;
+        [self->setDeviceAliasApi start];
+    }];
 }
 
 
+#pragma mark -PrivateMethod--
+- (void)freshUI{
+    self.title = kStringIsEmpty(_device.device_alias)?_device.device_name:_device.device_alias;
+    DeviceDetailInfo *mainJack = self.deviceDetailModel.deviceDetail.firstObject;
+    if (mainJack.device_sub_status == RTDeviceSubStatusOn) {
+        [self.mainSwitchBtn setImage:[UIImage imageNamed:@"ic_turnonturnoff1"] forState:UIControlStateNormal];
+    }else{
+        [self.mainSwitchBtn setImage:[UIImage imageNamed:@"ic_turnonturnoff2"] forState:UIControlStateNormal];
+    }
+    
+    DeviceDetailInfo *firstJack = self.deviceDetailModel.deviceDetail[1];
+    if (firstJack.device_sub_status == RTDeviceSubStatusOn) {
+        [self.firstSwitchBtn setImage:[UIImage imageNamed:@"ic_3random02"] forState:UIControlStateNormal];
+    }else{
+        [self.firstSwitchBtn setImage:[UIImage imageNamed:@"ic_3normal_random"] forState:UIControlStateNormal];
+    }
+    self.firstSwitchName.text = kStringIsEmpty(firstJack.device_sub_alias)?_device.device_name:firstJack.device_sub_alias;
+    self.firstSwitchStatus.text = firstJack.device_sub_status?RTLocalizedString(@"已开启"):RTLocalizedString(@"已关闭");
+    self.switchStatus = firstJack.device_sub_status;
+}
 
 
 #pragma mark -RTRequestDelegate --
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    if ([request isKindOfClass:[deviceDetailApi class]]) {
-        if ([request dataSuccess]) {
-            _deviceDetailModel = [DeviceDetailModel modelWithDictionary:request.responseObject];
-        }
+    [SVProgressHUD dismiss];
+    if ([request dataSuccess]) {
+        _deviceDetailModel = [DeviceDetailModel modelWithDictionary:request.responseObject];
+        [self freshUI];
+    }else{
+        [SVProgressHUD showErrorWithStatus:request.errorMessage];
     }
+
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
 }
-
 
 
 #pragma mark -Navigation--
@@ -103,8 +135,6 @@
     [vc setValue:_device forKey:@"_device"];
     [vc setValue:_deviceDetailModel.deviceDetail.firstObject forKey:@"_deviceDetailInfo"];
 }
-
-
 
 
 #pragma mark -GetterSetter--

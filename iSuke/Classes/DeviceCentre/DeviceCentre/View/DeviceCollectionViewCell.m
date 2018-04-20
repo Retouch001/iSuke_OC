@@ -42,7 +42,7 @@
 - (void)freshCellWithDevice:(Device *)device cellType:(RTCellType)cellType{
     _iconImageView.image = [UIImage imageNamed:@"ic_socket"];
     
-    _deviceNameLabel.text = device.device_name;
+    _deviceNameLabel.text = kStringIsEmpty(device.device_alias)?device.device_name:device.device_alias;
     
     switch (cellType) {
         case RTCellTypeDeviceCentre:

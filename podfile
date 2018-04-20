@@ -14,13 +14,13 @@ pod ‘YYKit’
 pod 'SVProgressHUD'
 pod 'MJRefresh'
 pod 'Masonry'
-pod 'IQKeyboardManager'
-pod 'Bugly'
 pod 'JTCalendar'
 pod 'DateTools'
 pod 'CocoaAsyncSocket'
-pod 'MBProgressHUD'
 pod 'DZNEmptyDataSet'
+pod 'IQKeyboardManager'
+pod 'Charts'
+use_frameworks!
 
   target 'iSukeTests' do
     inherit! :search_paths

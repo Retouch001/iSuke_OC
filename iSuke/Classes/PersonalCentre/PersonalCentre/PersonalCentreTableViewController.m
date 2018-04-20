@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *phone;
 
+@property (weak, nonatomic) IBOutlet UIView *togView;
 
 
 @end
@@ -28,7 +29,8 @@
     self.tableView.separatorColor = self.tableView.backgroundColor;
     self.title = RTLocalizedString(@"个人中心");
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.tableView.tableHeaderView.height = 150;
+    
+    self.togView.height = (SCREEN_HEIGHT*13/80);
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -38,18 +40,19 @@
 
 
 - (void)freshHeaderViewWith:(MainUser *)mainUser{
-    _userName.text = mainUser.nickname;
+    _userName.text = kStringIsEmpty(mainUser.nickname)?RTLocalizedString(@"未设置昵称"):mainUser.nickname;
     _phone.text = mainUser.phone;
+    
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    CGFloat yOffset = scrollView.contentOffset.y;  // 偏移的y值
-//    if (yOffset < 0) {
-//        CGFloat totalOffset = HEADER_HEIGHT + ABS(yOffset);
-//        CGFloat f = totalOffset / (HEADER_HEIGHT);
-//        self.headerBgImageView.frame =  CGRectMake(- (SCREEN_WIDTH * f - SCREEN_WIDTH) / 2, yOffset, SCREEN_WIDTH * f, totalOffset); //拉伸后的图片的frame应该是同比例缩放。
-//    }
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat yOffset = scrollView.contentOffset.y;  // 偏移的y值
+    if (yOffset < 0) {
+        CGFloat totalOffset = (SCREEN_HEIGHT*13/80) + ABS(yOffset);
+        CGFloat f = totalOffset / ((SCREEN_HEIGHT*13/80));
+        self.headerBgImageView.frame =  CGRectMake(- (SCREEN_WIDTH * f - SCREEN_WIDTH) / 2, yOffset, SCREEN_WIDTH * f, totalOffset); //拉伸后的图片的frame应该是同比例缩放。
+    }
+}
 
 
 

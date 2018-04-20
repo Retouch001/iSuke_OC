@@ -11,19 +11,18 @@
 @implementation AddShareUserApi{
     NSInteger _app_user_id;
     NSInteger _device_id;
-    NSString *_share_user_phone;
+    NSInteger _share_user_id;
 }
 
 
-- (id)initWithApp_user_id:(NSInteger)app_user_id share_user_phone:(NSString *)share_user_phone device_id:(NSInteger)device_id{
+- (id)initWithApp_user_id:(NSInteger)app_user_id share_user_id:(NSInteger)share_user_id device_id:(NSInteger)device_id{
     if (self = [super init]) {
         _app_user_id = app_user_id;
         _device_id = device_id;
-        _share_user_phone = share_user_phone;
+        _share_user_id = share_user_id;
     }
     return self;
 }
-
 
 
 - (NSString *)requestUrl{
@@ -34,7 +33,7 @@
     return @{
              @"app_user_id" : @(_app_user_id),
              @"device_id" : @(_device_id),
-             @"share_user_phone" : _share_user_phone
+             @"share_user_id" : @(_share_user_id)
              };
 }
 

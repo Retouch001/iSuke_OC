@@ -12,8 +12,6 @@
 
 @end
 
-
-
 @implementation DeviceCentreModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"deviceList" : [Device class]};

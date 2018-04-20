@@ -7,11 +7,12 @@
 //
 
 #import "AddTimingTableViewController.h"
-
-#import "TimedTaskModel.h"
+#import "WeekSelectTableViewController.h"
 
 #import "AddTimedTaskApi.h"
 #import "EditTimedTaskApi.h"
+
+#import <DateTools/DateTools.h>
 
 static const NSInteger pickerDataSize = 160000;
 
@@ -19,70 +20,82 @@ static const NSInteger pickerDataSize = 160000;
     Device *_device;
     TimedTask *_timedTask;
     
-    
     AddTimedTaskApi *addTimedTaskApi;
     EditTimedTaskApi *editTimedTaskApi;
-    
 }
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UILabel *selectedWeeksLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timedTaskActionLabel;
 
 @property (nonatomic, strong) NSMutableArray *hours;
 @property (nonatomic, strong) NSMutableArray *minutes;
-
 @end
 
 @implementation AddTimingTableViewController
-
+#pragma mark -LifeCycle--
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.separatorColor = self.tableView.backgroundColor;
+    self.title = self.timedTaskVCType == RTTimedTaskVCTypeAdd?RTLocalizedString(@"添加定时"):RTLocalizedString(@"编辑定时");
     
-    self.hours = [NSMutableArray array];
-    self.minutes = [NSMutableArray array];
-    for (int i = 1; i < 25; i++) {
-        [self.hours addObject:[NSString stringWithFormat:@"%d",i]];
-    }
-    for (int i = 0; i < 60; i ++) {
-        NSString *string = [NSString stringWithFormat:@"%d",i];
-        if (string.length == 1) {
-            string = [@"0" stringByAppendingString:string];
-        }
-        [self.minutes addObject:string];
-    }
-    
-    [self.pickerView selectRow:pickerDataSize/2 inComponent:0 animated:false];
-    [self.pickerView selectRow:pickerDataSize/2 inComponent:1 animated:NO];
-    
+    [self initData];
+    [self freshUI];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+
+
+
+#pragma mark -IBAction--
 - (IBAction)leftBtnClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)rightBtnClick:(id)sender {
-//    addTimedTaskApi = [[AddTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_belong_type:_device.device_belong_type timedtask_time:@"1010" timedtask_days:@"1,2,3,6" timedtasdk_action:0];
-//    addTimedTaskApi.delegate = self;
-//    [addTimedTaskApi start];
-    
-    editTimedTaskApi = [[EditTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id timedtask_id:_timedTask.timedtask_id timedtask_days:@"1,2,3" timedtask_action:0 timedtask_status:0 timedtask_time:@"1203"];
-    editTimedTaskApi.delegate = self;
-    [editTimedTaskApi start];
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"请稍后")];
+    if (self.timedTaskVCType == RTTimedTaskVCTypeAdd) {
+        addTimedTaskApi = [[AddTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device:_device timedTask:_timedTask];
+        addTimedTaskApi.delegate = self;
+        [addTimedTaskApi start];
+    }else{
+        editTimedTaskApi = [[EditTimedTaskApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id timedTask:_timedTask];
+        editTimedTaskApi.delegate = self;
+        [editTimedTaskApi start];
+    }
 }
 
 
-
-
+#pragma mark -UITableViewDelegate--
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 2) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        [alertVC addAction:[UIAlertAction actionWithTitle:RTLocalizedString(@"开启设备") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self->_timedTask.timedtask_action = 1;
+            [self freshUI];
+        }]];
+        
+        [alertVC addAction:[UIAlertAction actionWithTitle:RTLocalizedString(@"关闭设备") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self->_timedTask.timedtask_action = 0;
+            [self freshUI];
+        }]];
+        [alertVC addAction:[UIAlertAction actionWithTitle:RTLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    }
+}
 
 
 #pragma mark UIPickerView DataSource Method 数据源方法
-//指定pickerview有几个表盘
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 2;//第一个展示字母、第二个展示数字
 }
 
-//指定每个表盘上有几行数据
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     NSInteger result = 0;
     switch (component) {
@@ -92,24 +105,25 @@ static const NSInteger pickerDataSize = 160000;
         case 1:
             result = pickerDataSize;
             break;
-            
         default:
             break;
     }
-    
     return result;
 }
 
 #pragma mark UIPickerView Delegate Method 代理方法
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    
-    
+    NSInteger hourRows = [self.pickerView selectedRowInComponent:0];
+    NSInteger minuteRows = [self.pickerView selectedRowInComponent:1];
+    NSString *hour = self.hours[hourRows % self.hours.count];
+    if (hour.length == 1) {
+        hour = [@"0" stringByAppendingString:hour];
+    }
+    NSString *minute = self.minutes[minuteRows % self.minutes.count];
+    _timedTask.timedtask_time = [NSString stringWithFormat:@"%@%@",hour,minute];
 }
 
-
-//指定每行如何展示数据（此处和tableview类似）
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     NSString * title = nil;
     switch (component) {
         case 0:
@@ -124,29 +138,125 @@ static const NSInteger pickerDataSize = 160000;
     return title;
 }
 
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
-    // 设置列的宽度
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
     return 50.0;
 }
 
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-    // 设置列中的每行的高度
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 40.0;
 }
 
 
-
-
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
+    if ([request dataSuccess]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [SVProgressHUD showErrorWithStatus:request.errorMessage];
+    }
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
     
+}
+
+
+#pragma PrivateMethod--
+- (void)freshUI{
+    self.selectedWeeksLabel.text = [self parseTimedTaskDays:_timedTask.timedtask_days];
+    self.timedTaskActionLabel.text = _timedTask.timedtask_action?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
+    
+    NSInteger hour = [[_timedTask.timedtask_time substringToIndex:2] integerValue];
+    NSInteger minute = [[_timedTask.timedtask_time substringFromIndex:2] integerValue];
+    [self.pickerView selectRow:(hour-1) + 24*100 inComponent:0 animated:NO];
+    [self.pickerView selectRow:minute + 60*100 inComponent:1 animated:NO];
+}
+
+- (void)initData{
+    self.hours = [NSMutableArray array];
+    self.minutes = [NSMutableArray array];
+    for (int i = 1; i < 25; i++) {
+        [self.hours addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    for (int i = 0; i < 60; i ++) {
+        NSString *string = [NSString stringWithFormat:@"%d",i];
+        if (string.length == 1) {
+            string = [@"0" stringByAppendingString:string];
+        }
+        [self.minutes addObject:string];
+    }
+    
+    if (self.timedTaskVCType == RTTimedTaskVCTypeAdd) {
+        _timedTask = [[TimedTask alloc] init];
+        _timedTask.timedtask_time = [[NSDate date] formattedDateWithFormat:@"HHmm"];
+        _timedTask.timedtask_days = @"1,2,3,4,5,6,7";
+    }
+}
+
+
+- (NSString *)parseTimedTaskDays:(NSString *)timedTaskDays{
+    NSArray *weekDays = [timedTaskDays componentsSeparatedByString:@","];
+    NSMutableString *string = [NSMutableString string];
+    
+    for (int i = 0; i < weekDays.count; i++) {
+        NSString *temp = weekDays[i];
+        if (i == 0) {
+            if ([temp isEqualToString:@"1"]) {
+                [string appendString:RTLocalizedString(@"周一")];
+            }else if ([temp isEqualToString:@"2"]){
+                [string appendString:RTLocalizedString(@"周二")];
+            }else if ([temp isEqualToString:@"3"]){
+                [string appendString:RTLocalizedString(@"周三")];
+            }else if ([temp isEqualToString:@"4"]){
+                [string appendString:RTLocalizedString(@"周四")];
+            }else if ([temp isEqualToString:@"5"]){
+                [string appendString:RTLocalizedString(@"周五")];
+            }else if ([temp isEqualToString:@"6"]){
+                [string appendString:RTLocalizedString(@"周六")];
+            }else{
+                [string appendString:RTLocalizedString(@"周日")];
+            }
+        }else{
+            if ([temp isEqualToString:@"1"]) {
+                [string appendString:RTLocalizedString(@" 周一")];
+            }else if ([temp isEqualToString:@"2"]){
+                [string appendString:RTLocalizedString(@" 周二")];
+            }else if ([temp isEqualToString:@"3"]){
+                [string appendString:RTLocalizedString(@" 周三")];
+            }else if ([temp isEqualToString:@"4"]){
+                [string appendString:RTLocalizedString(@" 周四")];
+            }else if ([temp isEqualToString:@"5"]){
+                [string appendString:RTLocalizedString(@" 周五")];
+            }else if ([temp isEqualToString:@"6"]){
+                [string appendString:RTLocalizedString(@" 周六")];
+            }else{
+                [string appendString:RTLocalizedString(@" 周日")];
+            }
+        }
+    }
+    return string;
+}
+
+- (NSString *)parseTimedTaskTime:(NSString *)timedTaskTime{
+    return [NSString stringWithFormat:@"%@:%@",[timedTaskTime substringToIndex:2],[timedTaskTime substringFromIndex:2]];
+}
+
+
+
+#pragma mark -UINavigate---
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UINavigationController *nav = segue.destinationViewController;
+    WeekSelectTableViewController *selectWeekVC = nav.viewControllers.firstObject;
+    
+    NSArray *array = [_timedTask.timedtask_days componentsSeparatedByString:@","];
+    [selectWeekVC setValue:array forKey:@"_selectedWeeks"];
+    //@weakify(self);
+    selectWeekVC.block = ^(NSString *selectedWeeks) {
+        //@strongify(self);
+        self->_timedTask.timedtask_days = selectedWeeks;
+        [self freshUI];
+    };
 }
 
 

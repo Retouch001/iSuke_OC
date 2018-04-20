@@ -8,6 +8,7 @@
 
 #import "ShareUserTableViewController.h"
 #import "ShareUserTableViewCell.h"
+#import "EditJackNameView.h"
 
 #import "DeviceShareUserApi.h"
 #import "UnshareApi.h"
@@ -18,16 +19,20 @@
 #import "ShareUserModel.h"
 
 
+static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
+
 @interface ShareUserTableViewController ()<RTRequestDelegate>{
     Device *_device;
     ShareUserModel *shareUserModel;
-    
     
     DeviceShareUserApi *deviceShareUserApi;
     UnshareApi *unShareApi;
     SetShareUserAliasApi *setAliasApi;
     
     ShareUser *tempShareUser;
+    
+    EditJackNameView *editRemarkView;
+    NSString *tempRemark;
 }
 
 
@@ -38,8 +43,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    [kNotificationCenter addObserver:self selector:@selector(shareUserDidChanged:) name:kShareUserChangedNotification object:nil];
     
+    deviceShareUserApi = [[DeviceShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id];
+    deviceShareUserApi.delegate = self;
+    [deviceShareUserApi start];
+}
+
+
+- (void)dealloc{
+    [kNotificationCenter removeObserver:self name:kShareUserChangedNotification object:nil];
+}
+
+
+
+#pragma mark -PrivateMethod--
+- (void)shareUserDidChanged:(id)notification{
     deviceShareUserApi = [[DeviceShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id];
     deviceShareUserApi.delegate = self;
     [deviceShareUserApi start];
@@ -72,27 +91,31 @@
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     //删除
-    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:RTLocalizedString(@"删除") handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         
         self->unShareApi = [[UnshareApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:self->_device.device_id share_user_id:self->shareUserModel.shareUserList[indexPath.row].share_user_id];
         self->tempShareUser = self->shareUserModel.shareUserList[indexPath.row];
         self->unShareApi.delegate = self;
         [self->unShareApi start];
-        
-        NSLog(@"点击了删除");
     }];
     deleteRowAction.backgroundColor = kColorDeleteBtnBg;
-    //置顶
-    UITableViewRowAction *remarkAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"备注" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        self->setAliasApi = [[SetShareUserAliasApi alloc] initWitApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id share_user_id:self->shareUserModel.shareUserList[indexPath.row].share_user_id share_user_alias:@"共享用户别名"];
-        self->tempShareUser = self->shareUserModel.shareUserList[indexPath.row];
-        self -> setAliasApi.delegate = self;
-        [self->setAliasApi start];
+    
+    
+    //备注
+    UITableViewRowAction *remarkAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:RTLocalizedString(@"备注") handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+
+        self->editRemarkView = [EditJackNameView createFromXib];
+        [self->editRemarkView showWithCancel:nil ok:^(NSString *number) {
+            [SVProgressHUD showWithStatus:RTLocalizedString(@"正在执行...")];
+            self->setAliasApi = [[SetShareUserAliasApi alloc] initWitApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id share_user_id:self->shareUserModel.shareUserList[indexPath.row].share_user_id share_user_alias:number];
+            self->tempShareUser = self->shareUserModel.shareUserList[indexPath.row];
+            self->tempRemark = number;
+            self -> setAliasApi.delegate = self;
+            [self->setAliasApi start];
+        }];
         
-        NSLog(@"点击了备注");
     }];
     remarkAction.backgroundColor = kColorTheme;
-    
 
     return @[deleteRowAction,remarkAction];
 }
@@ -102,7 +125,7 @@
 
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
     if ([request isKindOfClass:[DeviceShareUserApi class]]) {
         if ([request dataSuccess]) {
             shareUserModel = [ShareUserModel modelWithDictionary:request.responseObject];
@@ -119,12 +142,10 @@
         }
     }else{
         if ([request dataSuccess]) {
-            tempShareUser.friend_alias = @"共享用户别名";
+            tempShareUser.friend_alias = tempRemark;
             [self.tableView reloadData];
         }
-
     }
-
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{

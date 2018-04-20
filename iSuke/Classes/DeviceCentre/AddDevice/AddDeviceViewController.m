@@ -8,7 +8,9 @@
 
 
 #import "AddDeviceViewController.h"
-#import "DeviceCollectionViewCell.h"
+#import "AddDeviceCollectionViewCell.h"
+
+static NSString *const reuseIdentifier = @"cell";
 
 #define ITEM_WIDTH  (SCREEN_WIDTH - 4 * kMagin) / 3
 static CGFloat kMagin = 10.f;
@@ -34,9 +36,9 @@ static CGFloat kMagin = 10.f;
     //flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 5);
     
     self.collectionView.collectionViewLayout = flowLayout;
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AddDeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
+
 
 
 
@@ -44,19 +46,13 @@ static CGFloat kMagin = 10.f;
 
 
 #pragma mark  -CollectionView Delegate-----
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 4;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
-    
-    
+    AddDeviceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    [cell initCellUIWithIndexPath:indexPath];
     return cell;
 }
 

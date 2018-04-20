@@ -11,6 +11,7 @@
 
 @interface TimedTaskTableViewCell : UITableViewCell
 
+@property (nonatomic, copy) void(^switchClickBlock)();
 
 - (void)freshCellWithTimedTask:(TimedTask *)timedTask;
 

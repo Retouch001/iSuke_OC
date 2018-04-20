@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _remarkTextField.text = _device.device_alias;
     [_remarkTextField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
@@ -32,9 +33,14 @@
 
 
 - (IBAction)rightBtnClick:(id)sender {
-    _setDeviceAliasApi = [[SetDeviceAliasApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_sub_id:_deviceDetailInfo.device_sub_id device_sub_alias:_remarkTextField.text device_belong_type:_device.device_belong_type];
-    _setDeviceAliasApi.delegate = self;
-    [_setDeviceAliasApi start];
+    if ([_remarkTextField.text isEqualToString:_device.device_alias]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [SVProgressHUD showWithStatus:RTLocalizedString(@"请稍等...")];
+        _setDeviceAliasApi = [[SetDeviceAliasApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_sub_id:_deviceDetailInfo.device_sub_id device_sub_alias:_remarkTextField.text device_belong_type:_device.device_belong_type device_id:_device.device_id];
+        _setDeviceAliasApi.delegate = self;
+        [_setDeviceAliasApi start];
+    }
 }
 
 
@@ -47,7 +53,9 @@
 
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
+    [SVProgressHUD dismiss];
     if ([request dataSuccess]) {
+        _device.device_alias = _remarkTextField.text;
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

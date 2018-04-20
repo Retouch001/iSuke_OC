@@ -9,10 +9,11 @@
 #import "AddShareUserSecondViewController.h"
 #import "AddShareUserApi.h"
 #import "DeviceCentreModel.h"
+#import "AddShareUser.h"
 
 @interface AddShareUserSecondViewController ()<RTRequestDelegate>{
-    NSString *_phone;
     Device *_device;
+    AddShareUser *_addShareUser;
     
     AddShareUserApi *addShareUserApi;
     
@@ -29,11 +30,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSLog(@"-------%@",[_addShareUser modelDescription]);
+    
+    self.deviceName.text = _device.device_alias;
+    self.shareUserName.text = kStringIsEmpty(_addShareUser.nickname)?_addShareUser.phone:_addShareUser.nickname;
 }
 
 
 - (IBAction)comfirmAciton:(id)sender {
-    addShareUserApi = [[AddShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id share_user_phone:_phone device_id:_device.device_id];
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"请稍后...")];
+    addShareUserApi = [[AddShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id share_user_id:_addShareUser.app_user_id device_id:_device.device_id];
     addShareUserApi.delegate = self;
     [addShareUserApi start];
 }
@@ -42,7 +50,13 @@
 
 #pragma mark -RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
+    if ([request dataSuccess]) {
+        [kNotificationCenter postNotificationName:@"shareUserDidChanged" object:nil];
+        [self.navigationController popToViewController:self.navigationController.viewControllers[3] animated:YES];
+    }else{
+        [SVProgressHUD showErrorWithStatus:request.errorMessage];
+    }
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
