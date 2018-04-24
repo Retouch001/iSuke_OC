@@ -7,11 +7,11 @@
 //
 
 #import "TriggerCollectionViewCell.h"
+#import "RTNetworkConfig.h"
 
 @interface TriggerCollectionViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
-
 @property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end
@@ -32,11 +32,19 @@
     return cell;
 }
 
-
-
-- (void)freshCellWithIcon:(NSString *)icon title:(NSString *)title{
-    _icon.image = [UIImage imageNamed:icon];
-    _title.text = title;
+- (void)freshCellWithSceneCodition:(SceneCondition *)sceneCondition selectedCondition:(SceneCondition *)selectedCondition{
+    RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
+    NSURL *url;
+    if (selectedCondition.condition_id == sceneCondition.condition_id) {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",config.baseUrl,RT_ICON_BASE,sceneCondition.hightLight_avatar]];
+        _title.textColor = kColorTheme;
+    }else{
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",config.baseUrl,RT_ICON_BASE,sceneCondition.normal_avatar]];
+        _title.textColor = UIColor.blackColor;
+    }
+    [_icon setImageWithURL:url placeholder:nil];
+    _title.text = sceneCondition.condition_name;
 }
+
 
 @end

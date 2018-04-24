@@ -181,7 +181,6 @@ static NSString * const headIdentifier = @"headCell";
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
     [self.collectionView.mj_header endRefreshing];
-
 }
 
 

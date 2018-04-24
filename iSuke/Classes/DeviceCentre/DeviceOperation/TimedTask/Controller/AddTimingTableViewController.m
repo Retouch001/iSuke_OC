@@ -43,13 +43,6 @@ static const NSInteger pickerDataSize = 160000;
 }
 
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-
-}
-
-
-
 #pragma mark -IBAction--
 - (IBAction)leftBtnClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -120,7 +113,7 @@ static const NSInteger pickerDataSize = 160000;
         hour = [@"0" stringByAppendingString:hour];
     }
     NSString *minute = self.minutes[minuteRows % self.minutes.count];
-    _timedTask.timedtask_time = [NSString stringWithFormat:@"%@%@",hour,minute];
+    _timedTask.timedtask_time = [NSString stringWithFormat:@"%@%@",hour,minute];    
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{

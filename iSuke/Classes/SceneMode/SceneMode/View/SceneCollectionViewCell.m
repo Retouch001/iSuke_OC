@@ -28,7 +28,7 @@
 
 
 - (void)freshCellWithScene:(Scene *)scene{
-    _icon.image = [UIImage imageNamed:@"ic_leave"];
+    _icon.image = [UIImage imageNamed:@"ic_cup"];
     _sceneName.text = scene.scene_name;
     
     if (scene.scene_status) {

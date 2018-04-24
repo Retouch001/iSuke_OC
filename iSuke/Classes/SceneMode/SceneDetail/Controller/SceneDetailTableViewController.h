@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface SceneDetailTableViewController : UITableViewController
+
 
 @end

@@ -1,101 +1,79 @@
 //
-//  SceneDetailTableViewController.m
+//  AddSceneTableViewController.m
 //  iSuke
 //
-//  Created by Tang Retouch on 2018/4/12.
+//  Created by Tang Retouch on 2018/4/23.
 //  Copyright © 2018年 Tang Retouch. All rights reserved.
 //
 
-#import "SceneDetailTableViewController.h"
-
+#import "AddSceneTableViewController.h"
 #import "TriggerCollectionViewCell.h"
 #import "SceneDeviceCollectionViewCell.h"
 #import "SelectSceneConditionView.h"
 
-#import "SceneModel.h"
-#import "SceneDetail.h"
-
-#import "SceneDetailApi.h"
-#import "EditSceneApi.h"
+#import "GetSceneConditionApi.h"
+#import "AddSceneApi.h"
 
 
 #define ITEM_WIDTH  (SCREEN_WIDTH - 4 * kMagin) / 3
 static CGFloat kMagin = 10.f;
 
-@interface SceneDetailTableViewController ()<RTRequestDelegate>{
-    Scene *_scene;
+@interface AddSceneTableViewController ()<RTRequestDelegate>{
+    GetSceneConditionApi *getConidtionApi;
+    AddSceneApi *addSceneApi;
+    
     SceneDetail *_sceneDetail;
-    
-    SceneDetailApi *sceneDetailApi;
-    EditSceneApi *editSceneApi;
-    
-    BOOL isEditMode;
 }
-@property (weak, nonatomic) IBOutlet UITextField *sceneName;
-@property (weak, nonatomic) IBOutlet UILabel *sceneCity;
-@property (weak, nonatomic) IBOutlet UILabel *sceneCondition;
-@property (weak, nonatomic) IBOutlet UILabel *sceneDeviceStatus;
-@property (weak, nonatomic) IBOutlet UIButton *sceneStatusBtn;
+@property (weak, nonatomic) IBOutlet UITextField *sceneNameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *sceneCityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sceneConditionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sceneDeviceStatusLabel;
+
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *triggerLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *triggerCollectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *deviceLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *deviceCollectionView;
-
 @property (nonatomic ,strong) SelectSceneConditionView *selectSceneConditionView;
+
 @end
 
-@implementation SceneDetailTableViewController
+@implementation AddSceneTableViewController
 #pragma mark -LifeCycle--
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorColor = kColorTableViewSeparatorLine;
-
+    
     self.triggerCollectionView.collectionViewLayout = self.triggerLayout;
     [self.triggerCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TriggerCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
     self.deviceCollectionView.collectionViewLayout = self.deviceLayout;
     [self.deviceCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SceneDeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseDeviceIdentifier];
     
-    [self.navigationItem.rightBarButtonItem setTitle:RTLocalizedString(@"编辑")];
-    sceneDetailApi = [[SceneDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene_id:_scene.scene_id];
-    sceneDetailApi.delegate = self;
-    [sceneDetailApi start];
+    [_sceneNameTextField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
+    
+    getConidtionApi = [[GetSceneConditionApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id];
+    getConidtionApi.delegate = self;
+    [getConidtionApi start];
+    
 }
 
 
 #pragma mark -IBAction--
 - (IBAction)rightBtnClick:(id)sender {
-    if (isEditMode) {
-        editSceneApi = [[EditSceneApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene:_scene sceneDetail:_sceneDetail];
-        editSceneApi.delegate = self;
-        [editSceneApi start];
-    }else{
-        [self.navigationItem.rightBarButtonItem setTitle:RTLocalizedString(@"保存")];
-        isEditMode = !isEditMode;
-    }
+    addSceneApi = [[AddSceneApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id sceneDetail:_sceneDetail];
+    addSceneApi.delegate = self;
+    [addSceneApi start];
 }
 
-- (void)freshUI{
-    _sceneName.text = _scene.scene_name;
-    _sceneCity.text = _sceneDetail.scene_city;
-    if (_sceneDetail.sceneCondition.condition_sub_option.count > 0) {
-        _sceneCondition.text = [NSString stringWithFormat:@"%@ %@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject,_sceneDetail.sceneCondition.condition_sub_option.firstObject];
-    }else{
-        _sceneCondition.text = [NSString stringWithFormat:@"%@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject];
-    }
-    _sceneDeviceStatus.text = _sceneDetail.device_status?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
+
+#pragma mark - UITextFieldDidChanged---
+- (void)textFieldDidChanged:(UITextField *)textField{
+    _sceneDetail.scene_name = textField.text;
 }
 
 
 #pragma mark _UITableViewDelegate--
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 3) {
-        return 30;
-    }
-    return 10;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 2 && indexPath.row == 1) {
         return ITEM_WIDTH/2*3;
@@ -105,12 +83,17 @@ static CGFloat kMagin = 10.f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if (indexPath.section == 3 && indexPath.row == 0) {
-//        NSArray *array = @[RTLocalizedString(@"开启设备"),RTLocalizedString(@"关闭设备")];
-//        [self.selectSceneConditionView showWithCancel:nil ok:^(NSString *number, NSString *subNumber) {
-//
-//        } option:array subOption:nil];
-//    }
+    if (indexPath.section == 3 && indexPath.row == 0) {
+        NSArray *array = @[RTLocalizedString(@"开启设备"),RTLocalizedString(@"关闭设备")];
+        [self.selectSceneConditionView showWithDataArray:array subDataArray:nil cancel:nil ok:^(NSArray *array) {
+            if ([array.firstObject isEqualToString:RTLocalizedString(@"开启设备")]) {
+                self->_sceneDetail.device_status = 1;
+            }else{
+                self->_sceneDetail.device_status = 0;
+            }
+            [self freshUI];
+        }];
+    }
 }
 
 
@@ -135,38 +118,37 @@ static CGFloat kMagin = 10.f;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (isEditMode) {
-        if ([collectionView isEqual:self.triggerCollectionView]) {
-            SceneCondition *condition = _sceneDetail.sceneConditionList[indexPath.row];
-            
-            @weakify(self);
-            [self.selectSceneConditionView showWithDataArray:condition.condition_option subDataArray:condition.condition_sub_option cancel:nil ok:^(NSArray *array) {
-                @strongify(self);
-                self->_sceneDetail.sceneCondition = condition;
-                self->_sceneDetail.sceneCondition.condition_option = @[array.firstObject];
-                if (array.count > 1) {
-                    self->_sceneDetail.sceneCondition.condition_sub_option = @[array.lastObject];
-                }
-                [self freshUI];
-                [self.triggerCollectionView reloadData];
-            }];
-        }else{
-            SceneDevice *device = _sceneDetail.sceneDeviceList[indexPath.row];
-            device.selected = !device.selected;
-            [self.deviceCollectionView reloadData];
-        }
+    if ([collectionView isEqual:self.triggerCollectionView]) {
+        SceneCondition *condition = _sceneDetail.sceneConditionList[indexPath.row];
+        @weakify(self);
+        [self.selectSceneConditionView showWithDataArray:condition.condition_option subDataArray:condition.condition_sub_option cancel:nil ok:^(NSArray *array) {
+            @strongify(self);
+            self->_sceneDetail.sceneCondition = [condition deepCopy];
+            self->_sceneDetail.sceneCondition.condition_option = @[array.firstObject];
+            if (array.count > 1) {
+                self->_sceneDetail.sceneCondition.condition_sub_option = @[array.lastObject];
+            }
+            [self.triggerCollectionView reloadData];
+            [self freshUI];
+        }];
+    }else{
+        SceneDevice *device = _sceneDetail.sceneDeviceList[indexPath.row];
+        device.selected = !device.selected;
+        [self.deviceCollectionView reloadData];
     }
 }
 
 
 #pragma mark -RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    if ([request isKindOfClass:[SceneDetailApi class]]) {
+    if ([request isKindOfClass:[GetSceneConditionApi class]]) {
         if ([request dataSuccess]) {
             _sceneDetail = [SceneDetail modelWithDictionary:request.responseObject];
+            _sceneDetail.scene_city = _sceneCityLabel.text;
             [self.triggerCollectionView reloadData];
             [self.deviceCollectionView reloadData];
-            [self freshUI];
+        }else{
+            [SVProgressHUD showErrorWithStatus:request.errorMessage];
         }
     }else{
         if (![request dataSuccess]) {
@@ -177,6 +159,19 @@ static CGFloat kMagin = 10.f;
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
     
+}
+
+
+#pragma mark -PrivateMethod--
+- (void)freshUI{
+    _sceneCityLabel.text = _sceneDetail.scene_name;
+    _sceneCityLabel.text = _sceneDetail.scene_city;
+    if (_sceneDetail.sceneCondition.condition_sub_option.count > 0) {
+        _sceneConditionLabel.text = [NSString stringWithFormat:@"%@%@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject,_sceneDetail.sceneCondition.condition_sub_option.firstObject];
+    }else{
+        _sceneConditionLabel.text = [NSString stringWithFormat:@"%@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject];
+    }
+    _sceneDeviceStatusLabel.text = _sceneDetail.device_status?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
 }
 
 
@@ -210,4 +205,6 @@ static CGFloat kMagin = 10.f;
     }
     return _selectSceneConditionView;
 }
+
+
 @end

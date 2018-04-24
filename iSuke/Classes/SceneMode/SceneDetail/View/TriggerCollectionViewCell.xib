@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,10 +22,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_air" translatesAutoresizingMaskIntoConstraints="NO" id="ZJv-ZT-tX2">
-                        <rect key="frame" x="31" y="10" width="30" height="30"/>
+                        <rect key="frame" x="31" y="10" width="31" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZJv-ZT-tX2" secondAttribute="height" multiplier="1:1" id="6o0-IU-Bq7"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvh-QS-f8z">
-                        <rect key="frame" x="29.5" y="49" width="33" height="19.5"/>
+                        <rect key="frame" x="29.5" y="50" width="33" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +38,7 @@
             <constraints>
                 <constraint firstItem="Uvh-QS-f8z" firstAttribute="top" secondItem="ZJv-ZT-tX2" secondAttribute="bottom" constant="9" id="DaW-kH-Cmm"/>
                 <constraint firstItem="ZJv-ZT-tX2" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="LKg-Ps-sNM"/>
+                <constraint firstItem="ZJv-ZT-tX2" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:3" id="LiT-Hk-Vvq"/>
                 <constraint firstItem="ZJv-ZT-tX2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="xN1-cQ-1cP"/>
                 <constraint firstItem="Uvh-QS-f8z" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zUX-Kr-fNg"/>
             </constraints>

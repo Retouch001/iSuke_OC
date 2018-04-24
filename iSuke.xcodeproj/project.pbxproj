@@ -11,6 +11,12 @@
 		5E0168B62088C56F002AA0F5 /* PowerLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168B52088C56F002AA0F5 /* PowerLineChartView.m */; };
 		5E0168BE2088E3BC002AA0F5 /* UITextView+ZWPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168BC2088E3BB002AA0F5 /* UITextView+ZWPlaceHolder.m */; };
 		5E0168C12088E573002AA0F5 /* UITextView+ZWLimitCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168C02088E573002AA0F5 /* UITextView+ZWLimitCounter.m */; };
+		5E0168C42089B6B6002AA0F5 /* SelectSceneConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168C32089B6B6002AA0F5 /* SelectSceneConditionView.m */; };
+		5E0168C62089B6CC002AA0F5 /* SelectSceneConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0168C52089B6CC002AA0F5 /* SelectSceneConditionView.xib */; };
+		5E0168D2208D8162002AA0F5 /* SceneDeviceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168D0208D8162002AA0F5 /* SceneDeviceCollectionViewCell.m */; };
+		5E0168D3208D8162002AA0F5 /* SceneDeviceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0168D1208D8162002AA0F5 /* SceneDeviceCollectionViewCell.xib */; };
+		5E0168D6208E1CF5002AA0F5 /* GetSceneConditionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168D4208E1CF5002AA0F5 /* GetSceneConditionApi.m */; };
+		5E0168D9208E1EDC002AA0F5 /* AddSceneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0168D8208E1EDC002AA0F5 /* AddSceneTableViewController.m */; };
 		5E413FEB207F03E000C621F4 /* SceneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FE9207F03E000C621F4 /* SceneCollectionViewCell.m */; };
 		5E413FEC207F03E000C621F4 /* SceneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E413FEA207F03E000C621F4 /* SceneCollectionViewCell.xib */; };
 		5E413FF3207F10BA00C621F4 /* SceneDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FF2207F10BA00C621F4 /* SceneDetailApi.m */; };
@@ -18,7 +24,6 @@
 		5E413FFC207F2D4D00C621F4 /* SceneDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E413FFB207F2D4D00C621F4 /* SceneDetailTableViewController.m */; };
 		5E414002207F53D100C621F4 /* SceneCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414001207F53D100C621F4 /* SceneCondition.m */; };
 		5E414005207F540A00C621F4 /* SceneDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414004207F540A00C621F4 /* SceneDetail.m */; };
-		5E414008207F58DD00C621F4 /* GetSceneConditionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */; };
 		5E498F922058EC10001D6D9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E498F912058EC10001D6D9B /* AppDelegate.m */; };
 		5E498F982058EC10001D6D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E498F962058EC10001D6D9B /* Main.storyboard */; };
 		5E498F9A2058EC10001D6D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E498F992058EC10001D6D9B /* Assets.xcassets */; };
@@ -187,6 +192,16 @@
 		5E0168BD2088E3BC002AA0F5 /* UITextView+ZWPlaceHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZWPlaceHolder.h"; sourceTree = "<group>"; };
 		5E0168BF2088E573002AA0F5 /* UITextView+ZWLimitCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZWLimitCounter.h"; sourceTree = "<group>"; };
 		5E0168C02088E573002AA0F5 /* UITextView+ZWLimitCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZWLimitCounter.m"; sourceTree = "<group>"; };
+		5E0168C22089B6B6002AA0F5 /* SelectSceneConditionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectSceneConditionView.h; sourceTree = "<group>"; };
+		5E0168C32089B6B6002AA0F5 /* SelectSceneConditionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectSceneConditionView.m; sourceTree = "<group>"; };
+		5E0168C52089B6CC002AA0F5 /* SelectSceneConditionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectSceneConditionView.xib; sourceTree = "<group>"; };
+		5E0168CF208D8162002AA0F5 /* SceneDeviceCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDeviceCollectionViewCell.h; sourceTree = "<group>"; };
+		5E0168D0208D8162002AA0F5 /* SceneDeviceCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDeviceCollectionViewCell.m; sourceTree = "<group>"; };
+		5E0168D1208D8162002AA0F5 /* SceneDeviceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneDeviceCollectionViewCell.xib; sourceTree = "<group>"; };
+		5E0168D4208E1CF5002AA0F5 /* GetSceneConditionApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSceneConditionApi.m; sourceTree = "<group>"; };
+		5E0168D5208E1CF5002AA0F5 /* GetSceneConditionApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSceneConditionApi.h; sourceTree = "<group>"; };
+		5E0168D7208E1EDC002AA0F5 /* AddSceneTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSceneTableViewController.h; sourceTree = "<group>"; };
+		5E0168D8208E1EDC002AA0F5 /* AddSceneTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddSceneTableViewController.m; sourceTree = "<group>"; };
 		5E413FE8207F03E000C621F4 /* SceneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCollectionViewCell.h; sourceTree = "<group>"; };
 		5E413FE9207F03E000C621F4 /* SceneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCollectionViewCell.m; sourceTree = "<group>"; };
 		5E413FEA207F03E000C621F4 /* SceneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SceneCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -200,8 +215,6 @@
 		5E414001207F53D100C621F4 /* SceneCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCondition.m; sourceTree = "<group>"; };
 		5E414003207F540A00C621F4 /* SceneDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDetail.h; sourceTree = "<group>"; };
 		5E414004207F540A00C621F4 /* SceneDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDetail.m; sourceTree = "<group>"; };
-		5E414006207F58DD00C621F4 /* GetSceneConditionApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSceneConditionApi.h; sourceTree = "<group>"; };
-		5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSceneConditionApi.m; sourceTree = "<group>"; };
 		5E498F8D2058EC10001D6D9B /* iSuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E498F902058EC10001D6D9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E498F912058EC10001D6D9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -551,6 +564,8 @@
 			children = (
 				5E413FFA207F2D4D00C621F4 /* SceneDetailTableViewController.h */,
 				5E413FFB207F2D4D00C621F4 /* SceneDetailTableViewController.m */,
+				5E0168D7208E1EDC002AA0F5 /* AddSceneTableViewController.h */,
+				5E0168D8208E1EDC002AA0F5 /* AddSceneTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +576,12 @@
 				5ED094EF2073339200F77160 /* TriggerCollectionViewCell.h */,
 				5ED094F02073339200F77160 /* TriggerCollectionViewCell.m */,
 				5ED094F12073339200F77160 /* TriggerCollectionViewCell.xib */,
+				5E0168CF208D8162002AA0F5 /* SceneDeviceCollectionViewCell.h */,
+				5E0168D0208D8162002AA0F5 /* SceneDeviceCollectionViewCell.m */,
+				5E0168D1208D8162002AA0F5 /* SceneDeviceCollectionViewCell.xib */,
+				5E0168C22089B6B6002AA0F5 /* SelectSceneConditionView.h */,
+				5E0168C32089B6B6002AA0F5 /* SelectSceneConditionView.m */,
+				5E0168C52089B6CC002AA0F5 /* SelectSceneConditionView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -581,12 +602,12 @@
 		5E413FF0207F107700C621F4 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				5E0168D5208E1CF5002AA0F5 /* GetSceneConditionApi.h */,
+				5E0168D4208E1CF5002AA0F5 /* GetSceneConditionApi.m */,
 				5E413FF1207F10BA00C621F4 /* SceneDetailApi.h */,
 				5E413FF2207F10BA00C621F4 /* SceneDetailApi.m */,
 				5E413FF4207F116900C621F4 /* AddSceneApi.h */,
 				5E413FF5207F116900C621F4 /* AddSceneApi.m */,
-				5E414006207F58DD00C621F4 /* GetSceneConditionApi.h */,
-				5E414007207F58DD00C621F4 /* GetSceneConditionApi.m */,
 				5E4B01732080793B00296F85 /* EditSceneApi.h */,
 				5E4B01742080793B00296F85 /* EditSceneApi.m */,
 				5E4B017620807F9700296F85 /* DeleteSceneApi.h */,
@@ -1922,9 +1943,11 @@
 				5E7373402068FC24004125F1 /* DeviceCentre.storyboard in Resources */,
 				5E4B01C120873C2B00296F85 /* AddDeviceCollectionViewCell.xib in Resources */,
 				5ED094DF20720BFC00F77160 /* DeviceConfig.storyboard in Resources */,
+				5E0168D3208D8162002AA0F5 /* SceneDeviceCollectionViewCell.xib in Resources */,
 				5E498F9D2058EC10001D6D9B /* LaunchScreen.storyboard in Resources */,
 				5E4B01B72087299700296F85 /* EditWiFiInfoView.xib in Resources */,
 				5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */,
+				5E0168C62089B6CC002AA0F5 /* SelectSceneConditionView.xib in Resources */,
 				5E73735F206A74DF004125F1 /* DeviceCollectionViewCell.xib in Resources */,
 				5E68C120207C8FA900B8DF9F /* EditJackNameView.xib in Resources */,
 				5EE3222F207E0D8C001C46D3 /* PowerTableViewCell.xib in Resources */,
@@ -2152,6 +2175,7 @@
 				5EE3223B207EFB84001C46D3 /* GetScenesApi.m in Sources */,
 				5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */,
 				5EA48AFD2068BEFA004B5E7E /* SceneModeViewController.m in Sources */,
+				5E0168D2208D8162002AA0F5 /* SceneDeviceCollectionViewCell.m in Sources */,
 				5E4B018720808A7200296F85 /* GetMessagesApi.m in Sources */,
 				5ED9E44D2063584F004A5D79 /* RTNetworkPrivate.m in Sources */,
 				5ED9E44C2063584B004A5D79 /* RTNetworkConfig.m in Sources */,
@@ -2162,9 +2186,11 @@
 				5E68C12C207CF4D800B8DF9F /* UnshareApi.m in Sources */,
 				5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */,
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
+				5E0168D6208E1CF5002AA0F5 /* GetSceneConditionApi.m in Sources */,
 				5E4B019720809F4B00296F85 /* ModifyUserIconApi.m in Sources */,
 				5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */,
 				5ED094E820725BA400F77160 /* UpdateApp.m in Sources */,
+				5E0168D9208E1EDC002AA0F5 /* AddSceneTableViewController.m in Sources */,
 				5EE32202207DD83C001C46D3 /* GetTimedTaskApi.m in Sources */,
 				5E68C12F207CF50300B8DF9F /* SetShareUserAliasApi.m in Sources */,
 				5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */,
@@ -2223,7 +2249,6 @@
 				5EE32241207EFECB001C46D3 /* SceneModel.m in Sources */,
 				5E737363206A7E87004125F1 /* DeviceDetailViewController.m in Sources */,
 				5E0168B62088C56F002AA0F5 /* PowerLineChartView.m in Sources */,
-				5E414008207F58DD00C621F4 /* GetSceneConditionApi.m in Sources */,
 				5E68C10C207B4BFE00B8DF9F /* DeviceCentreModel.m in Sources */,
 				5ED2FE02206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m in Sources */,
 				5E4B01A22085D8FF00296F85 /* QueryUserApi.m in Sources */,
@@ -2240,6 +2265,7 @@
 				5E4B017820807F9700296F85 /* DeleteSceneApi.m in Sources */,
 				5E4B0191208099CA00296F85 /* FeedbackViewController.m in Sources */,
 				5E4B019B2081111500296F85 /* TestViewController.m in Sources */,
+				5E0168C42089B6B6002AA0F5 /* SelectSceneConditionView.m in Sources */,
 				5E68C0D7207A40FE00B8DF9F /* ForgotPsdFirstViewController.m in Sources */,
 				5E4B018E208095D400296F85 /* MessageModel.m in Sources */,
 				5EA48B072068BFF8004B5E7E /* LoginViewController.m in Sources */,

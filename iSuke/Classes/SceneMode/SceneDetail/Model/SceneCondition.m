@@ -10,4 +10,20 @@
 
 @implementation SceneCondition
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"condition_option" : [NSString class],
+             @"condition_sub_option" : [NSString class]
+             };
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [self modelEncodeWithCoder:aCoder];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    return [self modelInitWithCoder:aDecoder];
+}
+
 @end

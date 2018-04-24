@@ -20,6 +20,8 @@
 #define   RT_BASE_URL                        @"http://192.168.8.216:8080"
 #define   RT_DEVELOP_BASE_URL                @"http://117.78.48.143"
 
+#define RT_ICON_BASE                         @"/iSukeImage/"
+
 //LoginMode
 #define   RT_REGISTER_URL                    @"/iSukeServer/api/register"
 #define   RT_GET_CAPTCHA_URL                 @"/iSukeServer/api/getVerifyCode"

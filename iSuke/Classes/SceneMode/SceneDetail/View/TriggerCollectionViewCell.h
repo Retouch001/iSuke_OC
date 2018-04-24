@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SceneCondition.h"
 
 static NSString *const reuseIdentifier = @"SceneModeCell";
 
@@ -16,8 +17,7 @@ static NSString *const reuseIdentifier = @"SceneModeCell";
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPaht;
 
 
-- (void)freshCellWithIcon:(NSString *)icon title:(NSString *)title;
-
+- (void)freshCellWithSceneCodition:(SceneCondition *)sceneCondition selectedCondition:(SceneCondition *)selectedCondition;
 
 @end
 

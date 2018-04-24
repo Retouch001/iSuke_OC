@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectSceneConditionView">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="639"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brJ-2o-pWG">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="401.5"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <connections>
+                        <action selector="bgBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="sll-UE-JQE"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H8-uc-vhO">
+                    <rect key="frame" x="0.0" y="401.5" width="382" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xk-dG-otN">
+                            <rect key="frame" x="0.0" y="10" width="70" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="I2l-9F-8tg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.63529411759999999" green="0.63529411759999999" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="fpm-7b-T1m"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-jS-b1m">
+                            <rect key="frame" x="312" y="10" width="70" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" red="0.93725490199999995" green="0.54117647059999996" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="okBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="0bt-m0-BBu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="yYU-jS-b1m" firstAttribute="centerY" secondItem="0H8-uc-vhO" secondAttribute="centerY" id="4HT-o0-z0S"/>
+                        <constraint firstItem="9xk-dG-otN" firstAttribute="leading" secondItem="0H8-uc-vhO" secondAttribute="leading" id="Xpn-ux-fjz"/>
+                        <constraint firstAttribute="trailing" secondItem="yYU-jS-b1m" secondAttribute="trailing" id="a0y-Lv-kTh"/>
+                        <constraint firstItem="9xk-dG-otN" firstAttribute="centerY" secondItem="0H8-uc-vhO" secondAttribute="centerY" id="nJc-C5-qRf"/>
+                        <constraint firstItem="yYU-jS-b1m" firstAttribute="width" secondItem="9xk-dG-otN" secondAttribute="width" id="vBv-9m-85W"/>
+                        <constraint firstAttribute="height" constant="55" id="wwl-8d-1A9"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-cc-OfN">
+                    <rect key="frame" x="0.0" y="457" width="382" height="182"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="brJ-2o-pWG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CAK-Wo-sGt"/>
+                <constraint firstItem="brJ-2o-pWG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fe3-zV-7CT"/>
+                <constraint firstItem="9WU-cc-OfN" firstAttribute="top" secondItem="0H8-uc-vhO" secondAttribute="bottom" id="IXX-d9-zgB"/>
+                <constraint firstItem="0H8-uc-vhO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QNP-Uo-2fc"/>
+                <constraint firstItem="9WU-cc-OfN" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="2:7" id="Y6k-q2-wei"/>
+                <constraint firstItem="9WU-cc-OfN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cQm-oe-Cyo"/>
+                <constraint firstItem="9WU-cc-OfN" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gZ5-zN-Fa1"/>
+                <constraint firstAttribute="bottom" secondItem="9WU-cc-OfN" secondAttribute="bottom" id="joA-ty-ThC"/>
+                <constraint firstItem="brJ-2o-pWG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="kcR-Cj-XV9"/>
+                <constraint firstItem="0H8-uc-vhO" firstAttribute="top" secondItem="brJ-2o-pWG" secondAttribute="bottom" id="pTd-m1-LHk"/>
+                <constraint firstItem="0H8-uc-vhO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="z2R-RP-oIB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomConstraint" destination="joA-ty-ThC" id="P24-ZQ-c9T"/>
+                <outlet property="pickerView" destination="9WU-cc-OfN" id="8xp-HG-4kf"/>
+            </connections>
+            <point key="canvasLocation" x="37" y="80.5"/>
+        </view>
+    </objects>
+</document>

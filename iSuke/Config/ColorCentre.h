@@ -30,7 +30,7 @@
 #define kColorDeleteBtnBg               [UIColor colorWithHexString:@"F95F5F"]
 
 
-
+#define kColorPickerCuttingLine         [UIColor colorWithHexString:@"F5F4F3"];
 
 
 

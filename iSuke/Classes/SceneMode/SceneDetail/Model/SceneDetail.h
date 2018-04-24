@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-@class SceneCondition,Device;
-
+#import "SceneDevice.h"
+#import "SceneCondition.h"
 
 @interface SceneDetail : NSObject
 
-@property (nonatomic, copy) NSString *sceneName;
-@property (nonatomic, copy) NSString *sceneCity;
+@property (nonatomic, copy) NSString *scene_name;
+@property (nonatomic, copy) NSString *scene_city;
+@property (nonatomic, assign) BOOL device_status;
+@property (nonatomic, assign) BOOL scene_status;
+
 @property (nonatomic, strong) SceneCondition *sceneCondition;
-@property (nonatomic, strong) NSArray <SceneCondition *>*sceneConditionOption;
-@property (nonatomic, assign) NSInteger sceneAction;
-@property (nonatomic ,strong) NSArray <Device *>*sceneDeviceList;
+
+@property (nonatomic, strong) NSArray <SceneCondition *>    *sceneConditionList;
+@property (nonatomic ,strong) NSArray <SceneDevice *>       *sceneDeviceList;
 
 
 @end

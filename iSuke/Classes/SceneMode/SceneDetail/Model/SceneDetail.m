@@ -8,6 +8,24 @@
 
 #import "SceneDetail.h"
 
+
+
 @implementation SceneDetail
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"sceneConditionList" : [SceneCondition class],
+             @"sceneDeviceList" : [SceneDevice class]
+             };
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [self modelEncodeWithCoder:aCoder];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    return [self modelInitWithCoder:aDecoder];
+}
 
 @end
