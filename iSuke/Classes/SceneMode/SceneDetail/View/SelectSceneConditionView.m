@@ -139,9 +139,6 @@
     myView.font = [UIFont systemFontOfSize:24]; // 用label来设置字体大小
     myView.backgroundColor = [UIColor clearColor];
     return myView;
-    
-    
-
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "SelectCountryTableViewController.h"
 #import "LoginApi.h"
-#import "MainUserManager.h"
+#import "RTAddinterceptor.h"
 
 @interface LoginViewController ()<RTRequestDelegate>
 
@@ -72,11 +72,10 @@
 #pragma mark - RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     [SVProgressHUD dismiss];
-    
     if ([request dataSuccess]) {
         MainUser *mainUser = [MainUser modelWithDictionary:request.responseObject[@"appUser"]];
         [MainUserManager updateLocalMainUserInfo:mainUser];
-        
+        [RTAddinterceptor addInterceptorWithMainUser:mainUser];
         UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
         kKeyWindow.rootViewController = mainVC;
     }else{

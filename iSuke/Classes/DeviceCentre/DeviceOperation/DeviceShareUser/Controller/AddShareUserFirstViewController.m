@@ -72,7 +72,7 @@
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
 }
 
 

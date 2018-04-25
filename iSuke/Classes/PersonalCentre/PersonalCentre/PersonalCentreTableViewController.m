@@ -7,7 +7,6 @@
 //
 
 #import "PersonalCentreTableViewController.h"
-//#import "UINavigationBar+Awesome.h"
 
 @interface PersonalCentreTableViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headerBgImageView;
@@ -38,11 +37,12 @@
     [self freshHeaderViewWith:[MainUserManager getLocalMainUserInfo]];
 }
 
-
 - (void)freshHeaderViewWith:(MainUser *)mainUser{
+    RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",config.baseUrl,RT_ICON_BASE,[MainUserManager getLocalMainUserInfo].avatar]];
+    [self.icon setImageWithURL:url placeholder:[UIImage imageNamed:RTPORTRAIT]];
     _userName.text = kStringIsEmpty(mainUser.nickname)?RTLocalizedString(@"未设置昵称"):mainUser.nickname;
     _phone.text = mainUser.phone;
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -55,17 +55,9 @@
 }
 
 
-
-
-
 #pragma mark  ---UITableViewDelegate---
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-
-
-
 
 @end

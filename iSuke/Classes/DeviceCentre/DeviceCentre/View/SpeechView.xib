@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpeechView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-VL-Qlw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c8o-qu-yFs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-4B-nCK">
+                                <rect key="frame" x="0.0" y="40" width="375" height="379"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yH5-Vb-U27">
+                                <rect key="frame" x="142" y="449" width="90" height="90"/>
+                                <state key="normal" image="ic_voice02"/>
+                                <connections>
+                                    <action selector="speechBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="7GF-Pm-x00"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pco-ck-TjI">
+                                <rect key="frame" x="163" y="599" width="48" height="48"/>
+                                <state key="normal" image="ic_quit"/>
+                                <connections>
+                                    <action selector="closeBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="m7O-Zz-r88"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cZj-4B-nCK" firstAttribute="top" secondItem="cif-td-cSW" secondAttribute="top" constant="20" id="1UM-Mw-X3j"/>
+                            <constraint firstItem="cif-td-cSW" firstAttribute="bottom" secondItem="Pco-ck-TjI" secondAttribute="bottom" constant="20" id="5Q4-sF-Rm0"/>
+                            <constraint firstItem="cZj-4B-nCK" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="A9Q-YL-fDX"/>
+                            <constraint firstItem="cZj-4B-nCK" firstAttribute="leading" secondItem="cif-td-cSW" secondAttribute="leading" id="AIa-a5-mse"/>
+                            <constraint firstItem="cif-td-cSW" firstAttribute="trailing" secondItem="cZj-4B-nCK" secondAttribute="trailing" id="H4t-Ya-lW8"/>
+                            <constraint firstItem="cZj-4B-nCK" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="aCi-SI-D1H"/>
+                            <constraint firstItem="Pco-ck-TjI" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="bEg-iV-gAU"/>
+                            <constraint firstItem="Pco-ck-TjI" firstAttribute="top" secondItem="yH5-Vb-U27" secondAttribute="bottom" constant="60" id="c7f-VT-P1h"/>
+                            <constraint firstItem="yH5-Vb-U27" firstAttribute="top" secondItem="cZj-4B-nCK" secondAttribute="bottom" constant="30" id="dpj-OW-keH"/>
+                            <constraint firstItem="yH5-Vb-U27" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="hSo-4w-p74"/>
+                            <constraint firstItem="Pco-ck-TjI" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="mkU-MH-mIF"/>
+                            <constraint firstItem="yH5-Vb-U27" firstAttribute="centerX" secondItem="c8o-qu-yFs" secondAttribute="centerX" id="zKR-gz-Ojw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cif-td-cSW"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xoc-VL-Qlw" secondAttribute="trailing" id="2gf-5o-UeB"/>
+                <constraint firstAttribute="bottom" secondItem="xoc-VL-Qlw" secondAttribute="bottom" id="PsT-Yj-daQ"/>
+                <constraint firstItem="xoc-VL-Qlw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sbd-UO-ATM"/>
+                <constraint firstItem="xoc-VL-Qlw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cYq-Qk-X2y"/>
+            </constraints>
+            <connections>
+                <outlet property="speechBtn" destination="yH5-Vb-U27" id="Ayf-kD-Am1"/>
+                <outlet property="tableView" destination="cZj-4B-nCK" id="aTf-vR-zCD"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_quit" width="48" height="48"/>
+        <image name="ic_voice02" width="90" height="90"/>
+    </resources>
+</document>

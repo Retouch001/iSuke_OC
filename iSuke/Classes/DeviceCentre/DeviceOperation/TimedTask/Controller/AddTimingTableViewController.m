@@ -116,20 +116,32 @@ static const NSInteger pickerDataSize = 160000;
     _timedTask.timedtask_time = [NSString stringWithFormat:@"%@%@",hour,minute];    
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    NSString * title = nil;
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    //设置分割线的颜色
+    for(UIView *singleLine in pickerView.subviews){
+        if (singleLine.frame.size.height < 1){
+            singleLine.backgroundColor = kColorPickerCuttingLine;
+        }
+    }
+    UILabel *myView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 40)];
+    myView.textAlignment = NSTextAlignmentCenter;
     switch (component) {
         case 0:
-            title = self.hours[row % self.hours.count];
+            myView.text = self.hours[row % self.hours.count];
             break;
         case 1:
-            title = self.minutes[row % self.minutes.count];
+            myView.text = self.minutes[row % self.minutes.count];
             break;
         default:
             break;
     }
-    return title;
+    myView.textColor = UIColor.blackColor;
+    myView.font = [UIFont systemFontOfSize:24]; // 用label来设置字体大小
+    myView.backgroundColor = [UIColor clearColor];
+    return myView;
 }
+
+
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
     return 50.0;

@@ -13,8 +13,9 @@
 #import "UIScrollView+EmptyDataSet.h"
 
 #import "DeviceCentreModel.h"
-
 #import "RTUdpSocketManager.h"
+#import "SpeechView.h"
+
 
 #define ITEM_WIDTH  (SCREEN_WIDTH - 4 * kMagin) / 3
 static CGFloat kMagin = 10.f;
@@ -22,14 +23,18 @@ static CGFloat kMagin = 10.f;
 
 static NSString * const headIdentifier = @"headCell";
 
-@interface DeviceCentreViewController ()<RTRequestDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,UICollectionViewDelegate,UICollectionViewDataSource>{
+@interface DeviceCentreViewController ()<RTRequestDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>{
     DeviceManageApi *deviceManageApi;
     NSInteger    _contentInsetTop;
 }
 @property (nonatomic, strong) DeviceCentreModel *deviceCentreModel;
-@property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *navigationBarConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *speakBtnConstraint;
+
+@property (nonatomic ,strong) SpeechView *speechView;
+@property (nonatomic, strong) NSArray *devices;
 @end
 
 
@@ -39,30 +44,29 @@ static NSString * const headIdentifier = @"headCell";
     [super viewDidLoad];
     deviceManageApi = [[DeviceManageApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id];
     deviceManageApi.delegate = self;
-    
     _contentInsetTop = HEADER_HEIGHT;
-    
     [self initCollectionView];
-    
     self.headerHeightConstraint.constant = _contentInsetTop;
-    
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.collectionView reloadData];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat tableViewoffsetY = scrollView.contentOffset.y;
-    //NSLog(@"%f---%ld",tableViewoffsetY,_contentInsetTop);
-    if ( tableViewoffsetY >= -_contentInsetTop) {
-        self.headerView.frame = CGRectMake(0, -_contentInsetTop-tableViewoffsetY, SCREEN_WIDTH, _contentInsetTop);
-    }else if( tableViewoffsetY < -_contentInsetTop){
-        self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _contentInsetTop);
+    self.navigationController.navigationBarHidden = YES;
+    if (IPHONE_X) {
+        self.navigationBarConstraint.constant = 88;
+        self.speakBtnConstraint.constant = self.speakBtnConstraint.constant + 44;
+    }else{
+        self.navigationBarConstraint.constant = 64;
+        self.speakBtnConstraint.constant = self.speakBtnConstraint.constant + 32;
     }
+    [kNotificationCenter addObserver:self selector:@selector(deviceCenterDidChanged:) name:RTDeviceCenterDidChangeNotification object:nil];
 }
+
+- (void)dealloc{
+    [kNotificationCenter removeObserver:self name:RTShareUserDidChangeNotification object:nil];
+}
+
+
+- (void)deviceCenterDidChanged:(id)notification{
+    [self loadDataFromNetwork];
+}
+
 
 
 #pragma mark -Private Method--
@@ -71,28 +75,19 @@ static NSString * const headIdentifier = @"headCell";
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.itemSize = CGSizeMake(ITEM_WIDTH, ITEM_WIDTH);
     flowLayout.sectionInset = UIEdgeInsetsMake(0, kMagin, 20, kMagin);////设置senction的内边距
+    
     flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 40);
-    
     self.collectionView.backgroundColor = kColorBase;
-    
     self.collectionView.collectionViewLayout = flowLayout;
-    self.collectionView.contentInset = UIEdgeInsetsMake(_contentInsetTop, 0, 0, 0);
-    
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.collectionView.allowsMultipleSelection = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DeviceCentreCollectionReusableView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headIdentifier];
-    self.collectionView.emptyDataSetSource = self;
-    self.collectionView.emptyDataSetDelegate = self;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    
+
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDataFromNetwork)];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
     self.collectionView.mj_header = header;
-    
     [self loadDataFromNetwork];
 }
 
@@ -100,33 +95,56 @@ static NSString * const headIdentifier = @"headCell";
     [deviceManageApi start];
 }
 
+- (NSArray *)deviceGroupWithDevices:(NSArray *)devices{
+    NSMutableArray *totalArray = [NSMutableArray array];
+    NSMutableArray *ownArray = [NSMutableArray array];
+    NSMutableArray *shareArray = [NSMutableArray array];
+    for (Device *device in devices) {
+        if (device.device_belong_type == RTDeviceBelongTypeOwn) {
+            [ownArray addObject:device];
+        }else{
+            [shareArray addObject:device];
+        }
+    }
+    if (ownArray.count > 0) {
+        [totalArray addObject:ownArray];
+    }
+    if (shareArray.count > 0) {
+        [totalArray addObject:shareArray];
+    }
+    return totalArray;
+}
 
 #pragma mark  - IBAction -----
 - (IBAction)leftBtnClick:(id)sender {
 }
 
 - (IBAction)speechBtnClick:(id)sender {
-    
+    [kKeyWindow addSubview:self.speechView];
+    [self.speechView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(kKeyWindow);
+    }];
 }
 
 
 #pragma mark  -CollectionView Delegate-----
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.devices.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.deviceCentreModel.deviceList.count;
+    NSArray *array = self.devices[section];
+    return array.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    //kind有两种 一种时header 一种事footer
     if (kind == UICollectionElementKindSectionHeader) {
         DeviceCentreCollectionReusableView * header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headIdentifier forIndexPath:indexPath];
-        if (indexPath.section == 0) {
-            header.title.text = @"我的设备";
+        Device *device = self.devices[indexPath.section][indexPath.row];
+        if (device.device_belong_type == RTDeviceBelongTypeOwn) {
+            header.title.text = RTLocalizedString(@"我的设备");
         }else{
-            header.title.text = @"共享的设备";
+            header.title.text = RTLocalizedString(@"共享的设备");
         }
         return header;
     }
@@ -135,14 +153,14 @@ static NSString * const headIdentifier = @"headCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DeviceCollectionViewCell *cell = [DeviceCollectionViewCell cellWithCollectionView:collectionView indexPath:indexPath];
-    Device *device = self.deviceCentreModel.deviceList[indexPath.row];
+    Device *device = self.devices[indexPath.section][indexPath.row];
     [cell freshCellWithDevice:device cellType:RTCellTypeDeviceCentre];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *vc = SB_VIEWCONTROLLER(SB_DEVICE_DETAIL);
-    Device *device = self.deviceCentreModel.deviceList[indexPath.row];
+    Device *device = self.devices[indexPath.section][indexPath.row];
     [vc setValue:device forKey:@"_device"];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -150,7 +168,7 @@ static NSString * const headIdentifier = @"headCell";
 
 #pragma mark -DZNEmptyDataSetDelegate--
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
-     return [[NSAttributedString alloc] initWithString:@"添加设备，开启智能生活"];
+     return [[NSAttributedString alloc] initWithString:RTLocalizedString(@"添加设备，开启智能生活")];
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
@@ -170,9 +188,9 @@ static NSString * const headIdentifier = @"headCell";
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     [self.collectionView.mj_header endRefreshing];
-    
     if ([request dataSuccess]) {
         self.deviceCentreModel = [DeviceCentreModel modelWithDictionary:request.responseObject];
+        self.devices = [self deviceGroupWithDevices:self.deviceCentreModel.deviceList];
         [self.collectionView reloadData];
     }else{
         [SVProgressHUD showErrorWithStatus:request.errorMessage];
@@ -183,5 +201,13 @@ static NSString * const headIdentifier = @"headCell";
     [self.collectionView.mj_header endRefreshing];
 }
 
+
+#pragma mark -SetterGetter--
+- (SpeechView *)speechView{
+    if (!_speechView) {
+        _speechView = [SpeechView createFromXib];
+    }
+    return _speechView;
+}
 
 @end

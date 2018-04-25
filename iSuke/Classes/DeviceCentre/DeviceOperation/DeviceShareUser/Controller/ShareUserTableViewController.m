@@ -9,6 +9,7 @@
 #import "ShareUserTableViewController.h"
 #import "ShareUserTableViewCell.h"
 #import "EditJackNameView.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 #import "DeviceShareUserApi.h"
 #import "UnshareApi.h"
@@ -19,9 +20,7 @@
 #import "ShareUserModel.h"
 
 
-static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
-
-@interface ShareUserTableViewController ()<RTRequestDelegate>{
+@interface ShareUserTableViewController ()<RTRequestDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>{
     Device *_device;
     ShareUserModel *shareUserModel;
     
@@ -34,27 +33,23 @@ static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
     EditJackNameView *editRemarkView;
     NSString *tempRemark;
 }
-
-
 @end
 
 @implementation ShareUserTableViewController
 #pragma mark -LifeCycle--
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [kNotificationCenter addObserver:self selector:@selector(shareUserDidChanged:) name:kShareUserChangedNotification object:nil];
-    
+    self.tableView.separatorColor = kColorTableViewSeparatorLine;
+    self.tableView.tableFooterView = [UIView new];
+    [kNotificationCenter addObserver:self selector:@selector(shareUserDidChanged:) name:RTShareUserDidChangeNotification object:nil];
     deviceShareUserApi = [[DeviceShareUserApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id];
     deviceShareUserApi.delegate = self;
     [deviceShareUserApi start];
 }
 
-
 - (void)dealloc{
-    [kNotificationCenter removeObserver:self name:kShareUserChangedNotification object:nil];
+    [kNotificationCenter removeObserver:self name:RTShareUserDidChangeNotification object:nil];
 }
-
 
 
 #pragma mark -PrivateMethod--
@@ -76,18 +71,13 @@ static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ShareUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
     [cell freshCellWithShareUser:shareUserModel.shareUserList[indexPath.row]];
-    
     return cell;
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
-
-
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     //删除
@@ -99,8 +89,6 @@ static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
         [self->unShareApi start];
     }];
     deleteRowAction.backgroundColor = kColorDeleteBtnBg;
-    
-    
     //备注
     UITableViewRowAction *remarkAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:RTLocalizedString(@"备注") handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 
@@ -116,10 +104,18 @@ static NSString *const kShareUserChangedNotification = @"shareUserDidChanged";
         
     }];
     remarkAction.backgroundColor = kColorTheme;
-
     return @[deleteRowAction,remarkAction];
 }
 
+
+#pragma mark -DZNEmptyDataSetDelegate--
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
+    return [[NSAttributedString alloc] initWithString:RTLocalizedString(@"没有共享设备给好友~")];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"ic_04nothing"];
+}
 
 
 

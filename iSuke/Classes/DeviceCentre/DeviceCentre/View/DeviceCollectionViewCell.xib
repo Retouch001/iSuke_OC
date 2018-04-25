@@ -59,7 +59,6 @@
                             <constraint firstAttribute="width" secondItem="lqb-WF-ZWC" secondAttribute="height" multiplier="1:1" id="n1f-bp-S4r"/>
                             <constraint firstAttribute="height" constant="20" id="pn2-gQ-jO5"/>
                         </constraints>
-                        <state key="normal" image="close"/>
                     </button>
                 </subviews>
             </view>
@@ -87,7 +86,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="close" width="48" height="48"/>
         <image name="ic_light" width="60" height="60"/>
     </resources>
 </document>

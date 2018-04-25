@@ -42,7 +42,6 @@
 		5E4B0191208099CA00296F85 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0190208099CA00296F85 /* FeedbackViewController.m */; };
 		5E4B0194208099EA00296F85 /* FeedbackApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B0193208099EA00296F85 /* FeedbackApi.m */; };
 		5E4B019720809F4B00296F85 /* ModifyUserIconApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B019620809F4B00296F85 /* ModifyUserIconApi.m */; };
-		5E4B019B2081111500296F85 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B019A2081111500296F85 /* TestViewController.m */; };
 		5E4B019F20859C0500296F85 /* UIView+XIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B019E20859C0500296F85 /* UIView+XIB.m */; };
 		5E4B01A22085D8FF00296F85 /* QueryUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B01A12085D8FF00296F85 /* QueryUserApi.m */; };
 		5E4B01A82085E25A00296F85 /* AddShareUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B01A72085E25A00296F85 /* AddShareUser.m */; };
@@ -137,6 +136,23 @@
 		5ED9E44B20635845004A5D79 /* RTNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEB7205FA08D0021FF58 /* RTNetworkAgent.m */; };
 		5ED9E44C2063584B004A5D79 /* RTNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEB6205FA08D0021FF58 /* RTNetworkConfig.m */; };
 		5ED9E44D2063584F004A5D79 /* RTNetworkPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3FEBD205FA08D0021FF58 /* RTNetworkPrivate.m */; };
+		5EDFCBA5208ED6050032935B /* TPAccessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBA4208ED6050032935B /* TPAccessTableViewController.m */; };
+		5EDFCBA8208ED6320032935B /* TPAccessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBA7208ED6320032935B /* TPAccessTableViewCell.m */; };
+		5EDFCBAC208EDD2A0032935B /* ModifyPswTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBAB208EDD2A0032935B /* ModifyPswTableViewController.m */; };
+		5EDFCBAF208EE0450032935B /* ModifyPswApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBAE208EE0450032935B /* ModifyPswApi.m */; };
+		5EDFCBB5208EFE8F0032935B /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBB4208EFE8F0032935B /* MessageDetailViewController.m */; };
+		5EDFCBB8208EFEC70032935B /* MessageDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBB7208EFEC70032935B /* MessageDetailApi.m */; };
+		5EDFCBBC208F09340032935B /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBBB208F09340032935B /* FAQViewController.m */; };
+		5EDFCBBF208F097A0032935B /* FAQApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBBE208F097A0032935B /* FAQApi.m */; };
+		5EDFCBC6208F16850032935B /* RTCleanCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBC5208F16850032935B /* RTCleanCache.m */; };
+		5EDFCBC9208F34020032935B /* AboutUsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBC8208F34020032935B /* AboutUsTableViewController.m */; };
+		5EDFCBCD208F5D740032935B /* AppDelegate+RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBCC208F5D740032935B /* AppDelegate+RootViewController.m */; };
+		5EDFCBD0208F62C90032935B /* RTAddinterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBCF208F62C90032935B /* RTAddinterceptor.m */; };
+		5EDFCBD3209026CB0032935B /* ShareDeviceOperationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBD2209026CB0032935B /* ShareDeviceOperationTableViewController.m */; };
+		5EDFCBD620902B4F0032935B /* SpeechView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBD520902B4F0032935B /* SpeechView.m */; };
+		5EDFCBDB209055130032935B /* NotificationConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBDA209055130032935B /* NotificationConst.m */; };
+		5EDFCBDF209064720032935B /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCBDD209064720032935B /* FXBlurView.m */; };
+		5EDFCBE1209068A30032935B /* SpeechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EDFCBE0209068A30032935B /* SpeechView.xib */; };
 		5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */; };
 		5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E6207D0191001C46D3 /* PowerDataViewController.m */; };
 		5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E9207D0421001C46D3 /* DevicePowerApi.m */; };
@@ -290,8 +306,6 @@
 		5E4B0193208099EA00296F85 /* FeedbackApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackApi.m; sourceTree = "<group>"; };
 		5E4B019520809F4B00296F85 /* ModifyUserIconApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyUserIconApi.h; sourceTree = "<group>"; };
 		5E4B019620809F4B00296F85 /* ModifyUserIconApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyUserIconApi.m; sourceTree = "<group>"; };
-		5E4B01992081111500296F85 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		5E4B019A2081111500296F85 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		5E4B019D20859C0500296F85 /* UIView+XIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XIB.h"; sourceTree = "<group>"; };
 		5E4B019E20859C0500296F85 /* UIView+XIB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XIB.m"; sourceTree = "<group>"; };
 		5E4B01A02085D8FF00296F85 /* QueryUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryUserApi.h; sourceTree = "<group>"; };
@@ -464,6 +478,39 @@
 		5ED2FE26206E09130067B7A4 /* SetDeviceRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetDeviceRemarkViewController.m; sourceTree = "<group>"; };
 		5ED2FE28206E0AD60067B7A4 /* AddTimingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTimingTableViewController.h; sourceTree = "<group>"; };
 		5ED2FE29206E0AD70067B7A4 /* AddTimingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTimingTableViewController.m; sourceTree = "<group>"; };
+		5EDFCBA3208ED6050032935B /* TPAccessTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPAccessTableViewController.h; sourceTree = "<group>"; };
+		5EDFCBA4208ED6050032935B /* TPAccessTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPAccessTableViewController.m; sourceTree = "<group>"; };
+		5EDFCBA6208ED6320032935B /* TPAccessTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPAccessTableViewCell.h; sourceTree = "<group>"; };
+		5EDFCBA7208ED6320032935B /* TPAccessTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPAccessTableViewCell.m; sourceTree = "<group>"; };
+		5EDFCBAA208EDD2A0032935B /* ModifyPswTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPswTableViewController.h; sourceTree = "<group>"; };
+		5EDFCBAB208EDD2A0032935B /* ModifyPswTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPswTableViewController.m; sourceTree = "<group>"; };
+		5EDFCBAD208EE0450032935B /* ModifyPswApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPswApi.h; sourceTree = "<group>"; };
+		5EDFCBAE208EE0450032935B /* ModifyPswApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPswApi.m; sourceTree = "<group>"; };
+		5EDFCBB3208EFE8F0032935B /* MessageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewController.h; sourceTree = "<group>"; };
+		5EDFCBB4208EFE8F0032935B /* MessageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewController.m; sourceTree = "<group>"; };
+		5EDFCBB6208EFEC70032935B /* MessageDetailApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailApi.h; sourceTree = "<group>"; };
+		5EDFCBB7208EFEC70032935B /* MessageDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailApi.m; sourceTree = "<group>"; };
+		5EDFCBBA208F09340032935B /* FAQViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		5EDFCBBB208F09340032935B /* FAQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
+		5EDFCBBD208F097A0032935B /* FAQApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQApi.h; sourceTree = "<group>"; };
+		5EDFCBBE208F097A0032935B /* FAQApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQApi.m; sourceTree = "<group>"; };
+		5EDFCBC4208F16850032935B /* RTCleanCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTCleanCache.h; sourceTree = "<group>"; };
+		5EDFCBC5208F16850032935B /* RTCleanCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTCleanCache.m; sourceTree = "<group>"; };
+		5EDFCBC7208F34020032935B /* AboutUsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsTableViewController.h; sourceTree = "<group>"; };
+		5EDFCBC8208F34020032935B /* AboutUsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsTableViewController.m; sourceTree = "<group>"; };
+		5EDFCBCB208F5D740032935B /* AppDelegate+RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+RootViewController.h"; sourceTree = "<group>"; };
+		5EDFCBCC208F5D740032935B /* AppDelegate+RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+RootViewController.m"; sourceTree = "<group>"; };
+		5EDFCBCE208F62C90032935B /* RTAddinterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTAddinterceptor.h; sourceTree = "<group>"; };
+		5EDFCBCF208F62C90032935B /* RTAddinterceptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTAddinterceptor.m; sourceTree = "<group>"; };
+		5EDFCBD1209026CB0032935B /* ShareDeviceOperationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareDeviceOperationTableViewController.h; sourceTree = "<group>"; };
+		5EDFCBD2209026CB0032935B /* ShareDeviceOperationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareDeviceOperationTableViewController.m; sourceTree = "<group>"; };
+		5EDFCBD420902B4F0032935B /* SpeechView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechView.h; sourceTree = "<group>"; };
+		5EDFCBD520902B4F0032935B /* SpeechView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechView.m; sourceTree = "<group>"; };
+		5EDFCBD9209055130032935B /* NotificationConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationConst.h; sourceTree = "<group>"; };
+		5EDFCBDA209055130032935B /* NotificationConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationConst.m; sourceTree = "<group>"; };
+		5EDFCBDD209064720032935B /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		5EDFCBDE209064720032935B /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		5EDFCBE0209068A30032935B /* SpeechView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechView.xib; sourceTree = "<group>"; };
 		5EE321E2207CF8DA001C46D3 /* AddShareUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShareUserApi.h; sourceTree = "<group>"; };
 		5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShareUserApi.m; sourceTree = "<group>"; };
 		5EE321E5207D0191001C46D3 /* PowerDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerDataViewController.h; sourceTree = "<group>"; };
@@ -681,6 +728,8 @@
 				5E737383206B732F004125F1 /* LocalizationKeys.h */,
 				5E737384206B732F004125F1 /* LocalizationKeys.m */,
 				5E0168B72088CB93002AA0F5 /* iSuke-Bridging-Header.h */,
+				5EDFCBD9209055130032935B /* NotificationConst.h */,
+				5EDFCBDA209055130032935B /* NotificationConst.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -705,6 +754,7 @@
 		5E498FC42058EC68001D6D9B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBDC2090645D0032935B /* FXBlurView */,
 				5E68C0C62074C73800B8DF9F /* RTVerfifyCodeButton */,
 				5ED2FDF2206C82F40067B7A4 /* RTRootNavigationCotroller */,
 			);
@@ -714,6 +764,7 @@
 		5E498FC52058EC69001D6D9B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBC0208F12E00032935B /* RTCleanCache */,
 				5ED094E020725B3500F77160 /* CheckUpdate */,
 				5E73737F206B6B50004125F1 /* AlertController */,
 				5E737369206B320B004125F1 /* Language */,
@@ -760,14 +811,14 @@
 		5E498FCB2058F68D001D6D9B /* PersonalCentre */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBB9208F090A0032935B /* FAQ */,
+				5EDFCBA2208ED5B20032935B /* TPAccess */,
 				5ED2FDEB206C7E080067B7A4 /* PersonalNavigationController */,
 				5E73737B206B66CD004125F1 /* PersonalInfo */,
 				5E737352206A314F004125F1 /* About Us */,
 				5E737351206A314C004125F1 /* Setting */,
 				5E737350206A306B004125F1 /* PersonalCentre */,
 				5E73734F206A3069004125F1 /* MessageCentre */,
-				5E73734E206A3068004125F1 /* IntelligentSpeaker */,
-				5E73734D206A3066004125F1 /* FAQ */,
 				5E73734C206A3064004125F1 /* Feedback */,
 			);
 			path = PersonalCentre;
@@ -809,6 +860,8 @@
 			children = (
 				5E498F902058EC10001D6D9B /* AppDelegate.h */,
 				5E498F912058EC10001D6D9B /* AppDelegate.m */,
+				5EDFCBCB208F5D740032935B /* AppDelegate+RootViewController.h */,
+				5EDFCBCC208F5D740032935B /* AppDelegate+RootViewController.m */,
 				5E498F9F2058EC10001D6D9B /* main.m */,
 				5E498F9E2058EC10001D6D9B /* Info.plist */,
 			);
@@ -1042,6 +1095,8 @@
 				5EF3FEBD205FA08D0021FF58 /* RTNetworkPrivate.m */,
 				5E68C0FF207B17EB00B8DF9F /* RTUrlArgumentsFilter.h */,
 				5E68C100207B17EB00B8DF9F /* RTUrlArgumentsFilter.m */,
+				5EDFCBCE208F62C90032935B /* RTAddinterceptor.h */,
+				5EDFCBCF208F62C90032935B /* RTAddinterceptor.m */,
 			);
 			path = RTNetwork;
 			sourceTree = "<group>";
@@ -1051,6 +1106,8 @@
 			children = (
 				5E737353206A35A6004125F1 /* MessageCentreTableViewController.h */,
 				5E737354206A35A6004125F1 /* MessageCentreTableViewController.m */,
+				5EDFCBB3208EFE8F0032935B /* MessageDetailViewController.h */,
+				5EDFCBB4208EFE8F0032935B /* MessageDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1077,6 +1134,8 @@
 		5E4B018B20808BBB00296F85 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBB6208EFEC70032935B /* MessageDetailApi.h */,
+				5EDFCBB7208EFEC70032935B /* MessageDetailApi.m */,
 				5E4B018520808A7200296F85 /* GetMessagesApi.h */,
 				5E4B018620808A7200296F85 /* GetMessagesApi.m */,
 			);
@@ -1202,6 +1261,9 @@
 				5E7373442069E8BA004125F1 /* DeviceCollectionViewCell.h */,
 				5E7373452069E8BA004125F1 /* DeviceCollectionViewCell.m */,
 				5E73735E206A74DF004125F1 /* DeviceCollectionViewCell.xib */,
+				5EDFCBD420902B4F0032935B /* SpeechView.h */,
+				5EDFCBD520902B4F0032935B /* SpeechView.m */,
+				5EDFCBE0209068A30032935B /* SpeechView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1213,8 +1275,6 @@
 				5E68C0EE207B0F5100B8DF9F /* DeviceManageApi.m */,
 				5EA48AF82068BEE8004B5E7E /* DeviceCentreViewController.h */,
 				5EA48AF92068BEE8004B5E7E /* DeviceCentreViewController.m */,
-				5E4B01992081111500296F85 /* TestViewController.h */,
-				5E4B019A2081111500296F85 /* TestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1314,20 +1374,6 @@
 			path = Feedback;
 			sourceTree = "<group>";
 		};
-		5E73734D206A3066004125F1 /* FAQ */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FAQ;
-			sourceTree = "<group>";
-		};
-		5E73734E206A3068004125F1 /* IntelligentSpeaker */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IntelligentSpeaker;
-			sourceTree = "<group>";
-		};
 		5E73734F206A3069004125F1 /* MessageCentre */ = {
 			isa = PBXGroup;
 			children = (
@@ -1351,6 +1397,7 @@
 		5E737351206A314C004125F1 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBA9208EDCE80032935B /* ModifyPsw */,
 				5ED2FDE3206B97960067B7A4 /* RootSetting */,
 				5ED2FDDF206B975C0067B7A4 /* TimeZone */,
 			);
@@ -1360,6 +1407,8 @@
 		5E737352206A314F004125F1 /* About Us */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFCBC7208F34020032935B /* AboutUsTableViewController.h */,
+				5EDFCBC8208F34020032935B /* AboutUsTableViewController.m */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -1628,10 +1677,63 @@
 			children = (
 				5ED2FE22206DED450067B7A4 /* DeviceOperationTableViewController.h */,
 				5ED2FE23206DED450067B7A4 /* DeviceOperationTableViewController.m */,
+				5EDFCBD1209026CB0032935B /* ShareDeviceOperationTableViewController.h */,
+				5EDFCBD2209026CB0032935B /* ShareDeviceOperationTableViewController.m */,
 				5EE321EE207D046C001C46D3 /* DeleteDeviceApi.h */,
 				5EE321EF207D046C001C46D3 /* DeleteDeviceApi.m */,
 			);
 			path = DeviceOperation;
+			sourceTree = "<group>";
+		};
+		5EDFCBA2208ED5B20032935B /* TPAccess */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFCBA3208ED6050032935B /* TPAccessTableViewController.h */,
+				5EDFCBA4208ED6050032935B /* TPAccessTableViewController.m */,
+				5EDFCBA6208ED6320032935B /* TPAccessTableViewCell.h */,
+				5EDFCBA7208ED6320032935B /* TPAccessTableViewCell.m */,
+			);
+			path = TPAccess;
+			sourceTree = "<group>";
+		};
+		5EDFCBA9208EDCE80032935B /* ModifyPsw */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFCBAA208EDD2A0032935B /* ModifyPswTableViewController.h */,
+				5EDFCBAB208EDD2A0032935B /* ModifyPswTableViewController.m */,
+				5EDFCBAD208EE0450032935B /* ModifyPswApi.h */,
+				5EDFCBAE208EE0450032935B /* ModifyPswApi.m */,
+			);
+			path = ModifyPsw;
+			sourceTree = "<group>";
+		};
+		5EDFCBB9208F090A0032935B /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFCBBA208F09340032935B /* FAQViewController.h */,
+				5EDFCBBB208F09340032935B /* FAQViewController.m */,
+				5EDFCBBD208F097A0032935B /* FAQApi.h */,
+				5EDFCBBE208F097A0032935B /* FAQApi.m */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		5EDFCBC0208F12E00032935B /* RTCleanCache */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFCBC4208F16850032935B /* RTCleanCache.h */,
+				5EDFCBC5208F16850032935B /* RTCleanCache.m */,
+			);
+			path = RTCleanCache;
+			sourceTree = "<group>";
+		};
+		5EDFCBDC2090645D0032935B /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				5EDFCBDE209064720032935B /* FXBlurView.h */,
+				5EDFCBDD209064720032935B /* FXBlurView.m */,
+			);
+			path = FXBlurView;
 			sourceTree = "<group>";
 		};
 		5EE32209207DDD73001C46D3 /* Controller */ = {
@@ -1953,6 +2055,7 @@
 				5EE3222F207E0D8C001C46D3 /* PowerTableViewCell.xib in Resources */,
 				5E73735A206A35C7004125F1 /* MessageCentreTableViewCell.xib in Resources */,
 				5EA48B222068C2F1004B5E7E /* LoginMode.storyboard in Resources */,
+				5EDFCBE1209068A30032935B /* SpeechView.xib in Resources */,
 				5ED2FE03206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib in Resources */,
 				5EC870222087749500454F2B /* NotConnectWiFiView.xib in Resources */,
 				5E737387206B7D9F004125F1 /* Setting.storyboard in Resources */,
@@ -2163,8 +2266,11 @@
 				5EC8702B20882B2F00454F2B /* RTUdpSocketManager.m in Sources */,
 				5E68C11B207B6D3200B8DF9F /* SetDeviceAliasApi.m in Sources */,
 				5E68C0C92074C77100B8DF9F /* RTVerifyCodeButton.m in Sources */,
+				5EDFCBD620902B4F0032935B /* SpeechView.m in Sources */,
 				5E737382206B6B97004125F1 /* RTAlertContrller.m in Sources */,
+				5EDFCBC6208F16850032935B /* RTCleanCache.m in Sources */,
 				5E73736F206B35E1004125F1 /* Language.m in Sources */,
+				5EDFCBBF208F097A0032935B /* FAQApi.m in Sources */,
 				5EE321F9207D9D57001C46D3 /* ShareUserTableViewCell.m in Sources */,
 				5E737359206A35C7004125F1 /* MessageCentreTableViewCell.m in Sources */,
 				5E68C0D4207A0D4700B8DF9F /* LoginApi.m in Sources */,
@@ -2183,6 +2289,8 @@
 				5E68C0DD207A44F900B8DF9F /* ForgotPsdApi.m in Sources */,
 				5EC8701E2087746A00454F2B /* NotConnectWiFiView.m in Sources */,
 				5EE32208207DDA63001C46D3 /* TimedTaskModel.m in Sources */,
+				5EDFCBD0208F62C90032935B /* RTAddinterceptor.m in Sources */,
+				5EDFCBAF208EE0450032935B /* ModifyPswApi.m in Sources */,
 				5E68C12C207CF4D800B8DF9F /* UnshareApi.m in Sources */,
 				5EE321F0207D046C001C46D3 /* DeleteDeviceApi.m in Sources */,
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
@@ -2196,11 +2304,15 @@
 				5ED2FE1E206DCA4A0067B7A4 /* ShareUserTableViewController.m in Sources */,
 				5E73735D206A4622004125F1 /* AddDeviceViewController.m in Sources */,
 				5ED9E44A2063583D004A5D79 /* RTBaseRequest.m in Sources */,
+				5EDFCBC9208F34020032935B /* AboutUsTableViewController.m in Sources */,
 				5E68C0EF207B0F5100B8DF9F /* DeviceManageApi.m in Sources */,
+				5EDFCBAC208EDD2A0032935B /* ModifyPswTableViewController.m in Sources */,
 				5E737385206B732F004125F1 /* LocalizationKeys.m in Sources */,
 				5E4B019F20859C0500296F85 /* UIView+XIB.m in Sources */,
+				5EDFCBD3209026CB0032935B /* ShareDeviceOperationTableViewController.m in Sources */,
 				5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */,
 				5E4B01752080793B00296F85 /* EditSceneApi.m in Sources */,
+				5EDFCBA8208ED6320032935B /* TPAccessTableViewCell.m in Sources */,
 				5EA48B1C2068C10E004B5E7E /* CodeLoginSecondViewController.m in Sources */,
 				5E68C0D12079E87200B8DF9F /* MainUserManager.m in Sources */,
 				5EC8702E2088796400454F2B /* QueryDeviceStatusApi.m in Sources */,
@@ -2208,6 +2320,7 @@
 				5EE32232207E1241001C46D3 /* PowerDetailViewController.m in Sources */,
 				5ED2FE24206DED450067B7A4 /* DeviceOperationTableViewController.m in Sources */,
 				5E4B01B52087298400296F85 /* EditWiFiInfoView.m in Sources */,
+				5EDFCBDF209064720032935B /* FXBlurView.m in Sources */,
 				5EE32212207DECCD001C46D3 /* EditTimedTaskApi.m in Sources */,
 				5E4B017220805C9700296F85 /* SceneDevice.m in Sources */,
 				5ED2FE27206E09130067B7A4 /* SetDeviceRemarkViewController.m in Sources */,
@@ -2222,6 +2335,7 @@
 				5EE3222E207E0D8C001C46D3 /* PowerTableViewCell.m in Sources */,
 				5EE32225207E035B001C46D3 /* PowerYear.m in Sources */,
 				5EE321F6207D9B3C001C46D3 /* ShareUserModel.m in Sources */,
+				5EDFCBB8208EFEC70032935B /* MessageDetailApi.m in Sources */,
 				5E68C123207C994900B8DF9F /* DeviceDetailModel.m in Sources */,
 				5E498FA02058EC10001D6D9B /* main.m in Sources */,
 				5E73737A206B6509004125F1 /* SettingTableViewController.m in Sources */,
@@ -2232,10 +2346,12 @@
 				5EA48B132068C0E0004B5E7E /* RegisterFirstViewController.m in Sources */,
 				5E413FF3207F10BA00C621F4 /* SceneDetailApi.m in Sources */,
 				5E73734B2069F7AD004125F1 /* PersonalCentreTableViewController.m in Sources */,
+				5EDFCBBC208F09340032935B /* FAQViewController.m in Sources */,
 				5ED094E720725BA400F77160 /* SELUpdateAlert.m in Sources */,
 				5E68C11E207C8F9A00B8DF9F /* EditJackNameView.m in Sources */,
 				5E4B01C020873C2B00296F85 /* AddDeviceCollectionViewCell.m in Sources */,
 				5E413FFC207F2D4D00C621F4 /* SceneDetailTableViewController.m in Sources */,
+				5EDFCBCD208F5D740032935B /* AppDelegate+RootViewController.m in Sources */,
 				5E4B01A82085E25A00296F85 /* AddShareUser.m in Sources */,
 				5ED2FE2A206E0AD70067B7A4 /* AddTimingTableViewController.m in Sources */,
 				5E68C129207CC75100B8DF9F /* DeviceShareUserApi.m in Sources */,
@@ -2256,7 +2372,9 @@
 				5E4B016F207FA39600296F85 /* UINavigationBar+Awesome.m in Sources */,
 				5EF3FECE2060E5480021FF58 /* RTSpeechSynthesizer.m in Sources */,
 				5ED2FE21206DE6CE0067B7A4 /* DeviceTimingTableViewController.m in Sources */,
+				5EDFCBB5208EFE8F0032935B /* MessageDetailViewController.m in Sources */,
 				5EC8703420889DC500454F2B /* ConfigDeviceFailView.m in Sources */,
+				5EDFCBA5208ED6050032935B /* TPAccessTableViewController.m in Sources */,
 				5E7373472069E8BA004125F1 /* DeviceCollectionViewCell.m in Sources */,
 				5E68C0C020749DE700B8DF9F /* RegisterApi.m in Sources */,
 				5EE321ED207D0430001C46D3 /* DevicePowerDetailApi.m in Sources */,
@@ -2264,7 +2382,7 @@
 				5E68C137207CF57500B8DF9F /* AddShareUserFirstViewController.m in Sources */,
 				5E4B017820807F9700296F85 /* DeleteSceneApi.m in Sources */,
 				5E4B0191208099CA00296F85 /* FeedbackViewController.m in Sources */,
-				5E4B019B2081111500296F85 /* TestViewController.m in Sources */,
+				5EDFCBDB209055130032935B /* NotificationConst.m in Sources */,
 				5E0168C42089B6B6002AA0F5 /* SelectSceneConditionView.m in Sources */,
 				5E68C0D7207A40FE00B8DF9F /* ForgotPsdFirstViewController.m in Sources */,
 				5E4B018E208095D400296F85 /* MessageModel.m in Sources */,

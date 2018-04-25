@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *friend_alias;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *avatar;
 
 @end
 

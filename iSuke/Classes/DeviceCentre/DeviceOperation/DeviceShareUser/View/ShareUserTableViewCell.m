@@ -41,8 +41,9 @@
     }else{
         _name.text = shareUser.friend_alias;
     }
-    
     _phone.text = shareUser.phone;
+    RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
+    [self.icon setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",config.baseUrl,RT_ICON_BASE,shareUser.avatar]] placeholder:[UIImage imageNamed:RTPORTRAIT]];
 }
 
 @end

@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign) NSInteger app_user_id;
 @property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, copy) NSString *avatar;
 @property (nonatomic, copy) NSString *phone;
 @property (nonatomic, copy) NSString *pushAlias;
 

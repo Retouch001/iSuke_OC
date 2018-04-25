@@ -27,10 +27,10 @@
 #import "API.h"
 #import "MainUserManager.h"
 #import "UIView+XIB.h"
+#import "RTNetworkConfig.h"
+#import "NotificationConst.h"
 
 #endif
-
-
 
 #define RTLocalizedString(key)  NSLocalizedString(key, nil)
 
@@ -41,7 +41,6 @@
 
 #define ABOVE_IOS11  (([[[UIDevice currentDevice] systemVersion] floatValue] >=11.0) ? YES : NO)
 #define IPHONE_X     ([[UIScreen mainScreen] bounds].size.width == 375.0 && [[UIScreen mainScreen] bounds].size.height == 812.0)
-
 
 
 

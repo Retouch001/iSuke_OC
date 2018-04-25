@@ -10,7 +10,9 @@
 #define ColorCentre_h
 
 
-#define HEADER_HEIGHT   (SCREEN_HEIGHT*17/80)
+#define HEADER_HEIGHT                   (SCREEN_HEIGHT/3)
+#define RTPORTRAIT                      @"ic_portrait"
+#define RT_MAINUSER_CACHE_NAME          @"RT_MainUser_Cache_Name"
 
 
 //基色F1F0EF

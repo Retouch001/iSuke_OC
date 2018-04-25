@@ -30,12 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    NSLog(@"-------%@",[_addShareUser modelDescription]);
-    
     self.deviceName.text = _device.device_alias;
     self.shareUserName.text = kStringIsEmpty(_addShareUser.nickname)?_addShareUser.phone:_addShareUser.nickname;
+    RTNetworkConfig *config = [RTNetworkConfig sharedConfig];
+    [self.shareUserIcon setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@",config.baseUrl,RT_ICON_BASE,_addShareUser.avatar]] placeholder:[UIImage imageNamed:RTPORTRAIT]];
 }
 
 
@@ -47,12 +45,11 @@
 }
 
 
-
 #pragma mark -RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     [SVProgressHUD dismiss];
     if ([request dataSuccess]) {
-        [kNotificationCenter postNotificationName:@"shareUserDidChanged" object:nil];
+        [kNotificationCenter postNotificationName:RTShareUserDidChangeNotification object:nil];
         [self.navigationController popToViewController:self.navigationController.viewControllers[3] animated:YES];
     }else{
         [SVProgressHUD showErrorWithStatus:request.errorMessage];

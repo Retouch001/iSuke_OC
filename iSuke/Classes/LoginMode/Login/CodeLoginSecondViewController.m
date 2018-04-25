@@ -11,7 +11,7 @@
 #import "LoginApi.h"
 #import "MainUserManager.h"
 #import "RTVerifyCodeButton.h"
-
+#import "RTAddinterceptor.h"
 
 @interface CodeLoginSecondViewController ()<RTRequestDelegate>
 
@@ -70,7 +70,7 @@
         if ([request dataSuccess]) {
             MainUser *mainUser = [MainUser modelWithDictionary:request.responseObject[@"appUser"]];
             [MainUserManager updateLocalMainUserInfo:mainUser];
-            
+            [RTAddinterceptor addInterceptorWithMainUser:mainUser];
             UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
             kKeyWindow.rootViewController = mainVC;
         }else{

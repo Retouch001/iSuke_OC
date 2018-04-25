@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, RTDeviceBelongType) {
 @interface Device : NSObject
 
 @property (nonatomic, assign) NSInteger device_user_id;//谁拥有的app_user_id
+@property (nonatomic, copy) NSString *device_user_name;
 
 @property (nonatomic, assign) RTDeviceBelongType device_belong_type;
 
@@ -28,7 +29,7 @@ typedef NS_ENUM(NSInteger, RTDeviceBelongType) {
 @property (nonatomic, assign) NSInteger device_type;
 
 @property (nonatomic, assign) NSInteger device_sub_id;
-
+@property (nonatomic, copy) NSString *software_version;
 
 @end
 

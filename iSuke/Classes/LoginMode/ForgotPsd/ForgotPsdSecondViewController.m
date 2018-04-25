@@ -12,6 +12,7 @@
 #import "VerifyCodeAPi.h"
 
 #import "MainUserManager.h"
+#import "RTAddinterceptor.h"
 
 
 @interface ForgotPsdSecondViewController ()<RTRequestDelegate>{
@@ -78,7 +79,7 @@
         if ([request dataSuccess]) {
             MainUser *mainUser = [MainUser modelWithDictionary:request.responseObject[@"appUser"]];
             [MainUserManager updateLocalMainUserInfo:mainUser];
-            
+            [RTAddinterceptor addInterceptorWithMainUser:mainUser];
             UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
             kKeyWindow.rootViewController = mainVC;
         }else{

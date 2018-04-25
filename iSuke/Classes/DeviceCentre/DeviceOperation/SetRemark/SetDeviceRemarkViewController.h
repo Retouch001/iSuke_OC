@@ -14,7 +14,4 @@
 
 @property (nonatomic, strong) Device *device;
 @property (nonatomic, strong) DeviceDetailInfo *deviceDetailInfo;
-
-@property (nonatomic, copy) void (^block)(NSString *string);
-
 @end

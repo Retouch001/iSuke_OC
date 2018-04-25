@@ -55,11 +55,9 @@
         }else if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0){
             aUtterance.rate = 0.15;//iOS8设置为0.15
         }
-        
         if ([self.speechSynthesizer isSpeaking]){
             [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryWord];
         }
-        
         [self.speechSynthesizer speakUtterance:aUtterance];
     }
 }

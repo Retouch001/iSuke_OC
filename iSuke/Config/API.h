@@ -78,8 +78,8 @@
 #define RT_GET_MESSAGES                        @"iSukeServer/api/getMessageCenter"
 #define RT_FEEDBACK                            @"iSukeServer/api/feedback"
 #define RT_MODIFY_PWD                          @"iSukeServer/api/changePwd"
-
-
+#define RT_GET_MESSAGES_DETAIL                 @"iSukeServer/api/getMessageDetail"
+#define RT_NORMAL_PROBLEM                      @"iSukeServer/api/normalProblem"
 
 
 

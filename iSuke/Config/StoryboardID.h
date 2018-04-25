@@ -32,19 +32,22 @@
 #define SB_POWER_DETAIL           @"powerDetail"
 #define SB_ADDSHARE_USER          @"AddShareUser"
 #define SB_DEVICE_CONFIG_SECOND   @"DeviceConfigSecond"
+#define SB_DEVICE_OPERATE         @"DeviceOperate"
+#define SB_SHARE_DEVICE_OPERATE   @"ShareDeviceOperate"
+
 
 //场景
 #define SB_SCENEMODE              @"SceneMode"
 
-#define SB_SCENEMODE_ADD          @"SceneDetail"
-
+#define SB_SCENEMODE_DETAIL       @"SceneDetail"
+#define SB_SCENMODE_ADD           @"SceneAdd"
 
 
 //个人中心
 #define SB_PERSONAL_CENTRE         @"PersonalCentre"
 
 #define SB_FEEDBACK                @"FeedBack"
-
+#define SB_MESSAGE_DETAIL          @"MessageDetail"
 
 
 

@@ -21,13 +21,14 @@
 @end
 
 @implementation ModifyUserInfoViewController
-
+#pragma mark -LifeCycle--
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _nickNameTextField.text = [MainUserManager getLocalMainUserInfo].nickname;
 }
 
-
+#pragma mark -IBAction--
 - (IBAction)confirmBtnAction:(id)sender {
     modifyUserInfoApi = [[ModifyUserInfoApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id nickname:_nickNameTextField.text];
     modifyUserInfoApi.delegate = self;
@@ -38,18 +39,19 @@
 }
 
 
-
-
 #pragma mark -RTRequestDelegate--
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
-    
+    if ([request dataSuccess]) {
+        MainUser *user = [MainUserManager getLocalMainUserInfo];
+        user.nickname = _nickNameTextField.text;
+        [MainUserManager updateLocalMainUserInfo:user];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [SVProgressHUD showErrorWithStatus:request.errorMessage];
+    }
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
     
 }
-
-
-
-
 @end

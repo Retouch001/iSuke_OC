@@ -7,6 +7,7 @@
 //
 
 #import "MessageCentreTableViewController.h"
+
 #import "MessageCentreTableViewCell.h"
 #import "GetMessagesApi.h"
 
@@ -16,28 +17,22 @@ static NSString *const reuseIdentifier = @"cell";
 
 @interface MessageCentreTableViewController ()<RTRequestDelegate>{
     GetMessagesApi *getMessagesApi;
-    
     MessageModel *messageModel;
 }
-
 @end
 
 @implementation MessageCentreTableViewController
-
+#pragma mark -LifeCycle--
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.separatorColor = kColorTableViewSeparatorLine;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MessageCentreTableViewCell class]) bundle:nil] forCellReuseIdentifier:reuseIdentifier];
     
     getMessagesApi = [[GetMessagesApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id];
     getMessagesApi.delegate = self;
     [getMessagesApi start];
-    
 }
-
-
-
 
 
 #pragma mark - Table view data source
@@ -45,19 +40,24 @@ static NSString *const reuseIdentifier = @"cell";
     return messageModel.messageList.count;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageCentreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
     [cell freshCellWithMessage:messageModel.messageList[indexPath.row]];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Message *message = messageModel.messageList[indexPath.row];
+    id vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_PERSONAL_CENTRE, SB_MESSAGE_DETAIL);
+    [vc setValue:message forKey:@"_message"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 #pragma mark -RTRequestDelegate--
@@ -72,6 +72,4 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
     
 }
-
-
 @end

@@ -17,16 +17,17 @@
 
 @interface DeviceDetailViewController ()<RTRequestDelegate>{
     Device *_device;
-    
-    
     DeviceDetailApi *deviceDetailApi;
     OperatingSwitchApi *operatingSwitchApi;
     SetDeviceAliasApi *setDeviceAliasApi;
 }
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *navigationBarConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mainSwitchBtn;
 @property (weak, nonatomic) IBOutlet UIButton *firstSwitchBtn;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *firstSwitchName;
 @property (weak, nonatomic) IBOutlet UILabel *firstSwitchStatus;
@@ -41,9 +42,13 @@
 #pragma mark  --LifeCycle---
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    
+    self.topViewConstraint.constant = HEADER_HEIGHT;
+    self.navigationController.navigationBarHidden = YES;
+    if (IPHONE_X) {
+        self.navigationBarConstraint.constant = 88;
+    }else{
+        self.navigationBarConstraint.constant = 64;
+    }
     deviceDetailApi = [[DeviceDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_belong_type:_device.device_belong_type];
     deviceDetailApi.delegate = self;
     [deviceDetailApi start];
@@ -57,6 +62,21 @@
 
 
 #pragma mark -IBAction--
+- (IBAction)leftBtnClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)rightBtnClick:(id)sender {
+    UIViewController *vc;
+    if (_device.device_belong_type == RTDeviceBelongTypeOwn) {
+        vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_DEVICE_DETAIL, SB_DEVICE_OPERATE);
+    }else{
+        vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_DEVICE_DETAIL, SB_SHARE_DEVICE_OPERATE);
+    }
+    [vc setValue:_device forKey:@"_device"];
+    [vc setValue:_deviceDetailModel.deviceDetail.firstObject forKey:@"_deviceDetailInfo"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (IBAction)mainSwitchClick:(id)sender {
     [SVProgressHUD showWithStatus:RTLocalizedString(@"正在执行...")];
     
@@ -92,7 +112,7 @@
 
 #pragma mark -PrivateMethod--
 - (void)freshUI{
-    self.title = kStringIsEmpty(_device.device_alias)?_device.device_name:_device.device_alias;
+    self.titleLabel.text = kStringIsEmpty(_device.device_alias)?_device.device_name:_device.device_alias;
     DeviceDetailInfo *mainJack = self.deviceDetailModel.deviceDetail.firstObject;
     if (mainJack.device_sub_status == RTDeviceSubStatusOn) {
         [self.mainSwitchBtn setImage:[UIImage imageNamed:@"ic_turnonturnoff1"] forState:UIControlStateNormal];
@@ -128,13 +148,6 @@
     [SVProgressHUD dismiss];
 }
 
-
-#pragma mark -Navigation--
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    UIViewController *vc = segue.destinationViewController;
-    [vc setValue:_device forKey:@"_device"];
-    [vc setValue:_deviceDetailModel.deviceDetail.firstObject forKey:@"_deviceDetailInfo"];
-}
 
 
 #pragma mark -GetterSetter--

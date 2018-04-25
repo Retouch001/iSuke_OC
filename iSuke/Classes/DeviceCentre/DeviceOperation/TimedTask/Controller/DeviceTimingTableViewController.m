@@ -8,6 +8,7 @@
 
 #import "DeviceTimingTableViewController.h"
 #import "AddTimingTableViewController.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 #import "DeviceCentreModel.h"
 #import "GetTimedTaskApi.h"
@@ -18,7 +19,7 @@
 #import "TimedTaskTableViewCell.h"
 
 
-@interface DeviceTimingTableViewController ()<RTRequestDelegate>{
+@interface DeviceTimingTableViewController ()<RTRequestDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>{
     Device *_device;
     TimedTaskModel *timedTaskModel;
     
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorColor = UIColorHex(0xf1f0ef);
 }
 
@@ -114,6 +115,14 @@
 }
 
 
+#pragma mark -DZNEmptyDataSetDelegate--
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
+    return [[NSAttributedString alloc] initWithString:RTLocalizedString(@"您还没有添加定时开启~")];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"ic_06nothing"];
+}
 
 
 

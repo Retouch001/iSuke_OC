@@ -31,10 +31,11 @@
         make.left.mas_equalTo(30);
         make.height.mas_equalTo(230);
     }];
-    [UIView animateWithDuration:.25f animations:^{
-        self.bgBtn.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.5f];
-        [self layoutIfNeeded];
-    }];
+    self.bgBtn.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.5f];
+    [self layoutIfNeeded];
+//    [UIView animateWithDuration:.25f animations:^{
+//
+//    }];
     
 }
 

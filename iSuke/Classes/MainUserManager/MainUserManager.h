@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MainUser.h"
 
-#define RT_MAINUSER_CACHE_NAME            @"RT_MainUser_Cache_Name"
 #define RT_MAINUSER_CACHE_KEY             @"RT_MainUser_Cache_Key"
 
 @interface MainUserManager : NSObject
