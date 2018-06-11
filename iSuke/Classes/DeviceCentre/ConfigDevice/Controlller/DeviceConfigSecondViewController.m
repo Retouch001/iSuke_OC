@@ -31,7 +31,7 @@
 
 - (void)applicationBecomeActive{
     NSString *connectedSSID = [self fetchSSIDInfo][@"SSID"];
-    if ([connectedSSID isEqualToString:@"isuke"] ) {
+    if ([connectedSSID containsString:@"iSuke"]) {
         self.block();
         [self.navigationController popViewControllerAnimated:NO];
     }

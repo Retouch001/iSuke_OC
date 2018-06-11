@@ -9,7 +9,6 @@
 #import "RTAlertContrller.h"
 
 @implementation RTAlertContrller
-
 + (void)alertFromVC:(UIViewController *)viewController
          alertTitle:(NSString *)alertTitle
       defaultTtitle:(NSString *)defaultTtitle

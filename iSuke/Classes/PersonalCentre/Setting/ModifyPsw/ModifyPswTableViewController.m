@@ -51,7 +51,8 @@
 #pragma mark -RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     if ([request dataSuccess]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [SVProgressHUD showSuccessWithStatus:RTLocalizedString(@"修改成功")];
+        [self.navigationController popViewControllerAnimated:YES];
     }else{
         [SVProgressHUD showErrorWithStatus:request.errorMessage];
     }

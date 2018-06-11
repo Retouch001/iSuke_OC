@@ -18,6 +18,9 @@
 
 - (id)initWithCountry_code:(NSString *)country_code phone:(NSString *)phone psd:(NSString *)psd verifycode:(NSString *)verifycode{
     if (self = [super init]) {
+        if ([country_code containsString:@"+"]) {
+            country_code = [country_code substringFromIndex:1];
+        }
         _country_code = country_code;
         _phone = phone;
         _password = psd;

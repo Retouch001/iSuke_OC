@@ -12,6 +12,6 @@
 
 @interface SceneCollectionViewCell : UICollectionViewCell
 
-- (void)freshCellWithScene:(Scene *)scene;
+- (void)freshCellWithScene:(Scene *)scene editMode:(BOOL)editMode;
 
 @end

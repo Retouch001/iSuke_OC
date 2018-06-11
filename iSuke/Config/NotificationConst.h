@@ -11,4 +11,6 @@
 
 FOUNDATION_EXPORT NSString * const RTDeviceCenterDidChangeNotification;
 FOUNDATION_EXPORT NSString * const RTShareUserDidChangeNotification;
+FOUNDATION_EXPORT NSString * const RTSceneCenterDidChangeNotification;
+FOUNDATION_EXPORT NSString * const RTSceneDetailDidChangeNotification;
 

@@ -13,7 +13,6 @@
     NSInteger _app_user_id;
 }
 
-
 - (id)initWithApp_user_id:(NSInteger)app_user_id device_mac:(NSString *)device_mac{
     if (self  = [super init]) {
         _app_user_id = app_user_id;
@@ -22,11 +21,9 @@
     return self;
 }
 
-
 - (NSString *)requestUrl{
     return RT_ADD_DEVICE;
 }
-
 
 - (id)requestArgument{
     return @{
@@ -34,6 +31,4 @@
              @"device_no" : _device_mac
              };
 }
-
-
 @end

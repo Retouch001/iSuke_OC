@@ -26,23 +26,14 @@ static CGFloat kMagin = 10.f;
 #pragma mark  --LifeCycle---
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.itemSize = CGSizeMake(ITEM_WIDTH, ITEM_WIDTH);
-    //flowLayout.minimumLineSpacing = 20;////最小行间距(默认为10)
-    //flowLayout.minimumInteritemSpacing = 0;//最小item间距（默认为10
-    flowLayout.sectionInset = UIEdgeInsetsMake(kMagin , kMagin, kMagin, kMagin);////设置senction的内边距
-    //flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 5);
+    flowLayout.minimumLineSpacing = 0;////最小行间距(默认为10)
     
     self.collectionView.collectionViewLayout = flowLayout;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([AddDeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
-
-
-
-
-
 
 
 #pragma mark  -CollectionView Delegate-----

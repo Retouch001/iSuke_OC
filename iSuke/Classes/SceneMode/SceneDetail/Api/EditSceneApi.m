@@ -24,10 +24,10 @@
 - (id)initWithApp_user_id:(NSInteger)app_user_id scene:(Scene *)scene sceneDetail:(SceneDetail *)sceneDetail{
     if (self = [super init]) {
         _app_user_id = app_user_id;
-        _scene_name = scene.scene_name;
         _scene_id = scene.scene_id;
-        _scene_status = scene.scene_status;
         
+        _scene_status = sceneDetail.scene_status;
+        _scene_name = sceneDetail.scene_name;
         _scene_city = sceneDetail.scene_city;
         _condition_id = sceneDetail.sceneCondition.condition_id;
         _condition_option = sceneDetail.sceneCondition.condition_option.firstObject;
@@ -62,7 +62,6 @@
 
 
 - (id)requestArgument{
-    NSLog(@"哈哈哈哈哈哈哈哈----%@",_devie_ids);
     return @{
              @"app_user_id" : @(_app_user_id),
              @"scene_id" : @(_scene_id),

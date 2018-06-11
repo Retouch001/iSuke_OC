@@ -9,16 +9,15 @@
 #ifndef Header_h
 #define Header_h
 
-
-
 #define RT_APPSERIALNUM                     @"MIS0812778904"
 #define RT_APPORGCODE                       @"0"
 #define RT_ORGID                            @"-1"
 
 
-
-#define   RT_BASE_URL                        @"http://192.168.8.216:8080"
+#define   RT_HAOWEI_BASE_URL                 @"http://192.168.8.241:8082"
+#define   RT_LINAG_BASE_URL                  @"http://192.168.1.182"
 #define   RT_DEVELOP_BASE_URL                @"http://117.78.48.143"
+#define   RT_TEST_BASE_URL                   @"http://117.78.48.140"
 
 #define RT_ICON_BASE                         @"/iSukeImage/"
 
@@ -43,6 +42,8 @@
 #define RT_ADD_SHARE_USER                    @"iSukeServer/user/addShareUser"
 #define RT_QUERY_USER                        @"iSukeServer/user/queryUser"
 #define RT_QUERY_DEVICE                      @"iSukeServer/device/getDeviceOnline"
+#define RT_SEARCH_DEVICE_V                   @"iSukeServer/device/getCurrentDeviceVersion"
+#define RT_UPDATE_DEVICE_V                   @"iSukeServer/device/updateDevice"
 #define RT_ADD_DEVICE                        @"iSukeServer/device/relativeDevice"
 
 

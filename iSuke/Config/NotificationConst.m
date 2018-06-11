@@ -10,4 +10,5 @@
 
 NSString * const RTDeviceCenterDidChangeNotification = @"deviceCenterDidChanged";
 NSString * const RTShareUserDidChangeNotification = @"shareUserDidChanged";
-
+NSString * const RTSceneCenterDidChangeNotification = @"sceneCenterDidChanged";
+NSString * const RTSceneDetailDidChangeNotification = @"sceneDetailDidChanged";

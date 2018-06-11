@@ -14,11 +14,11 @@ pod ‘YYKit’
 pod 'SVProgressHUD'
 pod 'MJRefresh'
 pod 'Masonry'
-pod 'JTCalendar'
 pod 'DateTools'
 pod 'CocoaAsyncSocket'
 pod 'DZNEmptyDataSet'
 pod 'IQKeyboardManager'
+
 pod 'Charts'
 use_frameworks!
 

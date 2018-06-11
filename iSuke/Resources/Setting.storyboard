@@ -73,11 +73,11 @@
                             </tableViewSection>
                             <tableViewSection id="5om-ga-iYo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Chf-6C-WeF" detailTextLabel="i7L-gf-xkw" style="IBUITableViewCellStyleValue1" id="as0-xN-sjm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Chf-6C-WeF" detailTextLabel="i7L-gf-xkw" style="IBUITableViewCellStyleValue1" id="as0-xN-sjm">
                                         <rect key="frame" x="0.0" y="130" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="as0-xN-sjm" id="PRy-sB-Xff">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="所在地区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Chf-6C-WeF">
@@ -88,7 +88,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="中国大陆" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i7L-gf-xkw">
-                                                    <rect key="frame" x="270.5" y="17" width="69.5" height="20.5"/>
+                                                    <rect key="frame" x="289.5" y="17" width="69.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,7 +121,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ffa-xG-ytu" kind="show" id="rrR-7I-gJt"/>
+                                            <segue destination="SVP-5L-p3W" kind="showDetail" id="Yv9-3u-6qJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jRd-sh-LbG" detailTextLabel="ZYg-ta-JnT" style="IBUITableViewCellStyleValue1" id="CLn-rT-tLO">
@@ -224,12 +224,12 @@
         <!--设置语言-->
         <scene sceneID="YWg-EA-9tt">
             <objects>
-                <tableViewController title="设置语言" id="Vt7-Ue-OOC" sceneMemberID="viewController">
+                <tableViewController title="设置语言" id="Vt7-Ue-OOC" customClass="LanguageTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z4a-0K-Fz8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94117647059999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="MfC-Kr-Zza">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="MfC-Kr-Zza">
                             <rect key="frame" x="0.0" y="165" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,7 +306,7 @@
             <objects>
                 <tableViewController title="选择时区" id="ffa-xG-ytu" customClass="TimeZoneSelectTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eef-ct-W1P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94117647059999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -314,10 +314,33 @@
                             <outlet property="delegate" destination="ffa-xG-ytu" id="Hwe-Xf-2Pg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="选择时区" id="aee-XR-BrJ">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="OY9-Ur-7Sy">
+                            <connections>
+                                <action selector="backAction:" destination="ffa-xG-ytu" id="3rp-tM-TCs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGb-ts-F9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="2014"/>
+            <point key="canvasLocation" x="649" y="2711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Ap-gz-iAR">
+            <objects>
+                <navigationController id="SVP-5L-p3W" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jnb-WP-tfj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ffa-xG-ytu" kind="relationship" relationship="rootViewController" id="IuE-sw-WRa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cm-B3-RXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="2013"/>
         </scene>
         <!--修改密码-->
         <scene sceneID="3Iu-Zu-3Ee">
@@ -327,7 +350,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94117647059999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="2cY-LQ-ILB">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="2cY-LQ-ILB">
                             <rect key="frame" x="0.0" y="165" width="375" height="173"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -369,7 +392,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="359" height="54.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -391,7 +414,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="359" height="54.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -413,7 +436,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="359" height="54.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

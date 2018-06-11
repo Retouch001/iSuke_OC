@@ -8,9 +8,7 @@
 
 #import "ShareUserModel.h"
 
-
 @implementation ShareUser
-
 
 @end
 

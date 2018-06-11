@@ -60,7 +60,8 @@
             DeviceConfigSecondViewController *vc = SB_VIEWCONTROLLER_IDENTIFIER(SB_DEVICE_CONFIG, SB_DEVICE_CONFIG_SECOND);
             vc.block = ^{
                 [self inConfigMode];
-                [[RTUdpSocketManager shareInstance] sendDataWithWiFiName:self->wifiName psd:self->psd];
+                NSData *data = [[RTParseGenerateDataManager shareInstance] configConmmandDataWithUsername:wifiName psw:wifiPsd];
+                [[RTUdpSocketManager shareInstance] sendDataWithData:data];
                 [RTUdpSocketManager shareInstance].delegate = self;
             };
             [self.navigationController pushViewController:vc animated:YES];
@@ -72,7 +73,6 @@
             [self toWIFI];
         }];
     }
-
 }
 
 - (void)timerAction:(id)sender{
@@ -98,23 +98,25 @@
 }
 
 -(void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
-//    NSString *ip = [GCDAsyncUdpSocket hostFromAddress:address];
-//    uint16_t port = [GCDAsyncUdpSocket portFromAddress:address];
-    
     Byte *bytes = (Byte *)[data bytes];
     if (bytes[5] == 0x01) {
         NSData *macData = [data subdataWithRange:NSMakeRange(6, 6)];
         NSString *macString = [self convertDataToHexStr:macData];
         mac = macString;
-        queryDeviceStatusApi = [[QueryDeviceStatusApi alloc] initWithMac:macString];
-        queryDeviceStatusApi.delegate = self;
-        [queryDeviceStatusApi start];
+        @weakify(self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            @strongify(self);
+            self->queryDeviceStatusApi = [[QueryDeviceStatusApi alloc] initWithMac:macString];
+            self->queryDeviceStatusApi.delegate = self;
+            [self->queryDeviceStatusApi start];
+        });
     }else{
         [self.configDeviceFailView showWithCancel:nil ok:nil];
         [self endConfigMode];
     }
     [[RTUdpSocketManager shareInstance] closeUdp];
 }
+
 
 
 #pragma mark -RTRequestDelegate--

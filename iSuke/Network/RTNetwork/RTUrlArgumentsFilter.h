@@ -14,7 +14,4 @@
 
 + (RTUrlArgumentsFilter *)filterWithArguments:(NSDictionary *)arguments;
 
-
-
-
 @end

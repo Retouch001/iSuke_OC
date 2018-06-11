@@ -20,5 +20,9 @@
 }
 
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;//白色
+}
+
 
 @end

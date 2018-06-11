@@ -23,12 +23,11 @@
 
 //设备
 #define SB_DEVICE_CENTRE          @"DeviceCentre"
+
 #define SB_DEVICE_DETAIL          @"DeviceDetail"
 #define SB_DEVICE_CONFIG          @"DeviceConfig"
 #define SB_ADD_DEVICE             @"AddDeviceVC"
-
 #define SB_EDIT_TIMEDTASK         @"editTimedTaskNav"
-
 #define SB_POWER_DETAIL           @"powerDetail"
 #define SB_ADDSHARE_USER          @"AddShareUser"
 #define SB_DEVICE_CONFIG_SECOND   @"DeviceConfigSecond"
@@ -40,7 +39,7 @@
 #define SB_SCENEMODE              @"SceneMode"
 
 #define SB_SCENEMODE_DETAIL       @"SceneDetail"
-#define SB_SCENMODE_ADD           @"SceneAdd"
+#define SB_SCENMODE_CHANGE        @"SceneChange"
 
 
 //个人中心

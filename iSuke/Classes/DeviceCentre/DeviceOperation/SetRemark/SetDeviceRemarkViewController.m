@@ -55,6 +55,7 @@
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
     [SVProgressHUD dismiss];
     if ([request dataSuccess]) {
+        [kNotificationCenter postNotificationName:RTDeviceCenterDidChangeNotification object:nil];
         _device.device_alias = _remarkTextField.text;
         [self dismissViewControllerAnimated:YES completion:nil];
     }

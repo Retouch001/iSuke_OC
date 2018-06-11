@@ -35,7 +35,6 @@
 
 @property (nonatomic, strong) EditJackNameView *editJackNameView;
 @property (nonatomic, strong) DeviceDetailModel *deviceDetailModel;
-
 @end
 
 @implementation DeviceDetailViewController
@@ -49,10 +48,11 @@
     }else{
         self.navigationBarConstraint.constant = 64;
     }
+    
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"正在加载...")];
     deviceDetailApi = [[DeviceDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id device_id:_device.device_id device_belong_type:_device.device_belong_type];
     deviceDetailApi.delegate = self;
     [deviceDetailApi start];
-    [SVProgressHUD show];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -65,6 +65,7 @@
 - (IBAction)leftBtnClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (IBAction)rightBtnClick:(id)sender {
     UIViewController *vc;
     if (_device.device_belong_type == RTDeviceBelongTypeOwn) {
@@ -96,7 +97,6 @@
     operatingSwitchApi.delegate = self;
     [operatingSwitchApi start];
 }
-
 
 - (IBAction)editFistSwitchNameAciton:(id)sender {
     self.editJackNameView = [EditJackNameView createFromXib];
@@ -149,7 +149,6 @@
 }
 
 
-
 #pragma mark -GetterSetter--
 - (EditJackNameView *)editJackNameView{
     if (!_editJackNameView) {
@@ -159,6 +158,4 @@
     }
     return _editJackNameView;
 }
-
-
 @end

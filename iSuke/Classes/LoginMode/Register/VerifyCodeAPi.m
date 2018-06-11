@@ -17,6 +17,9 @@
 
 - (id)initWithPhone:(NSString *)phone tag:(RTGetVerifyCodeType)tag country_code:(NSString *)country_code{
     if (self = [super init]) {
+        if ([country_code containsString:@"+"]) {
+            country_code = [country_code substringFromIndex:1];
+        }
         _phone = phone;
         _tag = tag;
         _country_code = country_code;

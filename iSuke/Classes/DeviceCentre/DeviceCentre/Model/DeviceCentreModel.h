@@ -30,6 +30,9 @@ typedef NS_ENUM(NSInteger, RTDeviceBelongType) {
 
 @property (nonatomic, assign) NSInteger device_sub_id;
 @property (nonatomic, copy) NSString *software_version;
+@property (nonatomic, copy) NSString *firmware_version;
+
+@property (nonatomic, assign) BOOL selected;
 
 @end
 

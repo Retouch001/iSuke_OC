@@ -85,7 +85,7 @@
                                                 <rect key="frame" x="335" y="26.5" width="28" height="28"/>
                                                 <state key="normal" image="ic_addhome"/>
                                                 <connections>
-                                                    <segue destination="Qnd-IV-8ys" kind="show" id="fZN-pF-xKL"/>
+                                                    <action selector="rightBtnClick:" destination="PUM-Qw-lta" eventType="touchUpInside" id="bjs-hB-nu9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -136,7 +136,9 @@
                     <connections>
                         <outlet property="collectionView" destination="5hd-D7-MbF" id="OjM-Iq-F8I"/>
                         <outlet property="headerHeightConstraint" destination="1m2-LK-Gan" id="ReL-0p-FWF"/>
+                        <outlet property="leftBtn" destination="THF-z0-4wo" id="ppW-Mu-Eq9"/>
                         <outlet property="navigationBarConstraint" destination="MEc-jj-pHJ" id="Afc-z6-qPs"/>
+                        <outlet property="rightBtn" destination="tzN-67-L5m" id="8sG-oF-gAP"/>
                         <outlet property="speakBtnConstraint" destination="IZk-Aj-7Rj" id="P3r-40-3M3"/>
                     </connections>
                 </viewController>

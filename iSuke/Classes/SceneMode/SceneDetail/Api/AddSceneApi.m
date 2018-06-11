@@ -20,7 +20,6 @@
     NSString *_condition_sub_option;
 }
 
-
 - (id)initWithApp_user_id:(NSInteger)app_user_id sceneDetail:(SceneDetail *)sceneDetail{
     if (self = [super init]) {
         _app_user_id = app_user_id;
@@ -52,8 +51,6 @@
     }
     return self;
 }
-
-
 
 - (NSString *)requestUrl{
     return RT_ADD_SCENE;

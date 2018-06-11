@@ -14,6 +14,7 @@
 @property (nonatomic,  copy) NSString *scene_name;
 @property (nonatomic, assign) NSInteger scene_status;
 
+@property (nonatomic, assign) BOOL selected;
 
 @end
 

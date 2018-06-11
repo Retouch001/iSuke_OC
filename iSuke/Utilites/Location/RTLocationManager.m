@@ -9,20 +9,11 @@
 #import "RTLocationManager.h"
 
 @interface RTLocationManager()<CLLocationManagerDelegate>
-
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
 @property (nonatomic, copy) DidGetGeolocationsCompledBlock didGetGeolocationsCompledBlock;
-
-
-
 @end
 
-
-
-
 @implementation RTLocationManager
-
 + (instancetype)sharedManager {
     static RTLocationManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -45,7 +36,6 @@
     return self;
 }
 
-
 - (void)getCurrentGeolocationsCompled:(DidGetGeolocationsCompledBlock)compled {
     self.didGetGeolocationsCompledBlock = compled;
     if ([CLLocationManager locationServicesEnabled]) {
@@ -54,19 +44,27 @@
 }
 
 
-
-
 #pragma mark - CLLocationManager Delegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     CLGeocoder* geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+    [geocoder reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (self.didGetGeolocationsCompledBlock) {
             self.didGetGeolocationsCompledBlock(placemarks);
         }
     }];
     [manager stopUpdatingLocation];
 }
+
+
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+//    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+//    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+//        if (self.didGetGeolocationsCompledBlock) {
+//            self.didGetGeolocationsCompledBlock(placemarks);
+//        }
+//    }];
+//    [manager stopUpdatingLocation];
+//}
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     [manager stopUpdatingLocation];

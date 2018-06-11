@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DeviceCentreModel.h"
 
-typedef NS_ENUM(NSInteger, RTCellType){
-    RTCellTypeDeviceCentre,
-    RTCellTypeDeviceAdd,
-    RTCellTypeSceneMode
-};
-
 
 static NSString * const reuseIdentifier = @"deviceCell";
 
@@ -23,7 +17,7 @@ static NSString * const reuseIdentifier = @"deviceCell";
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPaht;
 
-- (void)freshCellWithDevice:(Device *)device cellType:(RTCellType)cellType;
+- (void)freshCellWithDevice:(Device *)device editMode:(BOOL)editMode;
 
 
 @end

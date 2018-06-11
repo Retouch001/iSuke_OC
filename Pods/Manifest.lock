@@ -21,7 +21,6 @@ PODS:
   - DateTools (2.0.0)
   - DZNEmptyDataSet (1.8.1)
   - IQKeyboardManager (5.0.7)
-  - JTCalendar (2.2.1)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - SVProgressHUD (2.2.5)
@@ -36,7 +35,6 @@ DEPENDENCIES:
   - DateTools
   - DZNEmptyDataSet
   - IQKeyboardManager
-  - JTCalendar
   - Masonry
   - MJRefresh
   - SVProgressHUD
@@ -49,12 +47,11 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
-  JTCalendar: be9e781229c6e539d9b71267560410886cd65cfb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a48666ad886a9907d9ec548d099dbe1377f50f9e
+PODFILE CHECKSUM: d1167dff8f7d42f03fbd96a7aaf7b4677da9d781
 
 COCOAPODS: 1.3.1

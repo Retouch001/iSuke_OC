@@ -10,16 +10,13 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 
-
 static  const uint16_t Kport = 6000;
-
 
 @interface RTUdpSocketManager ()<GCDAsyncUdpSocketDelegate>
 @property (nonatomic, strong) GCDAsyncUdpSocket *asyncUdpSocket;
 @end
 
 @implementation RTUdpSocketManager
-
 + (RTUdpSocketManager *)shareInstance{
     static RTUdpSocketManager *share;
     static dispatch_once_t onceToken;
@@ -37,7 +34,6 @@ static  const uint16_t Kport = 6000;
     return self;
 }
 
-
 - (void)bindPort{
     NSError * error = nil;
     //banding一个端口(可选),如果不绑定端口, 那么就会随机产生一个随机的电脑唯一的端口
@@ -52,9 +48,8 @@ static  const uint16_t Kport = 6000;
     }
 }
 
-
--(void)sendDataWithWiFiName:(NSString *)wifiName psd:(NSString *)psd{
-    [self.asyncUdpSocket sendData:[self configurationCommandWithWiFiName:wifiName password:psd] toHost:[self convert255WithIp:[self getIPAddress]]  port:Kport withTimeout:-1 tag:100];
+- (void)sendDataWithData:(NSData *)data{
+    [self.asyncUdpSocket sendData:data toHost:[self convert255WithIp:[self getIPAddress]] port:Kport withTimeout:-1 tag:100];
 }
 
 - (void)closeUdp{
@@ -62,10 +57,8 @@ static  const uint16_t Kport = 6000;
 }
 
 
-
 #pragma mark -GCDAsyncUdpSocketDelegate
 -(void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag{
-    
     if ([self.delegate respondsToSelector:@selector(udpSocket:didSendDataWithTag:)]) {
         [self.delegate udpSocket:sock didSendDataWithTag:tag];
     }
@@ -96,50 +89,6 @@ static  const uint16_t Kport = 6000;
 - (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error{
     NSLog(@"udpSocket关闭");
 }
-
-
-
-
-
-
-//配置指令
-- (NSData *)configurationCommandWithWiFiName:(NSString *)wifiName password:(NSString *)password{
-    NSMutableData *totalDataM = [NSMutableData data];
-    NSData *ssidData = [wifiName dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *pwdData = [password dataUsingEncoding:NSUTF8StringEncoding];
-    
-    Byte firstPositionByte[] = {0x24, 0x06, 0x01};
-    [totalDataM appendData:[NSData dataWithBytes:firstPositionByte length:sizeof(firstPositionByte)]];
-    
-    unsigned int totalSize = (int)ssidData.length + (int)pwdData.length + 4;
-    NSData *totalSizeData = [NSData dataWithBytes:&totalSize length:1];
-    [totalDataM appendData:totalSizeData];
-    
-    Byte commendID[] = {0x10};//操作指令
-    [totalDataM appendData:[NSData dataWithBytes:commendID length:1]];
-    
-    unsigned int ssidSize = (int)ssidData.length;
-    NSData *ssidSizeData = [NSData dataWithBytes:&ssidSize length:1];
-    [totalDataM appendData:ssidSizeData];
-    
-    unsigned int pwdSize = (int)pwdData.length;
-    NSData *pwdSizeData = [NSData dataWithBytes:&pwdSize length:1];
-    [totalDataM appendData:pwdSizeData];
-    
-    [totalDataM appendData:ssidData];
-    [totalDataM appendData:pwdData];
-    
-    Byte endPositionByte[] = {0xff, 0x69, 0x42};
-    [totalDataM appendData:[NSData dataWithBytes:endPositionByte length:sizeof(endPositionByte)]];
-    
-    return totalDataM;
-}
-
-
-
-
-
-
 
 
 #pragma mark -PrivateMethod--

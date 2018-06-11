@@ -11,12 +11,7 @@
 
 typedef void(^DidGetGeolocationsCompledBlock)(NSArray *placemarks);
 
-
 @interface RTLocationManager : NSObject
-
 + (instancetype)sharedManager;
-
 - (void)getCurrentGeolocationsCompled:(DidGetGeolocationsCompledBlock)compled;
-
-
 @end

@@ -13,5 +13,4 @@
 + (instancetype)createFromXib{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
 }
-
 @end

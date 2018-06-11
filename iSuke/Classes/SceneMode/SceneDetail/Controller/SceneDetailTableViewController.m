@@ -7,6 +7,7 @@
 //
 
 #import "SceneDetailTableViewController.h"
+#import "SceneChangeTableViewController.h"
 
 #import "TriggerCollectionViewCell.h"
 #import "SceneDeviceCollectionViewCell.h"
@@ -26,12 +27,11 @@ static CGFloat kMagin = 10.f;
     Scene *_scene;
     SceneDetail *_sceneDetail;
     
-    SceneDetailApi *sceneDetailApi;
-    EditSceneApi *editSceneApi;
+    SceneDetail *_editSceneDetail;
     
-    BOOL isEditMode;
+    SceneDetailApi *sceneDetailApi;
+    EditSceneApi *_editSceneApi;
 }
-@property (weak, nonatomic) IBOutlet UITextField *sceneName;
 @property (weak, nonatomic) IBOutlet UILabel *sceneCity;
 @property (weak, nonatomic) IBOutlet UILabel *sceneCondition;
 @property (weak, nonatomic) IBOutlet UILabel *sceneDeviceStatus;
@@ -50,67 +50,92 @@ static CGFloat kMagin = 10.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorColor = kColorTableViewSeparatorLine;
-
     self.triggerCollectionView.collectionViewLayout = self.triggerLayout;
     [self.triggerCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TriggerCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    
     self.deviceCollectionView.collectionViewLayout = self.deviceLayout;
     [self.deviceCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SceneDeviceCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseDeviceIdentifier];
     
-    [self.navigationItem.rightBarButtonItem setTitle:RTLocalizedString(@"编辑")];
-    sceneDetailApi = [[SceneDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene_id:_scene.scene_id];
-    sceneDetailApi.delegate = self;
-    [sceneDetailApi start];
+    [kNotificationCenter addObserver:self selector:@selector(sceneDetailDidChanged:) name:RTSceneDetailDidChangeNotification object:nil];
+    [self loadDataFromNetwork];
+}
+
+- (void)dealloc{
+    [kNotificationCenter removeObserver:self name:RTSceneDetailDidChangeNotification object:nil];
 }
 
 
 #pragma mark -IBAction--
 - (IBAction)rightBtnClick:(id)sender {
-    if (isEditMode) {
-        editSceneApi = [[EditSceneApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene:_scene sceneDetail:_sceneDetail];
-        editSceneApi.delegate = self;
-        [editSceneApi start];
-    }else{
-        [self.navigationItem.rightBarButtonItem setTitle:RTLocalizedString(@"保存")];
-        isEditMode = !isEditMode;
-    }
+    SceneChangeTableViewController *addDeviceVC = SB_VIEWCONTROLLER_IDENTIFIER(SB_SCENEMODE, SB_SCENMODE_CHANGE);
+    addDeviceVC.sceneChangeType = RTSceneChangeTypeEdit;
+    [addDeviceVC setValue:_scene forKey:@"_scene"];
+    [addDeviceVC setValue:_sceneDetail forKey:@"_sceneDetail"];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:addDeviceVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)sceneStatusBtnClick:(id)sender {
+    _editSceneDetail = [_sceneDetail deepCopy];
+    _editSceneDetail.scene_status = !_editSceneDetail.scene_status;
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"正在加载...")];
+    _editSceneApi = [[EditSceneApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene:_scene sceneDetail:_editSceneDetail];
+    _editSceneApi.delegate = self;
+    [_editSceneApi start];
+}
+
+
+#pragma mark -PrivateMethod--
+- (void)loadDataFromNetwork{
+    [SVProgressHUD showWithStatus:RTLocalizedString(@"正在加载...")];
+    sceneDetailApi = [[SceneDetailApi alloc] initWithApp_user_id:[MainUserManager getLocalMainUserInfo].app_user_id scene_id:_scene.scene_id];
+    sceneDetailApi.delegate = self;
+    [sceneDetailApi start];
 }
 
 - (void)freshUI{
-    _sceneName.text = _scene.scene_name;
-    _sceneCity.text = _sceneDetail.scene_city;
+    self.title = _sceneDetail.scene_name;
+    self.sceneCity.text = _sceneDetail.scene_city;
     if (_sceneDetail.sceneCondition.condition_sub_option.count > 0) {
-        _sceneCondition.text = [NSString stringWithFormat:@"%@ %@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject,_sceneDetail.sceneCondition.condition_sub_option.firstObject];
+        self.sceneCondition.text = [NSString stringWithFormat:@"%@ %@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject,_sceneDetail.sceneCondition.condition_sub_option.firstObject];
     }else{
-        _sceneCondition.text = [NSString stringWithFormat:@"%@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject];
+        self.sceneCondition.text = [NSString stringWithFormat:@"%@%@",_sceneDetail.sceneCondition.condition_name,_sceneDetail.sceneCondition.condition_option.firstObject];
     }
-    _sceneDeviceStatus.text = _sceneDetail.device_status?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
+    self.sceneDeviceStatus.text = _sceneDetail.device_status?RTLocalizedString(@"开启设备"):RTLocalizedString(@"关闭设备");
+}
+
+- (void)freshSceneStatusBtnUI{
+    if (_sceneDetail.scene_status) {
+        [self.sceneStatusBtn setTitle:[NSString stringWithFormat:@"%@%@",RTLocalizedString(@"关闭"),_sceneDetail.scene_name] forState:UIControlStateNormal];
+        self.sceneStatusBtn.backgroundColor = UIColor.whiteColor;
+        [self.sceneStatusBtn setTitleColor:kColorTheme forState:UIControlStateNormal];
+        self.sceneStatusBtn.layer.borderColor = kColorTheme.CGColor;
+    }else{
+        [self.sceneStatusBtn setTitle:[NSString stringWithFormat:@"%@%@",RTLocalizedString(@"打开"),_sceneDetail.scene_name] forState:UIControlStateNormal];
+        self.sceneStatusBtn.backgroundColor = kColorTheme;
+        [self.sceneStatusBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        self.sceneStatusBtn.layer.borderColor = UIColor.clearColor.CGColor;
+    }
+}
+
+
+- (void)sceneDetailDidChanged:(id)sender{
+    [self loadDataFromNetwork];
 }
 
 
 #pragma mark _UITableViewDelegate--
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 3) {
+    if (section == 2) {
         return 30;
     }
     return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2 && indexPath.row == 1) {
+    if (indexPath.section == 1 && indexPath.row == 1) {
         return ITEM_WIDTH/2*3;
     }
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if (indexPath.section == 3 && indexPath.row == 0) {
-//        NSArray *array = @[RTLocalizedString(@"开启设备"),RTLocalizedString(@"关闭设备")];
-//        [self.selectSceneConditionView showWithCancel:nil ok:^(NSString *number, NSString *subNumber) {
-//
-//        } option:array subOption:nil];
-//    }
 }
 
 
@@ -134,51 +159,33 @@ static CGFloat kMagin = 10.f;
     }
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (isEditMode) {
-        if ([collectionView isEqual:self.triggerCollectionView]) {
-            SceneCondition *condition = _sceneDetail.sceneConditionList[indexPath.row];
-            
-            @weakify(self);
-            [self.selectSceneConditionView showWithDataArray:condition.condition_option subDataArray:condition.condition_sub_option cancel:nil ok:^(NSArray *array) {
-                @strongify(self);
-                self->_sceneDetail.sceneCondition = condition;
-                self->_sceneDetail.sceneCondition.condition_option = @[array.firstObject];
-                if (array.count > 1) {
-                    self->_sceneDetail.sceneCondition.condition_sub_option = @[array.lastObject];
-                }
-                [self freshUI];
-                [self.triggerCollectionView reloadData];
-            }];
-        }else{
-            SceneDevice *device = _sceneDetail.sceneDeviceList[indexPath.row];
-            device.selected = !device.selected;
-            [self.deviceCollectionView reloadData];
-        }
-    }
-}
 
 
 #pragma mark -RTRequestDelegate---
 - (void)requestFinished:(__kindof RTBaseRequest *)request{
+    [SVProgressHUD dismiss];
     if ([request isKindOfClass:[SceneDetailApi class]]) {
         if ([request dataSuccess]) {
             _sceneDetail = [SceneDetail modelWithDictionary:request.responseObject];
             [self.triggerCollectionView reloadData];
             [self.deviceCollectionView reloadData];
             [self freshUI];
+            [self freshSceneStatusBtnUI];
         }
     }else{
-        if (![request dataSuccess]) {
+        if ([request dataSuccess]) {
+            [kNotificationCenter postNotificationName:RTSceneCenterDidChangeNotification object:nil];
+            _sceneDetail = _editSceneDetail;
+            [self freshSceneStatusBtnUI];
+        }else{
             [SVProgressHUD showErrorWithStatus:request.errorMessage];
         }
     }
 }
 
 - (void)requestFailed:(__kindof RTBaseRequest *)request{
-    
+    [SVProgressHUD dismiss];
 }
-
 
 
 #pragma mark -SetterGetter--

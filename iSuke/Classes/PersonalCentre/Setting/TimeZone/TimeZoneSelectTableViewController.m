@@ -7,7 +7,7 @@
 //
 
 #import "TimeZoneSelectTableViewController.h"
-
+#import "TimeZoneTableViewCell.h"
 
 static NSString *const reuseIdentifier = @"Cell";
 @interface TimeZoneSelectTableViewController ()<UISearchResultsUpdating>
@@ -21,16 +21,28 @@ static NSString *const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.separatorColor = kColorTableViewSeparatorLine;
     self.timeZoneArray = [NSTimeZone knownTimeZoneNames];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
-    
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TimeZoneTableViewCell class]) bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+
+//    // 获取所有已知的时区名称
+//    NSArray *zoneNames = [NSTimeZone knownTimeZoneNames];
+//    for (NSString *string in zoneNames) {
+//        NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:string];
+//        NSLog(@"时区:%@\n时区名:%@\n时区缩写:%@",timeZone,string,timeZone.abbreviation);
+//    }
+//
+//    NSLog(@"%@",[NSTimeZone abbreviationDictionary]);
+    
 
 }
 
 
 
+- (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 
@@ -46,11 +58,8 @@ static NSString *const reuseIdentifier = @"Cell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    cell.textLabel.text = self.timeZoneArray[indexPath.row];
-    // Configure the cell...
-    
+    TimeZoneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    [cell freshCellWithString:self.timeZoneArray[indexPath.row]];
     return cell;
 }
 
@@ -71,15 +80,16 @@ static NSString *const reuseIdentifier = @"Cell";
 #pragma mark  -SetterGetter----
 -(UISearchController *)searchController{
     if (_searchController == nil) {
-        // 创建搜索框
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchResultsUpdater = self;
         [_searchController.searchBar sizeToFit];
-        
-        _searchController.dimsBackgroundDuringPresentation = NO;
+        _searchController.dimsBackgroundDuringPresentation = YES;
         _searchController.hidesNavigationBarDuringPresentation = NO;
-        
         [_searchController.searchBar setBackgroundImage:[UIImage new]];
+        [_searchController.searchBar setValue:RTLocalizedString(@"取消") forKey:@"_cancelButtonText"];
+        _searchController.searchBar.tintColor = kColorTheme;
+        _searchController.searchBar.placeholder = RTLocalizedString(@"搜索时区");
+
         self.definesPresentationContext = YES;
     }
     return _searchController;

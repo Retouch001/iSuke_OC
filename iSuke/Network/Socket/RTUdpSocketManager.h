@@ -8,23 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "GCDAsyncUdpSocket.h"
-
+#import "RTParseGenerateDataManager.h"
 
 @protocol RTUdpSocketDelegate <GCDAsyncUdpSocketDelegate>
 
-
 @end
 
-
 @interface RTUdpSocketManager : NSObject
-
 @property (nonatomic, weak) id<RTUdpSocketDelegate> delegate;
-
 + (instancetype)shareInstance;
-
-- (void)sendDataWithWiFiName:(NSString *)wifiName psd:(NSString *)psd;
-
+- (void)sendDataWithData:(NSData *)data;
 - (void)closeUdp;
-
-
 @end

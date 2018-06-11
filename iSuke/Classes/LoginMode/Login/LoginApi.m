@@ -19,9 +19,11 @@
     NSString *_verifyCode;
 }
 
-
 - (id)initWithCountryCode:(NSString *)countryCode phone:(NSString *)phone password:(NSString *)password loginType:(RTLoginType)loginType verifyCode:(NSString *)verifyCode{
     if (self = [super init]) {
+        if ([countryCode containsString:@"+"]) {
+            countryCode = [countryCode substringFromIndex:1];
+        }
         _country_code = countryCode;
         _login_phone = phone;
         _password = password;
@@ -69,7 +71,4 @@
              @"orgId" : RT_ORGID
              };
 }
-
-
-
 @end

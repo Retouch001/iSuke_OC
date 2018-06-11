@@ -13,8 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *closeBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
 
 
 @end
@@ -30,7 +29,6 @@
 
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath{
-    
     DeviceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:reuseIdentifier owner:nil options:nil] firstObject];
@@ -39,29 +37,10 @@
 }
 
 
-- (void)freshCellWithDevice:(Device *)device cellType:(RTCellType)cellType{
-    _iconImageView.image = [UIImage imageNamed:@"ic_socket"];
-    
+- (void)freshCellWithDevice:(Device *)device editMode:(BOOL)editMode{
+    _selectImageView.hidden = !editMode;
+    _selectImageView.image = device.selected?[UIImage imageNamed:@"ic_choose3"]:[UIImage imageNamed:@"ic_choose2"];
     _deviceNameLabel.text = kStringIsEmpty(device.device_alias)?device.device_name:device.device_alias;
-    
-    switch (cellType) {
-        case RTCellTypeDeviceCentre:
-            _deviceNameLabel.textColor = kColorTheme;
-            break;
-        case RTCellTypeDeviceAdd:
-            _deviceNameLabel.textColor = UIColor.blackColor;
-            break;
-        case RTCellTypeSceneMode:
-            _deviceNameLabel.textColor = kColorTheme;
-            break;
-        default:
-            break;
-    }
-}
-
-
-- (void)freshCellWihtIconString:(NSString *)iconString deviceName:(NSString *)deviceName{
-
 }
 
 @end
