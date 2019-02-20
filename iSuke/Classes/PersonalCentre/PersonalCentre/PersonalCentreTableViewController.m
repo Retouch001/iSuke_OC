@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *phone;
 
-
-
 @end
 
 @implementation PersonalCentreTableViewController

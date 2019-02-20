@@ -123,8 +123,6 @@
 		5ED2FDE2206B978F0067B7A4 /* TimeZoneSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE1206B978F0067B7A4 /* TimeZoneSelectTableViewController.m */; };
 		5ED2FDE9206BA6680067B7A4 /* SelectCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */; };
 		5ED2FDEA206BD5330067B7A4 /* sortedChnames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FDE5206BA0E30067B7A4 /* sortedChnames.plist */; };
-		5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDF5206C83180067B7A4 /* RTRootNavigationController.m */; };
-		5ED2FDF8206C83180067B7A4 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FDF6206C83180067B7A4 /* UIViewController+RTRootNavigationController.m */; };
 		5ED2FE02206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */; };
 		5ED2FE03206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */; };
 		5ED2FE05206D34AC0067B7A4 /* DeviceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2FE04206D34AC0067B7A4 /* DeviceDetail.storyboard */; };
@@ -166,6 +164,8 @@
 		5EDFCC0520944C6D0032935B /* UpdateDeviceVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCC0420944C6D0032935B /* UpdateDeviceVApi.m */; };
 		5EDFCC0820944C9E0032935B /* SearchDeviceVApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCC0720944C9E0032935B /* SearchDeviceVApi.m */; };
 		5EDFCC0F2094574D0032935B /* CurrentDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFCC0E2094574D0032935B /* CurrentDevice.m */; };
+		5EE213DB2140183800470181 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE213DA2140178800470181 /* RTRootNavigationController.m */; };
+		5EE213DC2140183800470181 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE213D72140178700470181 /* UIViewController+RTRootNavigationController.m */; };
 		5EE321E4207CF8DA001C46D3 /* AddShareUserApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */; };
 		5EE321E7207D0191001C46D3 /* PowerDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E6207D0191001C46D3 /* PowerDataViewController.m */; };
 		5EE321EA207D0421001C46D3 /* DevicePowerApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE321E9207D0421001C46D3 /* DevicePowerApi.m */; };
@@ -475,10 +475,6 @@
 		5ED2FDE6206BA0E40067B7A4 /* sortedEnames.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sortedEnames.plist; sourceTree = "<group>"; };
 		5ED2FDE7206BA6680067B7A4 /* SelectCountryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectCountryTableViewController.h; sourceTree = "<group>"; };
 		5ED2FDE8206BA6680067B7A4 /* SelectCountryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectCountryTableViewController.m; sourceTree = "<group>"; };
-		5ED2FDF3206C83180067B7A4 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
-		5ED2FDF4206C83180067B7A4 /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
-		5ED2FDF5206C83180067B7A4 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
-		5ED2FDF6206C83180067B7A4 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
 		5ED2FDFF206CB4100067B7A4 /* DeviceCentreCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceCentreCollectionReusableView.h; sourceTree = "<group>"; };
 		5ED2FE00206CB4100067B7A4 /* DeviceCentreCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceCentreCollectionReusableView.m; sourceTree = "<group>"; };
 		5ED2FE01206CB4100067B7A4 /* DeviceCentreCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCentreCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -546,6 +542,10 @@
 		5EDFCC0720944C9E0032935B /* SearchDeviceVApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchDeviceVApi.m; sourceTree = "<group>"; };
 		5EDFCC0D2094574D0032935B /* CurrentDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentDevice.h; sourceTree = "<group>"; };
 		5EDFCC0E2094574D0032935B /* CurrentDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentDevice.m; sourceTree = "<group>"; };
+		5EE213D72140178700470181 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
+		5EE213D82140178700470181 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
+		5EE213D92140178800470181 /* RTRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
+		5EE213DA2140178800470181 /* RTRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
 		5EE321E2207CF8DA001C46D3 /* AddShareUserApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShareUserApi.h; sourceTree = "<group>"; };
 		5EE321E3207CF8DA001C46D3 /* AddShareUserApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShareUserApi.m; sourceTree = "<group>"; };
 		5EE321E5207D0191001C46D3 /* PowerDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerDataViewController.h; sourceTree = "<group>"; };
@@ -1606,10 +1606,10 @@
 		5ED2FDF2206C82F40067B7A4 /* RTRootNavigationCotroller */ = {
 			isa = PBXGroup;
 			children = (
-				5ED2FDF4206C83180067B7A4 /* RTRootNavigationController.h */,
-				5ED2FDF5206C83180067B7A4 /* RTRootNavigationController.m */,
-				5ED2FDF3206C83180067B7A4 /* UIViewController+RTRootNavigationController.h */,
-				5ED2FDF6206C83180067B7A4 /* UIViewController+RTRootNavigationController.m */,
+				5EE213D92140178800470181 /* RTRootNavigationController.h */,
+				5EE213DA2140178800470181 /* RTRootNavigationController.m */,
+				5EE213D82140178700470181 /* UIViewController+RTRootNavigationController.h */,
+				5EE213D72140178700470181 /* UIViewController+RTRootNavigationController.m */,
 			);
 			path = RTRootNavigationCotroller;
 			sourceTree = "<group>";
@@ -2359,6 +2359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE213DB2140183800470181 /* RTRootNavigationController.m in Sources */,
+				5EE213DC2140183800470181 /* UIViewController+RTRootNavigationController.m in Sources */,
 				5ED094E920725BA400F77160 /* UpDataView.m in Sources */,
 				5EE321FC207DB59B001C46D3 /* AddTimedTaskApi.m in Sources */,
 				5EC8702B20882B2F00454F2B /* RTUdpSocketManager.m in Sources */,
@@ -2395,7 +2397,6 @@
 				5EA48B042068BFC2004B5E7E /* RootLoginViewController.m in Sources */,
 				5E0168D6208E1CF5002AA0F5 /* GetSceneConditionApi.m in Sources */,
 				5E4B019720809F4B00296F85 /* ModifyUserIconApi.m in Sources */,
-				5ED2FDF7206C83180067B7A4 /* RTRootNavigationController.m in Sources */,
 				5ED094E820725BA400F77160 /* UpdateApp.m in Sources */,
 				5EE32202207DD83C001C46D3 /* GetTimedTaskApi.m in Sources */,
 				5E68C12F207CF50300B8DF9F /* SetShareUserAliasApi.m in Sources */,
@@ -2501,7 +2502,6 @@
 				5EA48B162068C0EC004B5E7E /* RegisterSecondViewController.m in Sources */,
 				5E4B01B22087293300296F85 /* DeviceConfigViewController.m in Sources */,
 				5E68C0DA207A411300B8DF9F /* ForgotPsdSecondViewController.m in Sources */,
-				5ED2FDF8206C83180067B7A4 /* UIViewController+RTRootNavigationController.m in Sources */,
 				5EE32222207E01EC001C46D3 /* PowerModel.m in Sources */,
 				5EE3220F207DDDD7001C46D3 /* TimedTaskTableViewCell.m in Sources */,
 				5EA48AF72068BEAA004B5E7E /* RootTableBarController.m in Sources */,
@@ -2698,7 +2698,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3ENB4667F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/iSuke/Config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/retouch/Documents/iSuke/iSuke/iSuke/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2723,7 +2723,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3ENB4667F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/retouch/Desktop/iSuke/iSuke/iSuke/Config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/retouch/Documents/iSuke/iSuke/iSuke/Config/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/iSuke/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

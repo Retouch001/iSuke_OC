@@ -12,8 +12,15 @@
 @implementation AppDelegate (RootViewController)
 
 - (void)setRootViewController{
-    MainUser *mainUser = [MainUserManager getLocalMainUserInfo];
-    if (mainUser) {
+    //MainUser *mainUser = [MainUserManager getLocalMainUserInfo];
+    
+    MainUser *mainUser = [MainUser new];
+    mainUser.app_user_id = 123;
+    mainUser.nickname = @"Retouch";
+    mainUser.phone = @"15179182756";
+    [MainUserManager updateLocalMainUserInfo:mainUser];
+    
+    if (YES) {
         [RTAddinterceptor addInterceptorWithMainUser:mainUser];
         UIViewController *mainVC = SB_VIEWCONTROLLER(SB_MAIN);
         self.window.rootViewController = mainVC;

@@ -278,6 +278,16 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 }
 
 #if __IPHONE_11_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
+- (nullable UIViewController *)childViewControllerForScreenEdgesDeferringSystemGestures
+{
+    return self.contentViewController;
+}
+
+- (UIRectEdge)preferredScreenEdgesDeferringSystemGestures
+{
+    return [self.contentViewController preferredScreenEdgesDeferringSystemGestures];
+}
+
 - (BOOL)prefersHomeIndicatorAutoHidden
 {
     return [self.contentViewController prefersHomeIndicatorAutoHidden];
@@ -542,6 +552,16 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 }
 
 #if __IPHONE_11_0 && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
+- (nullable UIViewController *)childViewControllerForScreenEdgesDeferringSystemGestures
+{
+    return self.topViewController;
+}
+
+- (UIRectEdge)preferredScreenEdgesDeferringSystemGestures
+{
+    return [self.topViewController preferredScreenEdgesDeferringSystemGestures];
+}
+
 - (BOOL)prefersHomeIndicatorAutoHidden
 {
     return [self.topViewController prefersHomeIndicatorAutoHidden];
@@ -911,6 +931,7 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
             }
             else {
                 viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
+
 //                viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
 //                                                                                                   style:UIBarButtonItemStylePlain
 //                                                                                                  target:self
